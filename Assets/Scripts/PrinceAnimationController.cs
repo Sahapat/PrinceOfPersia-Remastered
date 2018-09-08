@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PrinceController : MonoBehaviour
+public class PrinceAnimationController : MonoBehaviour
 {
     public enum SideFacing
     {
@@ -13,12 +13,14 @@ public class PrinceController : MonoBehaviour
     public enum ActionState
     {
         IDLE,
-        COMMON_ACTION,
-        COMBAT,
-        OTHER
+        FLIPING,
+        RUNNING,
+        CROUCH,
+        JUMP
     };
 
-    private ActionState actionState;
+    [SerializeField]private ActionState currentState;
+    private ActionState previousState;
     private PrinceAction_CommonAction commonAction;
     private PrinceAction_Combat combat;
     private PrinceAction_Other other;
@@ -36,6 +38,8 @@ public class PrinceController : MonoBehaviour
     }
     void Start()
     {
+        previousState = currentState;
+        currentState = ActionState.IDLE;
         isReadyToTurn = true;
     }
     void Update()
@@ -43,16 +47,50 @@ public class PrinceController : MonoBehaviour
         var animationStateInfo = princeAnimator.GetCurrentAnimatorClipInfo(0);
         currentAnimationClip = animationStateInfo[0].clip.name;
     }
+    public void SetAnimationCrouch()
+    {
+        princeAnimator.SetBool("isCrouch",true);
+        previousState = currentState;
+        currentState = ActionState.CROUCH;
+    }
+    public void SetAnimationCrouchStop()
+    {
+        princeAnimator.SetBool("isCrouch",false);
+        previousState = currentState;
+        currentState = ActionState.IDLE;
+    }
     public void SetAnimationRunning()
     {
         princeAnimator.SetBool("isRun",true);
+        previousState = currentState;
+        currentState = ActionState.RUNNING;
     }
     public void SetAnimationRunStop()
     {
         princeAnimator.SetBool("isRun",false);
+        previousState = currentState;
+        currentState = ActionState.IDLE;
+    }
+    public void Jump()
+    {
+        princeAnimator.SetBool("isJump",true);
+        previousState = currentState;
+        currentState = ActionState.JUMP;
+    }
+    public void CancelJump()
+    {
+        princeAnimator.SetBool("isJump",false);
+        previousState = currentState;
+        currentState = ActionState.IDLE;
+    }
+    public void CrouchMove()
+    {
+        princeAnimator.SetTrigger("CrouchMove");
     }
     public void FlipFacing()
     {
+        previousState = currentState;
+        currentState = ActionState.FLIPING;
         if(isReadyToTurn)
         StartCoroutine(Fliping());
     }
@@ -60,9 +98,13 @@ public class PrinceController : MonoBehaviour
     {
         return (princeSpriteRenderer.flipX) ? SideFacing.Left : SideFacing.Right;
     }
+    public ActionState GetPreviousActionState()
+    {
+        return previousState;
+    }
     public ActionState GetCurrentActionState()
     {
-        return actionState;
+        return currentState;
     }
     public string GetCurrentAnimationClip()
     {
@@ -75,5 +117,14 @@ public class PrinceController : MonoBehaviour
         yield return new WaitForSeconds(0.64f);
         princeSpriteRenderer.flipX = !princeSpriteRenderer.flipX;
         isReadyToTurn = true;
+        currentState = previousState;
+        previousState = ActionState.FLIPING;
+    }
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if(currentState == ActionState.JUMP)
+        {
+            CancelJump();
+        }
     }
 }

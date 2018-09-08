@@ -2,6 +2,22 @@ using UnityEngine;
 
 public class InputManager
 {
+    public static bool getInputKeyUp_Right()
+    {
+        return Input.GetKeyUp(KeyCode.RightArrow)||Input.GetKeyUp(KeyCode.D);
+    }
+    public static bool getInputKeyUp_Left()
+    {
+        return Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.A);
+    }
+    public static bool getInputKeyUp_Up()
+    {
+        return Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.W);
+    }
+    public static bool getInputKeyUp_Down()
+    {
+        return Input.GetKeyUp(KeyCode.DownArrow) || Input.GetKeyUp(KeyCode.S);
+    }
     public static bool getInputKeyDown_Right()
     {
         return Input.GetKeyDown(KeyCode.RightArrow)||Input.GetKeyDown(KeyCode.D);
@@ -16,7 +32,7 @@ public class InputManager
     }
     public static bool getInputKeyDown_Down()
     {
-        return Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.W);
+        return Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S);
     }
     public static bool getInputKey_Right()
     {
@@ -32,7 +48,7 @@ public class InputManager
     }
     public static bool getInputKey_Down()
     {
-        return Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.W);
+        return Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S);
     }
     public static bool getInputKey_Interact()
     {

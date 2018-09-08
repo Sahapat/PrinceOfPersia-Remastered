@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 22454eb4c9767a44393d9d3739f80e88
+guid: 80c97d084c8c0b44e983cc7f8f5c5dd1
 TextureImporter:
   fileIDToRecycleName:
     21300000: idle_0
@@ -47,7 +47,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 173
-  spriteBorder: {x: 141, y: 20, z: 135, w: 79}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -110,10 +110,10 @@ TextureImporter:
       name: idle_0
       rect:
         serializedVersion: 2
-        x: 141
+        x: 142
         y: 19
-        width: 63
-        height: 242
+        width: 62
+        height: 237
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -121,7 +121,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 472f2962751086a499b55a40516cbe88
+      spriteID: f18e3033f8b000244b205b87256bc05d
       vertices: []
       indices: 
       edges: []
@@ -129,7 +129,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5fdebbb1c9fe5f542a2657ebb8b2c096
+    spriteID: 56e5890513f8146429557c705a092d86
     vertices: []
     indices: 
     edges: []
