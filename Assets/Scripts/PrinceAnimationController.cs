@@ -24,9 +24,11 @@ public class PrinceAnimationController : MonoBehaviour
     private PrinceAction_CommonAction commonAction;
     private PrinceAction_Combat combat;
     private PrinceAction_Other other;
+    
 
     [SerializeField] private Animator princeAnimator;
     [SerializeField] private SpriteRenderer princeSpriteRenderer;
+    [SerializeField] private float turnFlipDelay;
 
     private string currentAnimationClip;
     private bool isReadyToTurn;
@@ -114,7 +116,7 @@ public class PrinceAnimationController : MonoBehaviour
     {
         isReadyToTurn = false;
         princeAnimator.SetTrigger("Turn");
-        yield return new WaitForSeconds(0.64f);
+        yield return new WaitForSeconds(turnFlipDelay);
         princeSpriteRenderer.flipX = !princeSpriteRenderer.flipX;
         isReadyToTurn = true;
         currentState = previousState;

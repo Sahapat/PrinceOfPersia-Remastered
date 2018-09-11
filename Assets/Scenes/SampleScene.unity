@@ -3363,6 +3363,7 @@ MonoBehaviour:
   currentState: 0
   princeAnimator: {fileID: 1830403392}
   princeSpriteRenderer: {fileID: 1830403393}
+  turnFlipDelay: 0.68
 --- !u!114 &2081883718
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3377,7 +3378,7 @@ MonoBehaviour:
   princeAnimationController: {fileID: 2081883717}
   runInputDelay: 0.5
   runStepScale: 1.8
-  runSpeed: 2.2
+  runSpeed: 1.8
   crouchStepScale: 0.5
   crouchSpeed: 3
   jumpDelay: 0.85
