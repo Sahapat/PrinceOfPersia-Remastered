@@ -1,5 +1,9 @@
 using UnityEngine;
 public class PrinceAction_Other:MonoBehaviour
 {
-    [SerializeField]private PrinceAnimationController princeAnimationController;
+    private PrinceAnimationController princeAnimationController;
+    private void Awake()
+    {
+        princeAnimationController = GetComponent<PrinceAnimationController>();
+    }
 }

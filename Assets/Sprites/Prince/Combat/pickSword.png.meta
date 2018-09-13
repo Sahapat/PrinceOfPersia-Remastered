@@ -1,7 +1,20 @@
 fileFormatVersion: 2
 guid: a4e462ca1a0806a48a29d472e1f8047c
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: pickSword_0
+    21300002: pickSword_1
+    21300004: pickSword_2
+    21300006: pickSword_3
+    21300008: pickSword_4
+    21300010: pickSword_5
+    21300012: pickSword_6
+    21300014: pickSword_7
+    21300016: pickSword_8
+    21300018: pickSword_9
+    21300020: pickSword_10
+    21300022: pickSword_11
+    21300024: pickSword_12
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -40,7 +53,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -71,14 +84,14 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   - serializedVersion: 2
     buildTarget: Standalone
-    maxTextureSize: 2048
+    maxTextureSize: 8192
     resizeAlgorithm: 0
-    textureFormat: -1
+    textureFormat: 12
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
-    overridden: 0
+    overridden: 1
     androidETC2FallbackOverride: 0
   - serializedVersion: 2
     buildTarget: Android
@@ -104,7 +117,267 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: pickSword_0
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 35
+        width: 100
+        height: 228
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbf40d7030faa1f409ae8d3f648eb753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pickSword_1
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 35
+        width: 114
+        height: 225
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8698901d42d75bd4891d4e926b12559a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pickSword_2
+      rect:
+        serializedVersion: 2
+        x: 773
+        y: 41
+        width: 128
+        height: 225
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6f54059e3dffa54195ea4b0a52c928f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pickSword_3
+      rect:
+        serializedVersion: 2
+        x: 1116
+        y: 38
+        width: 126
+        height: 228
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 486824808cc476847bf707254ec2c459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pickSword_4
+      rect:
+        serializedVersion: 2
+        x: 1445
+        y: 47
+        width: 153
+        height: 219
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ded26d65b8b76fb429b12cfa99c01a98
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pickSword_5
+      rect:
+        serializedVersion: 2
+        x: 1790
+        y: 47
+        width: 157
+        height: 216
+      alignment: 9
+      pivot: {x: 0.45802337, y: 0.001326614}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3aeda5a066c13047aeea7ae24d6aee4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pickSword_6
+      rect:
+        serializedVersion: 2
+        x: 2136
+        y: 45
+        width: 174
+        height: 225
+      alignment: 9
+      pivot: {x: 0.37001756, y: 0.00082644995}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb6488dd41a3d764bba8f19448391e56
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pickSword_7
+      rect:
+        serializedVersion: 2
+        x: 2490
+        y: 44
+        width: 239
+        height: 227
+      alignment: 9
+      pivot: {x: 0.20005435, y: 0.0053076386}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 932bfd9bd14dff84085b41566f75fbc1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pickSword_8
+      rect:
+        serializedVersion: 2
+        x: 2828
+        y: 44
+        width: 247
+        height: 230
+      alignment: 9
+      pivot: {x: 0.22339164, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e2314dcb9f06f846af7a3e772da3237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pickSword_9
+      rect:
+        serializedVersion: 2
+        x: 3169
+        y: 44
+        width: 242
+        height: 230
+      alignment: 9
+      pivot: {x: 0.22339164, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8dcb8e50e2c3494dac19d174d21ce95
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pickSword_10
+      rect:
+        serializedVersion: 2
+        x: 3510
+        y: 44
+        width: 202
+        height: 259
+      alignment: 9
+      pivot: {x: 0.2622735, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8455671e644785a4da0a7c3d40e405c4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pickSword_11
+      rect:
+        serializedVersion: 2
+        x: 3850
+        y: 44
+        width: 165
+        height: 290
+      alignment: 9
+      pivot: {x: 0.32535955, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5ca747aa695c5d45ac44e78c3a473b9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pickSword_12
+      rect:
+        serializedVersion: 2
+        x: 4199
+        y: 44
+        width: 148
+        height: 295
+      alignment: 9
+      pivot: {x: 0.31552207, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ded238dd13a05b4789e000a77c659b2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

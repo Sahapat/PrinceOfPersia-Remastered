@@ -13,96 +13,68 @@ public class PrinceAnimationController : MonoBehaviour
     public enum ActionState
     {
         IDLE,
-        FLIPING,
-        RUNNING,
+        STALK,
         CROUCH,
-        JUMP
+        COMBAT
     };
-
-    [SerializeField]private ActionState currentState;
-    private ActionState previousState;
-    private PrinceAction_CommonAction commonAction;
-    private PrinceAction_Combat combat;
-    private PrinceAction_Other other;
-    
 
     [SerializeField] private Animator princeAnimator;
     [SerializeField] private SpriteRenderer princeSpriteRenderer;
     [SerializeField] private float turnFlipDelay;
-
+    public bool isFliping = false;
+    private PrinceAction_CommonAction princeAction_CommonAction;
+    private PrinceAction_Combat princeAction_Combat;
+    private PrinceAction_Other princeAction_Other;
+    private ActionState currentState;
     private string currentAnimationClip;
-    private bool isReadyToTurn;
-    void Awake()
+    private void Awake()
     {
-        commonAction = GetComponent<PrinceAction_CommonAction>();
-        combat = GetComponent<PrinceAction_Combat>();
-        other = GetComponent<PrinceAction_Other>();
+        princeAction_CommonAction = GetComponent<PrinceAction_CommonAction>();
+        princeAction_Combat = GetComponent<PrinceAction_Combat>();
+        princeAction_Other =GetComponent<PrinceAction_Other>();
     }
-    void Start()
+    public void IdleFlipFacing()
     {
-        previousState = currentState;
-        currentState = ActionState.IDLE;
-        isReadyToTurn = true;
+        isFliping = true;
+        StartCoroutine(IdleFlip());
     }
-    void Update()
+    public void TakeDamage()
     {
-        var animationStateInfo = princeAnimator.GetCurrentAnimatorClipInfo(0);
-        currentAnimationClip = animationStateInfo[0].clip.name;
+        princeAnimator.SetTrigger("TakeDamage");
     }
-    public void SetAnimationCrouch()
+    public void Attack()
     {
-        princeAnimator.SetBool("isCrouch",true);
-        previousState = currentState;
-        currentState = ActionState.CROUCH;
+        princeAnimator.SetTrigger("Attack1");
     }
-    public void SetAnimationCrouchStop()
+    public void CombatMoveLeft()
     {
-        princeAnimator.SetBool("isCrouch",false);
-        previousState = currentState;
-        currentState = ActionState.IDLE;
+        princeAnimator.SetTrigger("FightMoveLeft");
     }
-    public void SetAnimationRunning()
+    public void CombatMoveRight()
     {
-        princeAnimator.SetBool("isRun",true);
-        previousState = currentState;
-        currentState = ActionState.RUNNING;
+        princeAnimator.SetTrigger("FightMoveRight");
     }
-    public void SetAnimationRunStop()
+    public void SetAnimationRuning(bool status)
     {
-        princeAnimator.SetBool("isRun",false);
-        previousState = currentState;
-        currentState = ActionState.IDLE;
+        princeAnimator.SetBool("isRun",status);
     }
-    public void Jump()
+    public void ToCombat()
     {
-        princeAnimator.SetBool("isJump",true);
-        previousState = currentState;
-        currentState = ActionState.JUMP;
+        princeAnimator.SetTrigger("ToCombat");
+        currentState = ActionState.COMBAT;
     }
-    public void CancelJump()
+    private IEnumerator IdleFlip()
     {
-        princeAnimator.SetBool("isJump",false);
-        previousState = currentState;
-        currentState = ActionState.IDLE;
+        princeAnimator.SetTrigger("Turn");
+        yield return new WaitForSeconds(turnFlipDelay);
+        princeSpriteRenderer.flipX = !princeSpriteRenderer.flipX;
+        isFliping = false;
     }
-    public void CrouchMove()
-    {
-        princeAnimator.SetTrigger("CrouchMove");
-    }
-    public void FlipFacing()
-    {
-        previousState = currentState;
-        currentState = ActionState.FLIPING;
-        if(isReadyToTurn)
-        StartCoroutine(Fliping());
-    }
+
+    ///////////////////////////// Get property ///////////////////////////////////
     public SideFacing GetCurrentFacing()
     {
         return (princeSpriteRenderer.flipX) ? SideFacing.Left : SideFacing.Right;
-    }
-    public ActionState GetPreviousActionState()
-    {
-        return previousState;
     }
     public ActionState GetCurrentActionState()
     {
@@ -110,23 +82,8 @@ public class PrinceAnimationController : MonoBehaviour
     }
     public string GetCurrentAnimationClip()
     {
+        var animationStateInfo = princeAnimator.GetCurrentAnimatorClipInfo(0);
+        currentAnimationClip = animationStateInfo[0].clip.name;
         return currentAnimationClip;
-    }
-    private IEnumerator Fliping()
-    {
-        isReadyToTurn = false;
-        princeAnimator.SetTrigger("Turn");
-        yield return new WaitForSeconds(turnFlipDelay);
-        princeSpriteRenderer.flipX = !princeSpriteRenderer.flipX;
-        isReadyToTurn = true;
-        currentState = previousState;
-        previousState = ActionState.FLIPING;
-    }
-    void OnCollisionEnter2D(Collision2D other)
-    {
-        if(currentState == ActionState.JUMP)
-        {
-            CancelJump();
-        }
     }
 }

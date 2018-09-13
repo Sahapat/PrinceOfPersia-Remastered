@@ -1,7 +1,11 @@
 fileFormatVersion: 2
 guid: 3f3a1a78dd144454d84d47025b3d1caf
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: fightStep_0
+    21300002: fightStep_1
+    21300004: fightStep_2
+    21300006: fightStep_3
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -40,7 +44,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -71,14 +75,14 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   - serializedVersion: 2
     buildTarget: Standalone
-    maxTextureSize: 2048
+    maxTextureSize: 8192
     resizeAlgorithm: 0
-    textureFormat: -1
+    textureFormat: 12
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
-    overridden: 0
+    overridden: 1
     androidETC2FallbackOverride: 0
   - serializedVersion: 2
     buildTarget: Android
@@ -104,7 +108,87 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: fightStep_0
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 18
+        width: 298
+        height: 217
+      alignment: 9
+      pivot: {x: 0.32768285, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e2a89e7f9e940d4987038516ec6a955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fightStep_1
+      rect:
+        serializedVersion: 2
+        x: 682
+        y: 24
+        width: 302
+        height: 205
+      alignment: 9
+      pivot: {x: 0.32245925, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7593a59fa2cefde41ad7e11b95f6f776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fightStep_2
+      rect:
+        serializedVersion: 2
+        x: 1306
+        y: 18
+        width: 233
+        height: 219
+      alignment: 9
+      pivot: {x: 0.22277099, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 428b826252fed45498184878ee997fd2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fightStep_3
+      rect:
+        serializedVersion: 2
+        x: 1839
+        y: 18
+        width: 247
+        height: 222
+      alignment: 9
+      pivot: {x: 0.34292072, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d89a382e81f5fd48b77973de84db725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

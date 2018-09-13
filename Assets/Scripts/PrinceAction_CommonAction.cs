@@ -1,172 +1,109 @@
 using UnityEngine;
-
+using System.Collections;
+using System.Collections.Generic;
 public class PrinceAction_CommonAction : MonoBehaviour
 {
-    [SerializeField] private PrinceAnimationController princeAnimationController;
-    [SerializeField] private float runInputDelay;
-    [SerializeField] private float runStepScale;
     [SerializeField] private float runSpeed;
+    [SerializeField] private float runDrag;
+    [SerializeField] private float runStartDelay;
     [SerializeField] private float crouchStepScale;
     [SerializeField] private float crouchSpeed;
     [SerializeField] private float jumpDelay;
     [SerializeField] private float jumpScale;
-    private float predictPositionX;
-    private float countSelectTimeForMove;
-    private float countSelectTimeForJump;
-    private bool isRunning;
-    private bool isStalking;
-    private bool isChargeJump;
-    private bool isRuningTurn;
-    private AnimatorClipInfo[] animatorClipInfo;
-    private string currentAnimationClip;
-
+    private PrinceAnimationController princeAnimationController;
+    private float countDelayTimeForMove;
+    private float countDelayTimeForJump;
+    private bool isRunning = false;
     private Rigidbody2D prince_rigidbody;
+    private WaitForSeconds second;
 
     void Awake()
     {
+        princeAnimationController = GetComponent<PrinceAnimationController>();
         prince_rigidbody = GetComponent<Rigidbody2D>();
+        second = new WaitForSeconds(1f);
     }
-    void Update()
+    void FixedUpdate()
     {
+        if (princeAnimationController.GetCurrentActionState() == PrinceAnimationController.ActionState.COMBAT) return; //if on combat action return this function
+        else if (princeAnimationController.isFliping) return; //if on fliping action return this functon
+        if(InputManager.getInputKey_Interact())
+        {
+            princeAnimationController.ToCombat();
+        } 
         if (InputManager.getInputKeyDown_Right())
         {
-            if (isRunning && princeAnimationController.GetCurrentFacing() != PrinceAnimationController.SideFacing.Right && !isStalking)
+            switch (princeAnimationController.GetCurrentActionState())
             {
-                isRuningTurn = true;
-                predictPositionX = transform.position.x;
-                princeAnimationController.FlipFacing();
-            }
-            if (princeAnimationController.GetCurrentActionState() != PrinceAnimationController.ActionState.FLIPING)
-            {
-                if (princeAnimationController.GetCurrentActionState() == PrinceAnimationController.ActionState.CROUCH)
-                {
+                case PrinceAnimationController.ActionState.IDLE:
+                    if (princeAnimationController.isFliping) return;
+
                     if (princeAnimationController.GetCurrentFacing() == PrinceAnimationController.SideFacing.Right)
                     {
-                        princeAnimationController.CrouchMove();
-                        predictPositionX = transform.position.x + crouchStepScale;
-                        isRunning = false;
-                        isStalking = true;
+                        countDelayTimeForMove = Time.time + runStartDelay;
+                        princeAnimationController.SetAnimationRuning(true);
+                        isRunning = true;
                     }
-                }
-                else
-                {
-                    if (princeAnimationController.GetCurrentFacing() != PrinceAnimationController.SideFacing.Right)
+                    else
                     {
-                        princeAnimationController.FlipFacing();
-                        return;
+                        princeAnimationController.IdleFlipFacing();
                     }
-                    countSelectTimeForMove = Time.time + runInputDelay;
-                    predictPositionX = transform.position.x + runStepScale;
-                    isRunning = true;
-                    isStalking = false;
-                }
+                    break;
+                case PrinceAnimationController.ActionState.CROUCH:
+                    break;
+                case PrinceAnimationController.ActionState.STALK:
+                    break;
             }
         }
-        if (InputManager.getInputKey_Right() && isRunning && countSelectTimeForMove <= Time.time)
+        if (InputManager.getInputKey_Right())
         {
-            if (princeAnimationController.GetCurrentActionState() != PrinceAnimationController.ActionState.FLIPING)
+            if (princeAnimationController.GetCurrentFacing() != PrinceAnimationController.SideFacing.Right) return;
+            if (isRunning && countDelayTimeForMove < Time.time)
             {
-                countSelectTimeForMove = Time.time + runInputDelay;
-                predictPositionX = transform.position.x + runStepScale;
-                isRunning = true;
-                isStalking = false;
+                prince_rigidbody.velocity = new Vector2(runSpeed, prince_rigidbody.velocity.y);
             }
         }
-        if (InputManager.getInputKey_Left() && isRunning && countSelectTimeForMove <= Time.time)
+
+        if (InputManager.getInputKeyUp_Right())
         {
-            if (princeAnimationController.GetCurrentActionState() != PrinceAnimationController.ActionState.FLIPING)
-            {
-                countSelectTimeForMove = Time.time + runInputDelay;
-                predictPositionX = transform.position.x - runStepScale;
-                isRunning = true;
-                isStalking = false;
-            }
+            princeAnimationController.SetAnimationRuning(false);
         }
+
         if (InputManager.getInputKeyDown_Left())
         {
-            if (princeAnimationController.GetCurrentActionState() != PrinceAnimationController.ActionState.FLIPING)
+            switch (princeAnimationController.GetCurrentActionState())
             {
-                if (princeAnimationController.GetCurrentActionState() == PrinceAnimationController.ActionState.CROUCH)
-                {
+                case PrinceAnimationController.ActionState.IDLE:
+                    if (princeAnimationController.isFliping) return;
+
                     if (princeAnimationController.GetCurrentFacing() == PrinceAnimationController.SideFacing.Left)
                     {
-                        princeAnimationController.CrouchMove();
-                        predictPositionX = transform.position.x - crouchStepScale;
-                        isRunning = false;
-                        isStalking = true;
+                        countDelayTimeForMove = Time.time + runStartDelay;
+                        isRunning = true;
+                        princeAnimationController.SetAnimationRuning(true);
                     }
-                }
-                else
-                {
-                    if (princeAnimationController.GetCurrentFacing() != PrinceAnimationController.SideFacing.Left)
+                    else
                     {
-                        princeAnimationController.FlipFacing();
-                        return;
+                        princeAnimationController.IdleFlipFacing();
                     }
-                    countSelectTimeForMove = Time.time + runInputDelay;
-                    predictPositionX = transform.position.x - runStepScale;
-                    isRunning = true;
-                    isStalking = false;
-                }
+                    break;
+                case PrinceAnimationController.ActionState.CROUCH:
+                    break;
+                case PrinceAnimationController.ActionState.STALK:
+                    break;
             }
         }
-        if (InputManager.getInputKey_Down())
+        if (InputManager.getInputKey_Left())
         {
-            princeAnimationController.SetAnimationCrouch();
-        }
-        if (InputManager.getInputKeyUp_Down())
-        {
-            princeAnimationController.SetAnimationCrouchStop();
-        }
-        DoJump();
-        DoMovement();
-    }
-    private void DoJump()
-    {
-        if (InputManager.getInputKeyDown_Up())
-        {
-            princeAnimationController.Jump();
-            isChargeJump = true;
-            countSelectTimeForJump = Time.time + jumpDelay;
-        }
-        if (InputManager.getInputKey_Up() && isChargeJump && countSelectTimeForJump <= Time.time)
-        {
-            prince_rigidbody.velocity = new Vector2(prince_rigidbody.velocity.x, jumpScale);
-            isChargeJump = false;
-        }
-        if (InputManager.getInputKeyUp_Up())
-        {
-            isChargeJump = false;
-            princeAnimationController.CancelJump();
-        }
-    }
-    private void DoMovement()
-    {
-        if (isRunning)
-        {
-            if (Mathf.Abs(transform.position.x - predictPositionX) >= 0.05f)
+            if (princeAnimationController.GetCurrentFacing() != PrinceAnimationController.SideFacing.Left) return;
+            if (isRunning && countDelayTimeForMove < Time.time)
             {
-                transform.position = Vector3.MoveTowards(transform.position, new Vector3(predictPositionX, transform.position.y, transform.position.z), Time.deltaTime * runSpeed);
-                princeAnimationController.SetAnimationRunning();
-            }
-            else
-            {
-                transform.position = new Vector3(predictPositionX, transform.position.y, transform.position.z);
-                isRunning = false;
-                princeAnimationController.SetAnimationRunStop();
+                prince_rigidbody.velocity = new Vector2(-runSpeed, prince_rigidbody.velocity.y);
             }
         }
-        else if (isStalking)
+        if (InputManager.getInputKeyUp_Left())
         {
-            if (Mathf.Abs(transform.position.x - predictPositionX) >= 0.05f)
-            {
-                transform.position = Vector3.MoveTowards(transform.position, new Vector3(predictPositionX, transform.position.y, transform.position.z), Time.deltaTime * crouchSpeed);
-            }
-            else
-            {
-                transform.position = new Vector3(predictPositionX, transform.position.y, transform.position.z);
-                isStalking = false;
-            }
+            princeAnimationController.SetAnimationRuning(false);
         }
     }
 }
