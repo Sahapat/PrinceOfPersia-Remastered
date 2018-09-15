@@ -1,12 +1,10 @@
 fileFormatVersion: 2
-guid: 957bfb3eb9c8c2341b38aced831f7406
+guid: 40c0453e8905bd642b8cc380b20d5726
 TextureImporter:
   fileIDToRecycleName:
-    21300000: fightDying_0
-    21300002: fightDying_1
-    21300004: fightDying_2
-    21300006: fightDying_3
-    21300008: fightDying_4
+    21300000: guardFightInjure_0
+    21300002: guardFightInjure_1
+    21300004: guardFightInjure_2
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -76,28 +74,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   - serializedVersion: 2
     buildTarget: Standalone
-    maxTextureSize: 8192
-    resizeAlgorithm: 0
-    textureFormat: 12
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 1
-    androidETC2FallbackOverride: 0
-  - serializedVersion: 2
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-  - serializedVersion: 2
-    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -118,17 +94,28 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: fightDying_0
+      name: guardFightInjure_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 453.4
-        height: 339
+        width: 566.6667
+        height: 340
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -136,19 +123,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f96e8fad9b2c52a4bafcf319e3587c85
+      spriteID: 6a3c64879952ea24ca00be7cd8841f0e
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fightDying_1
+      name: guardFightInjure_1
       rect:
         serializedVersion: 2
-        x: 453
+        x: 566
         y: 0
-        width: 453.4
-        height: 339
+        width: 566.6667
+        height: 340
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -156,19 +143,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 735db5973b47a16478feeccf3a6f6fa6
+      spriteID: 28b10c57f5010a5489977aa6db64b583
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fightDying_2
+      name: guardFightInjure_2
       rect:
         serializedVersion: 2
-        x: 906
+        x: 1132
         y: 0
-        width: 453.4
-        height: 339
+        width: 566.6667
+        height: 340
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -176,47 +163,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 45c922889f6f764449ae31481e5270f4
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: fightDying_3
-      rect:
-        serializedVersion: 2
-        x: 1359
-        y: 0
-        width: 453.4
-        height: 339
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3142a90f591bf9741a60ccde6227a9d3
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: fightDying_4
-      rect:
-        serializedVersion: 2
-        x: 1812
-        y: 0
-        width: 453.4
-        height: 339
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 59307aaee173a454f888f88c9e1e2dbf
+      spriteID: 91ebccbc7511acc4eb035c3ef853a662
       vertices: []
       indices: 
       edges: []
@@ -224,7 +171,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 36b050345f7c09a40b92eaa421490fa0
+    spriteID: ed533458524608e43b5642769cacbe04
     vertices: []
     indices: 
     edges: []

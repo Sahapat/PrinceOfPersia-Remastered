@@ -1,12 +1,11 @@
 fileFormatVersion: 2
-guid: 957bfb3eb9c8c2341b38aced831f7406
+guid: ea9b8999ecf58fd4cae3a1abd458bd18
 TextureImporter:
   fileIDToRecycleName:
-    21300000: fightDying_0
-    21300002: fightDying_1
-    21300004: fightDying_2
-    21300006: fightDying_3
-    21300008: fightDying_4
+    21300000: guardFightStep_0
+    21300002: guardFightStep_1
+    21300004: guardFightStep_2
+    21300006: guardFightStep_3
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -76,28 +75,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   - serializedVersion: 2
     buildTarget: Standalone
-    maxTextureSize: 8192
-    resizeAlgorithm: 0
-    textureFormat: 12
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 1
-    androidETC2FallbackOverride: 0
-  - serializedVersion: 2
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-  - serializedVersion: 2
-    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -118,17 +95,28 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: fightDying_0
+      name: guardFightStep_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 453.4
-        height: 339
+        width: 566.75
+        height: 340
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -136,19 +124,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f96e8fad9b2c52a4bafcf319e3587c85
+      spriteID: d962fd4e7854bd34c8e2c0e514743108
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fightDying_1
+      name: guardFightStep_1
       rect:
         serializedVersion: 2
-        x: 453
+        x: 566
         y: 0
-        width: 453.4
-        height: 339
+        width: 566.75
+        height: 340
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -156,19 +144,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 735db5973b47a16478feeccf3a6f6fa6
+      spriteID: b645a62401143e9478c4b6da7dc135c5
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fightDying_2
+      name: guardFightStep_2
       rect:
         serializedVersion: 2
-        x: 906
+        x: 1132
         y: 0
-        width: 453.4
-        height: 339
+        width: 566.75
+        height: 340
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -176,19 +164,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 45c922889f6f764449ae31481e5270f4
+      spriteID: c44f7f29f4a0c504086d1d93720c3715
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fightDying_3
+      name: guardFightStep_3
       rect:
         serializedVersion: 2
-        x: 1359
+        x: 1698
         y: 0
-        width: 453.4
-        height: 339
+        width: 566.75
+        height: 340
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -196,27 +184,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3142a90f591bf9741a60ccde6227a9d3
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: fightDying_4
-      rect:
-        serializedVersion: 2
-        x: 1812
-        y: 0
-        width: 453.4
-        height: 339
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 59307aaee173a454f888f88c9e1e2dbf
+      spriteID: dacea41ccf8b89f4faf762d5fb862bea
       vertices: []
       indices: 
       edges: []
@@ -224,7 +192,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 36b050345f7c09a40b92eaa421490fa0
+    spriteID: b3d366a7850f42b408b4d55a007b2094
     vertices: []
     indices: 
     edges: []

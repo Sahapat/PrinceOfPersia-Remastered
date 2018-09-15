@@ -1,12 +1,15 @@
 fileFormatVersion: 2
-guid: 957bfb3eb9c8c2341b38aced831f7406
+guid: 179e280901828e94a84b8d930e4ce43a
 TextureImporter:
   fileIDToRecycleName:
-    21300000: fightDying_0
-    21300002: fightDying_1
-    21300004: fightDying_2
-    21300006: fightDying_3
-    21300008: fightDying_4
+    21300000: guardFightStrike_0
+    21300002: guardFightStrike_1
+    21300004: guardFightStrike_2
+    21300006: guardFightStrike_3
+    21300008: guardFightStrike_4
+    21300010: guardFightStrike_5
+    21300012: guardFightStrike_6
+    21300014: guardFightStrike_7
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -76,28 +79,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   - serializedVersion: 2
     buildTarget: Standalone
-    maxTextureSize: 8192
-    resizeAlgorithm: 0
-    textureFormat: 12
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 1
-    androidETC2FallbackOverride: 0
-  - serializedVersion: 2
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-  - serializedVersion: 2
-    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -118,17 +99,28 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: fightDying_0
+      name: guardFightStrike_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 453.4
-        height: 339
+        width: 566.625
+        height: 340
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -136,19 +128,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f96e8fad9b2c52a4bafcf319e3587c85
+      spriteID: 9f2f31eca47eba645859c695ebab5bfe
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fightDying_1
+      name: guardFightStrike_1
       rect:
         serializedVersion: 2
-        x: 453
+        x: 566
         y: 0
-        width: 453.4
-        height: 339
+        width: 566.625
+        height: 340
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -156,19 +148,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 735db5973b47a16478feeccf3a6f6fa6
+      spriteID: 41f68346a6e662145b76d06c8331591c
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fightDying_2
+      name: guardFightStrike_2
       rect:
         serializedVersion: 2
-        x: 906
+        x: 1132
         y: 0
-        width: 453.4
-        height: 339
+        width: 566.625
+        height: 340
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -176,19 +168,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 45c922889f6f764449ae31481e5270f4
+      spriteID: b2354b75aa4de8f48835b8a11bcb1462
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fightDying_3
+      name: guardFightStrike_3
       rect:
         serializedVersion: 2
-        x: 1359
+        x: 1698
         y: 0
-        width: 453.4
-        height: 339
+        width: 566.625
+        height: 340
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -196,19 +188,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3142a90f591bf9741a60ccde6227a9d3
+      spriteID: e43ad86eec8b7374c8436479f0859a95
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fightDying_4
+      name: guardFightStrike_4
       rect:
         serializedVersion: 2
-        x: 1812
+        x: 2264
         y: 0
-        width: 453.4
-        height: 339
+        width: 566.625
+        height: 340
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -216,7 +208,67 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 59307aaee173a454f888f88c9e1e2dbf
+      spriteID: 51b38470043634b4587a90bb75085288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guardFightStrike_5
+      rect:
+        serializedVersion: 2
+        x: 2830
+        y: 0
+        width: 566.625
+        height: 340
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ea310fd66a0ba948a0b5b1791cfa49f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guardFightStrike_6
+      rect:
+        serializedVersion: 2
+        x: 3396
+        y: 0
+        width: 566.625
+        height: 340
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 913a342faf4c04e4f9d7b7641fee24a2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guardFightStrike_7
+      rect:
+        serializedVersion: 2
+        x: 3962
+        y: 0
+        width: 566.625
+        height: 340
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50a43de3962610348ac3661c794ec6d8
       vertices: []
       indices: 
       edges: []
@@ -224,7 +276,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 36b050345f7c09a40b92eaa421490fa0
+    spriteID: 4aa42645d37c13d47b2ee72bfd744934
     vertices: []
     indices: 
     edges: []

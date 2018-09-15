@@ -1,12 +1,19 @@
 fileFormatVersion: 2
-guid: 957bfb3eb9c8c2341b38aced831f7406
+guid: 69ef7c852c37ddd45905d6cb99892717
 TextureImporter:
   fileIDToRecycleName:
-    21300000: fightDying_0
-    21300002: fightDying_1
-    21300004: fightDying_2
-    21300006: fightDying_3
-    21300008: fightDying_4
+    21300000: door_0
+    21300002: door_1
+    21300004: door_2
+    21300006: door_3
+    21300008: door_4
+    21300010: door_5
+    21300012: door_6
+    21300014: door_7
+    21300016: door_8
+    21300018: door_9
+    21300020: door_10
+    21300022: door_11
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -76,28 +83,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   - serializedVersion: 2
     buildTarget: Standalone
-    maxTextureSize: 8192
-    resizeAlgorithm: 0
-    textureFormat: 12
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 1
-    androidETC2FallbackOverride: 0
-  - serializedVersion: 2
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-  - serializedVersion: 2
-    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -118,17 +103,28 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: fightDying_0
+      name: door_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 453.4
-        height: 339
+        width: 340
+        height: 340
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -136,19 +132,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f96e8fad9b2c52a4bafcf319e3587c85
+      spriteID: 1ee16aff24545d240a8dc3026375c82b
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fightDying_1
+      name: door_1
       rect:
         serializedVersion: 2
-        x: 453
+        x: 340
         y: 0
-        width: 453.4
-        height: 339
+        width: 340
+        height: 340
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -156,19 +152,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 735db5973b47a16478feeccf3a6f6fa6
+      spriteID: 3528ad032c6d4cc4ea4ac9a9fb588a8e
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fightDying_2
+      name: door_2
       rect:
         serializedVersion: 2
-        x: 906
+        x: 680
         y: 0
-        width: 453.4
-        height: 339
+        width: 340
+        height: 340
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -176,19 +172,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 45c922889f6f764449ae31481e5270f4
+      spriteID: 3af3853f3a977fa4da00c8cf06f1bb18
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fightDying_3
+      name: door_3
       rect:
         serializedVersion: 2
-        x: 1359
+        x: 1020
         y: 0
-        width: 453.4
-        height: 339
+        width: 340
+        height: 340
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -196,19 +192,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3142a90f591bf9741a60ccde6227a9d3
+      spriteID: b754675284bd33e49bca5bb6ad481d24
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fightDying_4
+      name: door_4
       rect:
         serializedVersion: 2
-        x: 1812
+        x: 1360
         y: 0
-        width: 453.4
-        height: 339
+        width: 340
+        height: 340
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -216,7 +212,147 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 59307aaee173a454f888f88c9e1e2dbf
+      spriteID: 023bdcb4062247e4abd2ebe9140a1b05
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: door_5
+      rect:
+        serializedVersion: 2
+        x: 1700
+        y: 0
+        width: 340
+        height: 340
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aeedfe73611f77147abcbbf7680ccbf8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: door_6
+      rect:
+        serializedVersion: 2
+        x: 2040
+        y: 0
+        width: 340
+        height: 340
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: debb0bfce01918944aa1748173e8a128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: door_7
+      rect:
+        serializedVersion: 2
+        x: 2380
+        y: 0
+        width: 340
+        height: 340
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c9c392655a9f754bb77fe575ca135e7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: door_8
+      rect:
+        serializedVersion: 2
+        x: 2720
+        y: 0
+        width: 340
+        height: 340
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca7595984e508254da91691ad967aa09
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: door_9
+      rect:
+        serializedVersion: 2
+        x: 3060
+        y: 0
+        width: 340
+        height: 340
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: beba7eb7afb14174fa71da973dcf6cf7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: door_10
+      rect:
+        serializedVersion: 2
+        x: 3400
+        y: 0
+        width: 340
+        height: 340
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e285f11448839e4498aa0930e56dd562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: door_11
+      rect:
+        serializedVersion: 2
+        x: 3740
+        y: 0
+        width: 340
+        height: 340
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 396d50df7c187474ab0079cc2a404f45
       vertices: []
       indices: 
       edges: []
@@ -224,7 +360,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 36b050345f7c09a40b92eaa421490fa0
+    spriteID: 59f2fe1fa84d55f4099f2209fa8207a4
     vertices: []
     indices: 
     edges: []

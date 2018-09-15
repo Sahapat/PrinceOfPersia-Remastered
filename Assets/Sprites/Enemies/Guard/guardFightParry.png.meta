@@ -1,12 +1,13 @@
 fileFormatVersion: 2
-guid: 957bfb3eb9c8c2341b38aced831f7406
+guid: d3ca850e4bebf1f4088061619f3f1897
 TextureImporter:
   fileIDToRecycleName:
-    21300000: fightDying_0
-    21300002: fightDying_1
-    21300004: fightDying_2
-    21300006: fightDying_3
-    21300008: fightDying_4
+    21300000: guardFightParry_0
+    21300002: guardFightParry_1
+    21300004: guardFightParry_2
+    21300006: guardFightParry_3
+    21300008: guardFightParry_4
+    21300010: guardFightParry_5
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -76,28 +77,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   - serializedVersion: 2
     buildTarget: Standalone
-    maxTextureSize: 8192
-    resizeAlgorithm: 0
-    textureFormat: 12
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 1
-    androidETC2FallbackOverride: 0
-  - serializedVersion: 2
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-  - serializedVersion: 2
-    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -118,17 +97,28 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: fightDying_0
+      name: guardFightParry_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 453.4
-        height: 339
+        width: 566.6667
+        height: 340
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -136,19 +126,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f96e8fad9b2c52a4bafcf319e3587c85
+      spriteID: eb137a088c44904438b77dadc53ab65c
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fightDying_1
+      name: guardFightParry_1
       rect:
         serializedVersion: 2
-        x: 453
+        x: 566
         y: 0
-        width: 453.4
-        height: 339
+        width: 566.6667
+        height: 340
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -156,19 +146,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 735db5973b47a16478feeccf3a6f6fa6
+      spriteID: 6792c74440791714894c149044b0ff37
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fightDying_2
+      name: guardFightParry_2
       rect:
         serializedVersion: 2
-        x: 906
+        x: 1132
         y: 0
-        width: 453.4
-        height: 339
+        width: 566.6667
+        height: 340
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -176,19 +166,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 45c922889f6f764449ae31481e5270f4
+      spriteID: 0e2f54e7996de6743b8940e6c993b5ba
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fightDying_3
+      name: guardFightParry_3
       rect:
         serializedVersion: 2
-        x: 1359
+        x: 1698
         y: 0
-        width: 453.4
-        height: 339
+        width: 566.6667
+        height: 340
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -196,19 +186,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3142a90f591bf9741a60ccde6227a9d3
+      spriteID: 4644c2e7efc1f184b815a30cdd1d6c24
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fightDying_4
+      name: guardFightParry_4
       rect:
         serializedVersion: 2
-        x: 1812
+        x: 2264
         y: 0
-        width: 453.4
-        height: 339
+        width: 566.6667
+        height: 340
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -216,7 +206,27 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 59307aaee173a454f888f88c9e1e2dbf
+      spriteID: 887454e69d4e815468d13182fc45ca76
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guardFightParry_5
+      rect:
+        serializedVersion: 2
+        x: 2830
+        y: 0
+        width: 566.6667
+        height: 340
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 347100b7b94db32449e76763d670abec
       vertices: []
       indices: 
       edges: []
@@ -224,7 +234,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 36b050345f7c09a40b92eaa421490fa0
+    spriteID: b00875615868ab645b9cd688932b7b91
     vertices: []
     indices: 
     edges: []
