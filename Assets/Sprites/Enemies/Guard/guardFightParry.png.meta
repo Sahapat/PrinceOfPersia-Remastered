@@ -8,6 +8,7 @@ TextureImporter:
     21300006: guardFightParry_3
     21300008: guardFightParry_4
     21300010: guardFightParry_5
+    21300012: guardFightParry_6
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -77,14 +78,14 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   - serializedVersion: 2
     buildTarget: Standalone
-    maxTextureSize: 2048
+    maxTextureSize: 8192
     resizeAlgorithm: 0
-    textureFormat: -1
+    textureFormat: 12
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
-    overridden: 0
+    overridden: 1
     androidETC2FallbackOverride: 0
   - serializedVersion: 2
     buildTarget: iPhone
@@ -108,6 +109,17 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -115,18 +127,18 @@ TextureImporter:
       name: guardFightParry_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 566.6667
-        height: 340
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 172
+        y: 25
+        width: 239
+        height: 222
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eb137a088c44904438b77dadc53ab65c
+      spriteID: 7416f94c0f759bd4db56003d73906fac
       vertices: []
       indices: 
       edges: []
@@ -135,18 +147,18 @@ TextureImporter:
       name: guardFightParry_1
       rect:
         serializedVersion: 2
-        x: 566
-        y: 0
-        width: 566.6667
-        height: 340
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 773
+        y: 25
+        width: 242
+        height: 213
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6792c74440791714894c149044b0ff37
+      spriteID: 0c17f7dfd2717fc42add796d905ef5d6
       vertices: []
       indices: 
       edges: []
@@ -155,18 +167,18 @@ TextureImporter:
       name: guardFightParry_2
       rect:
         serializedVersion: 2
-        x: 1132
-        y: 0
-        width: 566.6667
-        height: 340
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1351
+        y: 25
+        width: 236
+        height: 219
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0e2f54e7996de6743b8940e6c993b5ba
+      spriteID: 96933aa7a58c3aa47b4514b208461e7e
       vertices: []
       indices: 
       edges: []
@@ -175,18 +187,18 @@ TextureImporter:
       name: guardFightParry_3
       rect:
         serializedVersion: 2
-        x: 1698
-        y: 0
-        width: 566.6667
-        height: 340
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1841
+        y: 25
+        width: 270
+        height: 228
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4644c2e7efc1f184b815a30cdd1d6c24
+      spriteID: 210cf94b3eb0ae24ba26a9b42de471d9
       vertices: []
       indices: 
       edges: []
@@ -195,38 +207,38 @@ TextureImporter:
       name: guardFightParry_4
       rect:
         serializedVersion: 2
-        x: 2264
-        y: 0
-        width: 566.6667
-        height: 340
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 2439
+        y: 25
+        width: 239
+        height: 222
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 887454e69d4e815468d13182fc45ca76
+      spriteID: 88e29dd33560611418a560fa34e93e6b
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: guardFightParry_5
+      name: guardFightParry_6
       rect:
         serializedVersion: 2
-        x: 2830
-        y: 0
-        width: 566.6667
-        height: 340
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 3006
+        y: 25
+        width: 233
+        height: 219
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 347100b7b94db32449e76763d670abec
+      spriteID: b20bd00ba2eaa0d44bc81cdcaaf832b1
       vertices: []
       indices: 
       edges: []

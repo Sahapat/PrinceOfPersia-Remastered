@@ -76,14 +76,14 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   - serializedVersion: 2
     buildTarget: Standalone
-    maxTextureSize: 2048
+    maxTextureSize: 8192
     resizeAlgorithm: 0
-    textureFormat: -1
+    textureFormat: 12
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
-    overridden: 0
+    overridden: 1
     androidETC2FallbackOverride: 0
   - serializedVersion: 2
     buildTarget: iPhone
@@ -107,6 +107,17 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -114,18 +125,18 @@ TextureImporter:
       name: guardFightDying_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 566.6
-        height: 340
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 223
+        y: 25
+        width: 171
+        height: 228
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: caf96f0bc9985784e8d57aa709e7ca61
+      spriteID: 66135f8b3a0188c4b9ef9f0546630072
       vertices: []
       indices: 
       edges: []
@@ -134,18 +145,18 @@ TextureImporter:
       name: guardFightDying_1
       rect:
         serializedVersion: 2
-        x: 566
-        y: 0
-        width: 566.6
-        height: 340
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 852
+        y: 25
+        width: 98
+        height: 199
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0720599571373c2459bdc68acaab0030
+      spriteID: f58da99250a883340bed4e27c349e045
       vertices: []
       indices: 
       edges: []
@@ -154,18 +165,18 @@ TextureImporter:
       name: guardFightDying_2
       rect:
         serializedVersion: 2
-        x: 1132
-        y: 0
-        width: 566.6
-        height: 340
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1408
+        y: 25
+        width: 117
+        height: 185
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 47a22b777b563da4493c51cbfbd7543e
+      spriteID: fe481d24f6ea9df439962de5a7787ff4
       vertices: []
       indices: 
       edges: []
@@ -174,18 +185,18 @@ TextureImporter:
       name: guardFightDying_3
       rect:
         serializedVersion: 2
-        x: 1698
-        y: 0
-        width: 566.6
-        height: 340
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1960
+        y: 25
+        width: 123
+        height: 134
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 358a9802ecc1d7c45b9d03c9ed30717d
+      spriteID: a1aaf4cd21da3ec479c23c64f80b7ea8
       vertices: []
       indices: 
       edges: []
@@ -194,18 +205,18 @@ TextureImporter:
       name: guardFightDying_4
       rect:
         serializedVersion: 2
-        x: 2264
-        y: 0
-        width: 566.6
-        height: 340
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 2518
+        y: 19
+        width: 163
+        height: 109
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 830cb613b751f0b4c9bc09508ec37286
+      spriteID: 6198284cfb3df374aa709f17235ec9c4
       vertices: []
       indices: 
       edges: []

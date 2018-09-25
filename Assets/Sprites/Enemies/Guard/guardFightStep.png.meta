@@ -75,14 +75,14 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   - serializedVersion: 2
     buildTarget: Standalone
-    maxTextureSize: 2048
+    maxTextureSize: 8192
     resizeAlgorithm: 0
-    textureFormat: -1
+    textureFormat: 12
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
-    overridden: 0
+    overridden: 1
     androidETC2FallbackOverride: 0
   - serializedVersion: 2
     buildTarget: iPhone
@@ -106,6 +106,17 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -113,18 +124,18 @@ TextureImporter:
       name: guardFightStep_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 566.75
-        height: 340
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 181
+        y: 25
+        width: 250
+        height: 222
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d962fd4e7854bd34c8e2c0e514743108
+      spriteID: f18a5f334e121dd45a8e6e322523dd85
       vertices: []
       indices: 
       edges: []
@@ -133,18 +144,18 @@ TextureImporter:
       name: guardFightStep_1
       rect:
         serializedVersion: 2
-        x: 566
-        y: 0
-        width: 566.75
-        height: 340
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 739
+        y: 31
+        width: 265
+        height: 216
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b645a62401143e9478c4b6da7dc135c5
+      spriteID: b2cc6c1d73020e84b9324e0231a24dbf
       vertices: []
       indices: 
       edges: []
@@ -153,18 +164,18 @@ TextureImporter:
       name: guardFightStep_2
       rect:
         serializedVersion: 2
-        x: 1132
-        y: 0
-        width: 566.75
-        height: 340
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1289
+        y: 25
+        width: 281
+        height: 222
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c44f7f29f4a0c504086d1d93720c3715
+      spriteID: 274646afc4dbacb4c94a40c9afc43453
       vertices: []
       indices: 
       edges: []
@@ -173,18 +184,18 @@ TextureImporter:
       name: guardFightStep_3
       rect:
         serializedVersion: 2
-        x: 1698
-        y: 0
-        width: 566.75
-        height: 340
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1833
+        y: 25
+        width: 239
+        height: 222
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dacea41ccf8b89f4faf762d5fb862bea
+      spriteID: 65dec8c9fb49dff40bd7b941a2e28687
       vertices: []
       indices: 
       edges: []
