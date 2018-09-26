@@ -10,10 +10,16 @@ public static class GameCore
 }
 public class GameManager : MonoBehaviour
 {
+    public bool isGameEnd{get;private set;}
     void Awake()
     {
 		GameCore.gameManager = this;
         GameCore.timeCounter = GetComponent<TimeCounter>();
         GameCore.combatController = GetComponent<CombatController>();
+    }
+    public void GameEnd()
+    {
+        isGameEnd = true;
+        GameCore.combatController.canCombat = false;
     }
 }

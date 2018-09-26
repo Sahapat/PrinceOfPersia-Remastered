@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-[ExecuteInEditMode]
 public class RayChecker : MonoBehaviour
 {
     [Header("CombatChecker")]
@@ -10,24 +9,32 @@ public class RayChecker : MonoBehaviour
     [SerializeField] private LayerMask EnemyLayer;
     private CharacterSystem character;
     private Vector3 direction;
-    void Awake()
+
+    private void OnEnable()
     {
         character = GetComponentInParent<CharacterSystem>();
     }
     private void Update()
     {
-        FacingCheck();
-        Vector3 rayDirection = transform.TransformDirection(direction) * EnemyCheckerRayDistance;
-        RaycastHit2D EnemyHit = Physics2D.Raycast(transform.position, rayDirection, EnemyCheckerRayDistance, EnemyLayer);
-        if (EnemyHit)
+        if (!GameCore.gameManager.isGameEnd)
         {
-
+            FacingCheck();
+            Vector3 rayDirection = transform.TransformDirection(direction) * EnemyCheckerRayDistance;
+            RaycastHit2D EnemyHit = Physics2D.Raycast(transform.position, rayDirection, EnemyCheckerRayDistance, EnemyLayer);
+            if (EnemyHit)
+            {
+                GameCore.combatController.canCombat = true;
+            }
+            else
+            {
+                GameCore.combatController.canCombat= false;
+            }
+            Debug.DrawRay(transform.position, direction*EnemyCheckerRayDistance, Color.green);
         }
-        Debug.DrawRay(transform.position, direction, Color.green);
     }
     private void FacingCheck()
     {
-        if(flipDirection)
+        if (flipDirection)
         {
             direction = (character.currentFacing) ? Vector3.right : Vector3.left;
         }

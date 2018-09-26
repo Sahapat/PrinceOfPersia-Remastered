@@ -17,6 +17,8 @@ public class Guard : CharacterSystem
         {
             enemyAnim.SetTrigger("Dead");
             deadTriggerSet = true;
+            gameObject.layer = LayerMask.GetMask("Default");
+            GameCore.combatController.canCombat = false;
             Destroy(this.gameObject,destroyAfterDeadDuration);
         }
     }

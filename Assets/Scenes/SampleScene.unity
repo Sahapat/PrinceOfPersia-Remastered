@@ -457,7 +457,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 347427987}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.754, y: 0, z: 0}
+  m_LocalPosition: {x: -1.22, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 232791676}
@@ -523,6 +523,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHealth: 3
+  isInvertFacing: 1
+  fallTakeDamageDistance: 0
+  fallDieDistance: 0
   fightStepScale: 0.4
   fightStartAttackDuration: 0.25
   fightAttackDuration: 0.5
@@ -652,10 +655,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flipDirection: 0
-  EnemyCheckerRayDistance: 0
+  EnemyCheckerRayDistance: 9
   EnemyLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 2048
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -817,7 +820,7 @@ GameObject:
   m_Component:
   - component: {fileID: 756846781}
   - component: {fileID: 756846780}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Testing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1214,10 +1217,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flipDirection: 1
-  EnemyCheckerRayDistance: 0
+  EnemyCheckerRayDistance: 9
   EnemyLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
 --- !u!1 &1803333692
 GameObject:
   m_ObjectHideFlags: 0
@@ -1504,8 +1507,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1905235299}
   - component: {fileID: 1905235298}
-  - component: {fileID: 1905235297}
   - component: {fileID: 1905235300}
+  - component: {fileID: 1905235297}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1559,6 +1562,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dc25ec2ddd2add46be158214bc7aeb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canCombat: 0
 --- !u!1 &2006223426
 GameObject:
   m_ObjectHideFlags: 0
@@ -1725,7 +1729,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHealth: 3
-  fightStepScale: 0.6
+  isInvertFacing: 0
+  fallTakeDamageDistance: 0
+  fallDieDistance: 0
+  fightStepScale: 0.4
   fightStartAttackDuration: 0.2
   fightAttackDuration: 0.5
   fightParryDuration: 0
@@ -1736,5 +1743,27 @@ MonoBehaviour:
   attackLayer:
     serializedVersion: 2
     m_Bits: 2048
-  fightDrawSwordDuration: 0.5
+  normalStepScale: 0.8
+  normalStepSpeed: 1
+  normalStartStepDuration: 0.2
+  normalStepDuration: 0.85
+  normalTurnDuration: 0.64
+  crouchStepScale: 0.6
+  crouchStepSpeed: 3.5
+  crouchStepDuration: 0.25
+  toCrouchDuration: 0.2
+  outCrouchDuration: 1.25
+  runStepScale: 0
+  runStopScale: 0
+  runSpeed: 0
+  runStartDuration: 0
+  runStopDuration: 0
+  runTurnDuration: 0
+  runCycleInputDelay: 0
+  jumpStartDuration: 0
+  fightDrawSwordDuration: 0.7
+  fightShealthSwordDuration: 0.8
   princeAnimator: {fileID: 1830403392}
+  canJumpUp: 0
+  canClimbDown: 0
+  canClimbUp: 0
