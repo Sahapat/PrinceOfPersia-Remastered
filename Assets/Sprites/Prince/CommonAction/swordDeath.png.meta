@@ -32,7 +32,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -110,18 +110,18 @@ TextureImporter:
       name: swordDeath_0
       rect:
         serializedVersion: 2
-        x: 43
-        y: 32
-        width: 70
-        height: 40
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 32
+        y: 18
+        width: 260
+        height: 145
+      alignment: 9
+      pivot: {x: 0.5, y: 0.29381147}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eb1cfb1fe68d4b8428f97088a5d4436e
+      spriteID: ca55f5b7490fcc54faaccf04dd36a982
       vertices: []
       indices: 
       edges: []

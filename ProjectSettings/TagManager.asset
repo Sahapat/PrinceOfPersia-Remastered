@@ -17,9 +17,9 @@ TagManager:
   - Player
   - Wall
   - Enemy
-  - 
-  - 
-  - 
+  - Interact
+  - CameraChecker
+  - NotTouchPlayer
   - 
   - 
   - 
@@ -49,6 +49,9 @@ TagManager:
     locked: 0
   - name: Floor
     uniqueID: 1499385269
+    locked: 0
+  - name: Trap
+    uniqueID: 1208435087
     locked: 0
   - name: Player
     uniqueID: 1058031115

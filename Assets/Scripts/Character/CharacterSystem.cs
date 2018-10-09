@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -17,7 +18,7 @@ public class CharacterSystem : MonoBehaviour
         {
             return characterHealth;
         }
-        private set
+        protected set
         {
             characterHealth = value;
             characterHealth = (sbyte)Mathf.Clamp(characterHealth, 0, MaxHealth);
@@ -32,9 +33,8 @@ public class CharacterSystem : MonoBehaviour
     protected CharacterState actionState;
     [Header("CharacterProperty")]
     [SerializeField] private sbyte MaxHealth;
+    [SerializeField] private float fallDistancePerFloor;
     [SerializeField] private bool isInvertFacing;
-    [SerializeField] private float fallTakeDamageDistance;
-    [SerializeField] private float fallDieDistance;
 
     [Header("FightPhaseProperty")]
     [SerializeField] private float fightStepScale;
@@ -45,6 +45,7 @@ public class CharacterSystem : MonoBehaviour
     [SerializeField] private float fightStepMoveSpeed;
     [SerializeField] private float takeDamageDuration;
     [SerializeField] private BoxCollider2D attackColider;
+    [SerializeField] protected BoxCollider2D floorColider;
     [SerializeField] private LayerMask attackLayer;
 
     //Counter Variable
@@ -56,22 +57,22 @@ public class CharacterSystem : MonoBehaviour
     private bool isHitSomething;
     protected bool attackTrigger;
     //Character property
-    private sbyte characterHealth;
+    protected sbyte characterHealth;
     private bool isDead;
     private bool isFall;
-    private bool isFallTakeDamage;
-    private bool isFallDie;
+    protected byte fallDamageTaken;
     protected bool isMoving = false;
     protected bool isAttacking = false;
     protected bool isParring = false;
     protected bool controlable = false;
+    protected bool isCheckingFall = false;
     private bool isTakeDamage = false;
     //Other
     protected Vector3 predictPosition;
     protected float settingMoveSpeed;
     protected SpriteRenderer spriteRenderer;
     protected Rigidbody2D characterRigid;
-    private BoxCollider2D characterColider;
+    protected BoxCollider2D characterColider;
 
     private void Awake()
     {
@@ -87,13 +88,32 @@ public class CharacterSystem : MonoBehaviour
     }
     private void FixedUpdate()
     {
+        if (takeDamageCounter < Time.time && isTakeDamage)
+        {
+            controlable = true;
+            isTakeDamage = false;
+        }
+        if (fightParryCounter < Time.time && isParring)
+        {
+            controlable = true;
+            isParring = false;
+        }
+        UpdateFacing();
         switch (actionState)
         {
             case CharacterState.NORMAL:
+                if (isCheckingFall)
+                {
+                    FallingCheck();
+                }
                 OnNormal();
                 MoveToPosition();
                 break;
             case CharacterState.COMBAT:
+                if (isCheckingFall)
+                {
+                    FallingCheck();
+                }
                 OnCombat();
                 MoveToPosition();
                 break;
@@ -101,6 +121,10 @@ public class CharacterSystem : MonoBehaviour
                 OnDie();
                 break;
             case CharacterState.FALL:
+                if (isCheckingFall)
+                {
+                    FallingCheck();
+                }
                 OnFall();
                 break;
         }
@@ -186,7 +210,13 @@ public class CharacterSystem : MonoBehaviour
     }
     protected virtual void FightParry()
     {
-        return;
+        controlable = false;
+        if (fightParryCounter <= Time.time)
+        {
+            isParring = true;
+            fightParryCounter = Time.time + fightParryDuration;
+            OnParry();
+        }
     }
     protected virtual void OnTakeParry()
     {
@@ -202,11 +232,7 @@ public class CharacterSystem : MonoBehaviour
     }
     protected virtual void OnCombat()
     {
-        if (isParring)
-        {
-            FightParry();
-        }
-        else if (isAttacking)
+        if (isAttacking)
         {
             FightAttack();
         }
@@ -221,18 +247,23 @@ public class CharacterSystem : MonoBehaviour
     }
     protected virtual void OnFall()
     {
+        return;
     }
     protected virtual void OnStartFall()
     {
-
+        var nextGroundCheck = Physics2D.Raycast(transform.position, Vector2.down, Mathf.Infinity, LayerMask.GetMask("Floor"));
+        if (nextGroundCheck)
+        {
+            var distanceBetweenPoint = Mathf.Abs(nextGroundCheck.point.y - transform.position.y);
+            fallDamageTaken = (byte)(distanceBetweenPoint / fallDistancePerFloor);
+        }
+        predictPosition = transform.position;
+        isMoving = false;
     }
     protected virtual void OnStopFall()
     {
-
-    }
-    protected virtual void FallTakeDamage()
-    {
-
+        var damageTake = Mathf.Clamp(fallDamageTaken - 1, 0, 10);
+        health -= (sbyte)damageTake;
     }
     protected virtual void OnAwake()
     {
@@ -243,35 +274,28 @@ public class CharacterSystem : MonoBehaviour
     protected virtual void OnStart()
     {
         attackColider.enabled = false;
-        health = MaxHealth;
+        //health = MaxHealth;
         actionState = CharacterState.NORMAL;
         controlable = true;
         isAttacking = false;
         attackTrigger = true;
+        isCheckingFall = true;
     }
     protected virtual void OnUpdate()
     {
-        if (takeDamageCounter < Time.time && isTakeDamage)
-        {
-            controlable = true;
-            isTakeDamage = false;
-        }
-        UpdateFacing();
-        if (!characterRigid.isKinematic)
-        {
-            FallingCheck();
-        }
+        return;
     }
     private void FallingCheck()
     {
-        var overlapBoxPos = new Vector2(transform.position.x + characterColider.offset.x, transform.position.y + characterColider.offset.y);
-        var groundCheck = Physics2D.OverlapBox(overlapBoxPos, characterColider.size, 0, LayerMask.GetMask("Floor"));
+        var overlapBoxPos = new Vector2(transform.position.x + floorColider.offset.x, transform.position.y + floorColider.offset.y);
+        var groundCheck = Physics2D.OverlapBox(overlapBoxPos, floorColider.size, 0, LayerMask.GetMask("Floor"));
 
         if (!groundCheck)
         {
             if (!isFall)
             {
                 OnStartFall();
+                controlable = false;
                 isFall = true;
                 actionState = CharacterState.FALL;
             }
@@ -281,6 +305,7 @@ public class CharacterSystem : MonoBehaviour
             if (isFall)
             {
                 isFall = false;
+                actionState = CharacterState.NORMAL;
                 OnStopFall();
             }
         }

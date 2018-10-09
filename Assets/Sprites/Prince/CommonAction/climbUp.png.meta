@@ -128,8 +128,8 @@ TextureImporter:
         serializedVersion: 2
         x: 167
         y: 19
-        width: 63
-        height: 304
+        width: 62
+        height: 305
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,7 +137,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8554b3e353853b04bbab58bd4d5d629f
+      spriteID: 2f08a454fadcde54fb7ae6ed3e391926
       vertices: []
       indices: 
       edges: []
@@ -146,10 +146,10 @@ TextureImporter:
       name: climbUp_1
       rect:
         serializedVersion: 2
-        x: 498
+        x: 499
         y: 19
-        width: 72
-        height: 253
+        width: 71
+        height: 254
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -157,7 +157,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b18351d6b7266a846835d3d295907f3e
+      spriteID: 5718101d7a1530a4283b83be2cb7230a
       vertices: []
       indices: 
       edges: []
@@ -166,10 +166,10 @@ TextureImporter:
       name: climbUp_2
       rect:
         serializedVersion: 2
-        x: 844
+        x: 848
         y: 19
-        width: 78
-        height: 256
+        width: 74
+        height: 254
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -177,7 +177,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6c7dd58b4fb8352498ff5dc69dccb01a
+      spriteID: d9ddb1d189e2cbf458e33258d85f8955
       vertices: []
       indices: 
       edges: []
@@ -186,10 +186,10 @@ TextureImporter:
       name: climbUp_3
       rect:
         serializedVersion: 2
-        x: 1175
+        x: 1177
         y: 19
-        width: 98
-        height: 262
+        width: 95
+        height: 258
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -197,7 +197,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6e101ea19fbddb549814f62b5fd13f80
+      spriteID: 01ae4ce2c8bbee243bcada6cfb6138b9
       vertices: []
       indices: 
       edges: []
@@ -206,10 +206,10 @@ TextureImporter:
       name: climbUp_4
       rect:
         serializedVersion: 2
-        x: 1518
-        y: 19
-        width: 131
-        height: 234
+        x: 1522
+        y: 20
+        width: 126
+        height: 228
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -217,7 +217,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aebca1c0f99a0bb43b46bbd48fdacd2e
+      spriteID: eba882a2c1127ea44b14beefac5a3405
       vertices: []
       indices: 
       edges: []
@@ -226,10 +226,10 @@ TextureImporter:
       name: climbUp_5
       rect:
         serializedVersion: 2
-        x: 1872
-        y: 19
-        width: 140
-        height: 202
+        x: 1873
+        y: 20
+        width: 136
+        height: 198
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -237,7 +237,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 12a34be5e68fbde499876a2b470d8f7f
+      spriteID: 5fa338c94f7012c428c087930b7cfb46
       vertices: []
       indices: 
       edges: []
@@ -246,10 +246,10 @@ TextureImporter:
       name: climbUp_6
       rect:
         serializedVersion: 2
-        x: 2212
-        y: 19
-        width: 134
-        height: 171
+        x: 2213
+        y: 20
+        width: 129
+        height: 164
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -257,7 +257,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9a2b009faa6bde743afe261e65f85164
+      spriteID: ee597690fff869542936f324f25ada15
       vertices: []
       indices: 
       edges: []
@@ -266,10 +266,10 @@ TextureImporter:
       name: climbUp_7
       rect:
         serializedVersion: 2
-        x: 2510
-        y: 19
-        width: 176
-        height: 134
+        x: 2508
+        y: 20
+        width: 175
+        height: 125
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -277,7 +277,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a683a308ebb4b134ebddfe79137b32ff
+      spriteID: 48280bcb4afeb0d4d9be693a5ec28bd6
       vertices: []
       indices: 
       edges: []
@@ -287,9 +287,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2856
-        y: 11
-        width: 170
-        height: 120
+        y: 13
+        width: 168
+        height: 116
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -297,7 +297,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3d9c4e1721d64974b849c7193c375e1e
+      spriteID: e4e11a9e072ab00489023b26c978bd90
       vertices: []
       indices: 
       edges: []
@@ -306,10 +306,10 @@ TextureImporter:
       name: climbUp_9
       rect:
         serializedVersion: 2
-        x: 3173
-        y: 0
-        width: 179
-        height: 148
+        x: 3174
+        y: 1
+        width: 174
+        height: 147
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -317,7 +317,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8c600c3b3e5127041b4b7602e1295a6d
+      spriteID: 2133f71bf5cf0b548b1d59a6775b36af
       vertices: []
       indices: 
       edges: []
@@ -328,8 +328,8 @@ TextureImporter:
         serializedVersion: 2
         x: 3527
         y: 19
-        width: 163
-        height: 132
+        width: 161
+        height: 130
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -337,7 +337,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c89e5636e4655024b9513d7aca2d4342
+      spriteID: 7436c92570e0ae740ad660bdb4e4b975
       vertices: []
       indices: 
       edges: []
@@ -346,10 +346,10 @@ TextureImporter:
       name: climbUp_11
       rect:
         serializedVersion: 2
-        x: 3884
-        y: 19
-        width: 151
-        height: 137
+        x: 3890
+        y: 20
+        width: 141
+        height: 134
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -357,7 +357,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6749a7ed5d1242b4999ea51bcfdf7ee2
+      spriteID: 3cf466be3ee4a2e4eb8216c66d4cc669
       vertices: []
       indices: 
       edges: []
@@ -366,10 +366,10 @@ TextureImporter:
       name: climbUp_12
       rect:
         serializedVersion: 2
-        x: 4196
-        y: 19
-        width: 154
-        height: 166
+        x: 4200
+        y: 20
+        width: 145
+        height: 160
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -377,7 +377,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 33091f6599947d54798da6c331026772
+      spriteID: 8c6b22b8ea677994c83ce6543d3a7139
       vertices: []
       indices: 
       edges: []
@@ -386,10 +386,10 @@ TextureImporter:
       name: climbUp_13
       rect:
         serializedVersion: 2
-        x: 4547
-        y: 19
-        width: 151
-        height: 183
+        x: 4551
+        y: 20
+        width: 145
+        height: 180
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -397,7 +397,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 157d93b98c5e5a349b2cb5bca9adecbd
+      spriteID: c940463f68a608e4bb23f9713a1f1894
       vertices: []
       indices: 
       edges: []
@@ -406,10 +406,10 @@ TextureImporter:
       name: climbUp_14
       rect:
         serializedVersion: 2
-        x: 4904
+        x: 4906
         y: 19
-        width: 145
-        height: 197
+        width: 138
+        height: 194
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -417,7 +417,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: da1e6625e1976b74daa12c50f6614052
+      spriteID: f1f7804cc116a1b4289dedce7f3dbcb2
       vertices: []
       indices: 
       edges: []
@@ -426,10 +426,10 @@ TextureImporter:
       name: climbUp_15
       rect:
         serializedVersion: 2
-        x: 5224
+        x: 5228
         y: 19
-        width: 89
-        height: 225
+        width: 88
+        height: 221
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -437,7 +437,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 39604eb5d56d4bd4cb1cb75df84b1ded
+      spriteID: 3b72d0ba8be0b8347873733f1aef93a6
       vertices: []
       indices: 
       edges: []
@@ -446,10 +446,10 @@ TextureImporter:
       name: climbUp_16
       rect:
         serializedVersion: 2
-        x: 5570
-        y: 19
-        width: 66
-        height: 228
+        x: 5569
+        y: 20
+        width: 71
+        height: 221
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -457,7 +457,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f21c8552b495f8e4abc26f88409085eb
+      spriteID: cb174c6ebcb6ee440aaf9f6289419d1c
       vertices: []
       indices: 
       edges: []

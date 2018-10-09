@@ -110,18 +110,18 @@ TextureImporter:
       name: spikeKill_0
       rect:
         serializedVersion: 2
-        x: 71
-        y: 20
-        width: 221
-        height: 320
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 70
+        y: 19
+        width: 222
+        height: 157
+      alignment: 9
+      pivot: {x: 0.34508967, y: 0.4446291}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 510b76a331182bf42bd309993aa4f3f4
+      spriteID: 64269885bcd3b384691d91902474df2c
       vertices: []
       indices: 
       edges: []
