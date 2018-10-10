@@ -38,6 +38,12 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
+  - m_Name: isGround
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 9100000}
   - m_Name: Step
     m_Type: 9
     m_DefaultFloat: 0
@@ -128,13 +134,13 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
-  - m_Name: FallNotTakeDamage
+  - m_Name: CrouchOut
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
-  - m_Name: CrouchOut
+  - m_Name: FallNotTakeDamage
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -1222,9 +1228,9 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.2135584
-  m_TransitionOffset: 5.866967
-  m_ExitTime: 0.7053854
+  m_TransitionDuration: 0.14326233
+  m_TransitionOffset: 12.589018
+  m_ExitTime: 0.8529429
   m_HasExitTime: 1
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
@@ -1291,9 +1297,9 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.25
+  m_TransitionDuration: 0.25023872
   m_TransitionOffset: 0
-  m_ExitTime: 0.40000004
+  m_ExitTime: 0.40000024
   m_HasExitTime: 1
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
@@ -2813,13 +2819,13 @@ AnimatorStateMachine:
     m_Position: {x: 240, y: 24, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102950071577448032}
-    m_Position: {x: 276, y: 108, z: 0}
+    m_Position: {x: 252, y: 108, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102450776433512940}
     m_Position: {x: 60, y: -36, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102875534596243112}
-    m_Position: {x: 108, y: 144, z: 0}
+    m_Position: {x: 120, y: 168, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102799274540527310}
     m_Position: {x: 744, y: 24, z: 0}

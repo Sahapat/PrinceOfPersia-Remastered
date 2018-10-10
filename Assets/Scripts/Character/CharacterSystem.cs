@@ -274,7 +274,7 @@ public class CharacterSystem : MonoBehaviour
     protected virtual void OnStart()
     {
         attackColider.enabled = false;
-        //health = MaxHealth;
+        health = MaxHealth;
         actionState = CharacterState.NORMAL;
         controlable = true;
         isAttacking = false;

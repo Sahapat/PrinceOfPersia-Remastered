@@ -197,6 +197,7 @@ public class Prince : CharacterSystem
                 }
                 else
                 {
+
                     if (currentFacing)
                     {
                         if (isRunning)
@@ -457,8 +458,6 @@ public class Prince : CharacterSystem
     protected override void OnStart()
     {
         base.OnStart();
-        /* characterHealth = (sbyte)(health + 1); */
-        characterHealth = 2;
         deadTriggerSet = true;
     }
     private IEnumerator StopRun()
