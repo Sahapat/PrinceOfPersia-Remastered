@@ -29,6 +29,8 @@ public class Prince : CharacterSystem
     [SerializeField] private float fallTakeDamageStunDuration;
     [SerializeField] private float jumpStartDuration;
     [SerializeField] private float jumpScale;
+    [SerializeField] private float jumpSpeed;
+    [SerializeField] private float jumpUpScale;
     [SerializeField] private float jumpDuration;
     [SerializeField] private float climbUpDuration;
     [SerializeField] private float climbDownDuration;
@@ -43,10 +45,10 @@ public class Prince : CharacterSystem
     //Other
     private bool isCrouch;
     private bool isRunning;
+    private bool isJump;
     [HideInInspector] public bool isRunningStop;
     private bool isInteractSomething;
     private bool isDeadFromFall;
-    private bool canClimbUp;
     private bool canClimpDown;
     private bool deadTriggerSet;
     private bool forwardBlock;
@@ -157,9 +159,17 @@ public class Prince : CharacterSystem
             }
             #endregion
             #region KeyUp Implement
-            if(InputManager.GetKeyDown_Up())
+            if(InputManager.GetKey_Up())
             {
-                StartCoroutine(JumpWithoutGrab());
+                isJump = true;
+            }
+            else if (!InputManager.GetKey_Up())
+            {
+                isJump = false;
+            }
+            if (InputManager.GetKeyDown_Up())
+            {
+                isJump = true;
             }
             #endregion
             #region KeyLeft Implement
@@ -177,6 +187,15 @@ public class Prince : CharacterSystem
                             predictPosition = new Vector3(transform.position.x - crouchStepScale, transform.position.y, transform.position.z);
                             princeAnimator.SetTrigger("CrouchStep");
                         }
+                    }
+                }
+                else if (isJump)
+                {
+                    if (!currentFacing)
+                    {
+                        predictPosition = new Vector3(transform.position.x - jumpScale, transform.position.y, transform.position.z);
+                        settingMoveSpeed = jumpSpeed;
+                        StartCoroutine(JumpIdle());
                     }
                 }
                 else
@@ -269,6 +288,15 @@ public class Prince : CharacterSystem
                             {
                                 StartCoroutine(IdleTurn());
                             }
+                        }
+                    }
+                    else if (isJump)
+                    {
+                        if (currentFacing)
+                        {
+                            predictPosition = new Vector3(transform.position.x + jumpScale, transform.position.y, transform.position.z);
+                            settingMoveSpeed = jumpSpeed;
+                            StartCoroutine(JumpIdle());
                         }
                     }
                     else
@@ -420,16 +448,14 @@ public class Prince : CharacterSystem
         controlable = true;
         transform.position = new Vector3(transform.position.x, transform.position.y - 1.5f, transform.position.z);
     } */
-    private IEnumerator JumpWithoutGrab()
+    private IEnumerator JumpIdle()
     {
         controlable = false;
         isCheckingFall = false;
-        princeAnimator.SetTrigger("Jump");
+        isMoving = false;
+        princeAnimator.SetTrigger("IdleJump");
         yield return waitForStartJump;
-        characterRigid.velocity = new Vector2(characterRigid.velocity.x,jumpScale);
-        yield return waitForJump;
-        isCheckingFall = true;
-        princeAnimator.SetTrigger("ToIdle");
+        isMoving = true;
         controlable = true;
     }
     private IEnumerator StartRun()
