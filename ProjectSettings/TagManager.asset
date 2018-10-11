@@ -51,6 +51,9 @@ TagManager:
   - name: Floor
     uniqueID: 1499385269
     locked: 0
+  - name: FloorClose
+    uniqueID: 1622262739
+    locked: 0
   - name: Trap
     uniqueID: 1208435087
     locked: 0
