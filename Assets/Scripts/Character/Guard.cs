@@ -161,6 +161,10 @@ public class Guard : CharacterSystem
         enemyAnim.SetTrigger("Parry");
         isReayAttack = true;
     }
+    protected override void OnTakeParry()
+    {
+        enemyAnim.SetTrigger("TakeParry");
+    }
     protected override void OnTakeDamage()
     {
         enemyAnim.SetTrigger("TakeDamage");

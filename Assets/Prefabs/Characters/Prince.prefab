@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4602848399499538}
   - component: {fileID: 212160500753838080}
   - component: {fileID: 95195094673098138}
+  - component: {fileID: 114112430792073588}
   m_Layer: 0
   m_Name: PrinceSprite
   m_TagString: Untagged
@@ -140,7 +141,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1403595600725164}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.709, y: -1.145, z: 0}
+  m_LocalPosition: {x: -4.02, y: 3.557, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4602848399499538}
@@ -329,6 +330,18 @@ MonoBehaviour:
   fightDrawSwordDuration: 0.7
   fightShealthSwordDuration: 0.8
   princeAnimator: {fileID: 95195094673098138}
+--- !u!114 &114112430792073588
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1043437064952098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5578c4f62aeb16b4f84175b08342777f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  crouchOutmoveScale: 0.12
 --- !u!114 &114351547307333440
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -378,11 +391,11 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1058031115
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 80c97d084c8c0b44e983cc7f8f5c5dd1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 1
+  m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.95953757, y: 1.283237}

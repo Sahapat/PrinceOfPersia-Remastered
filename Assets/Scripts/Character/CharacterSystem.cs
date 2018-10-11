@@ -73,6 +73,10 @@ public class CharacterSystem : MonoBehaviour
     protected SpriteRenderer spriteRenderer;
     protected Rigidbody2D characterRigid;
     protected BoxCollider2D characterColider;
+    public void FlipSprite()
+    {
+        spriteRenderer.flipX = !spriteRenderer.flipX;
+    }
 
     private void Awake()
     {
