@@ -264,7 +264,7 @@ TextureImporter:
         serializedVersion: 2
         x: 2380
         y: 0
-        width: 340
+        width: 350
         height: 339
       alignment: 9
       pivot: {x: 0.5, y: 0.14241692}
@@ -282,12 +282,12 @@ TextureImporter:
       name: pickSword_8
       rect:
         serializedVersion: 2
-        x: 2720
+        x: 2730
         y: 0
-        width: 340
+        width: 350
         height: 339
       alignment: 9
-      pivot: {x: 0.5, y: 0.14241692}
+      pivot: {x: 0.45714286, y: 0.14241692}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -302,12 +302,12 @@ TextureImporter:
       name: pickSword_9
       rect:
         serializedVersion: 2
-        x: 3060
+        x: 3080
         y: 0
         width: 340
         height: 339
       alignment: 9
-      pivot: {x: 0.5, y: 0.14241692}
+      pivot: {x: 0.44117647, y: 0.14241692}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -322,12 +322,12 @@ TextureImporter:
       name: pickSword_10
       rect:
         serializedVersion: 2
-        x: 3400
+        x: 3420
         y: 0
         width: 340
         height: 339
       alignment: 9
-      pivot: {x: 0.5, y: 0.14241692}
+      pivot: {x: 0.44117647, y: 0.14241692}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

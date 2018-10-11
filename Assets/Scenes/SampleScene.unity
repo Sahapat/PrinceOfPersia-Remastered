@@ -2326,7 +2326,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.95953757, y: 1.283237}
+  m_Size: {x: 3.27553, y: 1.965318}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -2575,7 +2575,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4804619068633194, guid: c9a2b337428e36c4fa98bf5b75d48582, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 4.675562
+      value: 0.42
       objectReference: {fileID: 0}
     - target: {fileID: 4804619068633194, guid: c9a2b337428e36c4fa98bf5b75d48582, type: 2}
       propertyPath: m_LocalPosition.y
@@ -2605,29 +2605,9 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114875621427910496, guid: c9a2b337428e36c4fa98bf5b75d48582,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4085646566307178, guid: c9a2b337428e36c4fa98bf5b75d48582, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0.323
-      objectReference: {fileID: 0}
-    - target: {fileID: 114875621427910496, guid: c9a2b337428e36c4fa98bf5b75d48582,
-        type: 2}
-      propertyPath: fightStepMoveSpeed
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114875621427910496, guid: c9a2b337428e36c4fa98bf5b75d48582,
-        type: 2}
-      propertyPath: fightStepDuration
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114875621427910496, guid: c9a2b337428e36c4fa98bf5b75d48582,
-        type: 2}
-      propertyPath: fightStepScale
-      value: 0.2
+      value: 0.32
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c9a2b337428e36c4fa98bf5b75d48582, type: 2}
