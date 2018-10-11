@@ -124,18 +124,18 @@ TextureImporter:
       name: jumpGrab_0
       rect:
         serializedVersion: 2
-        x: 130
-        y: 19
-        width: 66
-        height: 239
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 0
+        y: 0
+        width: 340
+        height: 340
+      alignment: 9
+      pivot: {x: 0.5, y: 0.065}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5579024aa8300a747b2853de5754eb4f
+      spriteID: eb22589841dc8b2439218f5c565f5300
       vertices: []
       indices: 
       edges: []
@@ -144,18 +144,18 @@ TextureImporter:
       name: jumpGrab_1
       rect:
         serializedVersion: 2
-        x: 467
-        y: 19
-        width: 69
-        height: 242
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 340
+        y: 0
+        width: 340
+        height: 340
+      alignment: 9
+      pivot: {x: 0.5, y: 0.065}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 55810643c30e7ae4aa1d6a62f3d505d4
+      spriteID: 47920d49e23f5a14bbc91616702e0fb0
       vertices: []
       indices: 
       edges: []
@@ -164,18 +164,18 @@ TextureImporter:
       name: jumpGrab_2
       rect:
         serializedVersion: 2
-        x: 810
-        y: 19
-        width: 66
-        height: 236
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 680
+        y: 0
+        width: 340
+        height: 340
+      alignment: 9
+      pivot: {x: 0.5, y: 0.065}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 33228b7b1dd6c234babf3655694e283f
+      spriteID: fc368d7c679327445aa83d30eeeddc6e
       vertices: []
       indices: 
       edges: []
@@ -184,18 +184,18 @@ TextureImporter:
       name: jumpGrab_3
       rect:
         serializedVersion: 2
-        x: 1133
-        y: 19
-        width: 83
-        height: 231
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 1020
+        y: 0
+        width: 340
+        height: 340
+      alignment: 9
+      pivot: {x: 0.5, y: 0.065}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 842a2befc9daf3b44990a40d6486e5f6
+      spriteID: 6280cc5292cbbf447a0b70ed519c716a
       vertices: []
       indices: 
       edges: []
@@ -204,18 +204,18 @@ TextureImporter:
       name: jumpGrab_4
       rect:
         serializedVersion: 2
-        x: 1450
-        y: 19
-        width: 106
-        height: 231
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 1360
+        y: 0
+        width: 340
+        height: 340
+      alignment: 9
+      pivot: {x: 0.5, y: 0.065}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 11394753b23e563468b8fb30a66f8d83
+      spriteID: 90d15f483b2812d4bb339a64e2f23ee0
       vertices: []
       indices: 
       edges: []
@@ -224,18 +224,18 @@ TextureImporter:
       name: jumpGrab_5
       rect:
         serializedVersion: 2
-        x: 1782
-        y: 19
-        width: 126
-        height: 234
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 1700
+        y: 0
+        width: 340
+        height: 340
+      alignment: 9
+      pivot: {x: 0.5, y: 0.065}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 354d636b688bddc4daa527aaaa10d5b3
+      spriteID: 07006b5db049c2a4587491c0b0d32cb7
       vertices: []
       indices: 
       edges: []
@@ -244,18 +244,18 @@ TextureImporter:
       name: jumpGrab_6
       rect:
         serializedVersion: 2
-        x: 2108
-        y: 19
-        width: 139
-        height: 234
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 2040
+        y: 0
+        width: 340
+        height: 340
+      alignment: 9
+      pivot: {x: 0.5, y: 0.065}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4cb3bddd6482dad4c8ffa5637a714add
+      spriteID: 92013149a4e42f54786030258f57b967
       vertices: []
       indices: 
       edges: []
@@ -264,18 +264,18 @@ TextureImporter:
       name: jumpGrab_7
       rect:
         serializedVersion: 2
-        x: 2476
-        y: 19
-        width: 125
-        height: 225
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 2380
+        y: 0
+        width: 340
+        height: 340
+      alignment: 9
+      pivot: {x: 0.5, y: 0.065}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d422d121f4497024fbd23f15cbb6b08c
+      spriteID: fdfe1b20c9791c14b81de71444b53c2d
       vertices: []
       indices: 
       edges: []
@@ -284,18 +284,18 @@ TextureImporter:
       name: jumpGrab_8
       rect:
         serializedVersion: 2
-        x: 2850
-        y: 19
-        width: 95
-        height: 211
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 2720
+        y: 0
+        width: 340
+        height: 340
+      alignment: 9
+      pivot: {x: 0.5, y: 0.065}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 147259b41393e244e9da28e7cf37a54f
+      spriteID: bc8ab457fc7f9c745ad1a1bded8dda85
       vertices: []
       indices: 
       edges: []
@@ -304,18 +304,18 @@ TextureImporter:
       name: jumpGrab_9
       rect:
         serializedVersion: 2
-        x: 3198
-        y: 19
-        width: 123
-        height: 205
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 3060
+        y: 0
+        width: 340
+        height: 340
+      alignment: 9
+      pivot: {x: 0.5, y: 0.065}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6f47314eaadb73b46a21199e6c7d93f8
+      spriteID: 8ccd649047f7e6a4fb164d3e5194e626
       vertices: []
       indices: 
       edges: []
@@ -324,18 +324,18 @@ TextureImporter:
       name: jumpGrab_10
       rect:
         serializedVersion: 2
-        x: 3547
-        y: 19
-        width: 100
-        height: 217
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 3400
+        y: 0
+        width: 340
+        height: 340
+      alignment: 9
+      pivot: {x: 0.5, y: 0.065}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 974e0152fa97099418fc3d3ffb54f36c
+      spriteID: a49b01517596c0d449092248a0effae6
       vertices: []
       indices: 
       edges: []
@@ -344,18 +344,18 @@ TextureImporter:
       name: jumpGrab_11
       rect:
         serializedVersion: 2
-        x: 3890
-        y: 19
-        width: 94
-        height: 273
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 3740
+        y: 0
+        width: 340
+        height: 340
+      alignment: 9
+      pivot: {x: 0.5, y: 0.065}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 57e156b582397d149acac7857aec38d1
+      spriteID: a9d93dd2bbfefbe4c9aecd4e0e2f12e3
       vertices: []
       indices: 
       edges: []
@@ -364,18 +364,18 @@ TextureImporter:
       name: jumpGrab_12
       rect:
         serializedVersion: 2
-        x: 4218
-        y: 14
-        width: 95
-        height: 295
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 4080
+        y: 0
+        width: 340
+        height: 340
+      alignment: 9
+      pivot: {x: 0.5, y: 0.065}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 65d9feb64af3e554997a9ecf3fe8d0a6
+      spriteID: c6234976694a9924dac883bd3fcc27bb
       vertices: []
       indices: 
       edges: []
@@ -384,18 +384,18 @@ TextureImporter:
       name: jumpGrab_13
       rect:
         serializedVersion: 2
-        x: 4564
+        x: 4420
         y: 0
-        width: 94
-        height: 309
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 340
+        height: 340
+      alignment: 9
+      pivot: {x: 0.5, y: 0.065}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 11ef4641041de5e4d8c689880737c681
+      spriteID: 2668c4576954a654dae3c8717634dc4d
       vertices: []
       indices: 
       edges: []
@@ -404,18 +404,18 @@ TextureImporter:
       name: jumpGrab_14
       rect:
         serializedVersion: 2
-        x: 4927
+        x: 4760
         y: 0
-        width: 69
-        height: 309
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 340
+        height: 340
+      alignment: 9
+      pivot: {x: 0.5, y: 0.065}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1a8fc3717b3c1b04f95947db962930f9
+      spriteID: aaee09580bc0c114f9a1c15cf37fa84a
       vertices: []
       indices: 
       edges: []

@@ -121,18 +121,18 @@ TextureImporter:
       name: guardFightIdle_0
       rect:
         serializedVersion: 2
-        x: 172
-        y: 25
-        width: 240
-        height: 219
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 0
+        y: 0
+        width: 567
+        height: 340
+      alignment: 9
+      pivot: {x: 0.6074637, y: 0.09856623}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f45c63b008e79164682d5c92af7f9551
+      spriteID: abea7f8b6d638c94785b94f931329dcd
       vertices: []
       indices: 
       edges: []

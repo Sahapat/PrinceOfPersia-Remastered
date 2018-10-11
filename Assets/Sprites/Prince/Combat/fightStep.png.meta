@@ -113,18 +113,18 @@ TextureImporter:
       name: fightStep_0
       rect:
         serializedVersion: 2
-        x: 119
-        y: 18
-        width: 298
-        height: 217
+        x: 0
+        y: 0
+        width: 566.75
+        height: 339
       alignment: 9
-      pivot: {x: 0.32768285, y: 0}
+      pivot: {x: 0.35426763, y: 0.071477234}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5e2a89e7f9e940d4987038516ec6a955
+      spriteID: b6c771614e7375a4d8e68796542fad79
       vertices: []
       indices: 
       edges: []
@@ -133,18 +133,18 @@ TextureImporter:
       name: fightStep_1
       rect:
         serializedVersion: 2
-        x: 682
-        y: 24
-        width: 302
-        height: 205
+        x: 566
+        y: 0
+        width: 566.75
+        height: 339
       alignment: 9
-      pivot: {x: 0.32245925, y: 0}
+      pivot: {x: 0.35426763, y: 0.071477234}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7593a59fa2cefde41ad7e11b95f6f776
+      spriteID: d929968b9129cb749b44636bfb3691ce
       vertices: []
       indices: 
       edges: []
@@ -153,18 +153,18 @@ TextureImporter:
       name: fightStep_2
       rect:
         serializedVersion: 2
-        x: 1306
-        y: 18
-        width: 233
-        height: 219
+        x: 1132
+        y: 0
+        width: 566.75
+        height: 339
       alignment: 9
-      pivot: {x: 0.22277099, y: 0}
+      pivot: {x: 0.35426763, y: 0.071477234}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 428b826252fed45498184878ee997fd2
+      spriteID: 547c9ec5ccd9c7a46b45e236d22bd85a
       vertices: []
       indices: 
       edges: []
@@ -173,18 +173,18 @@ TextureImporter:
       name: fightStep_3
       rect:
         serializedVersion: 2
-        x: 1839
-        y: 18
-        width: 247
-        height: 222
+        x: 1698
+        y: 0
+        width: 566.75
+        height: 339
       alignment: 9
-      pivot: {x: 0.34292072, y: 0}
+      pivot: {x: 0.35426763, y: 0.071477234}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6d89a382e81f5fd48b77973de84db725
+      spriteID: 4a207c576663f7048ae7a46fc234cf76
       vertices: []
       indices: 
       edges: []

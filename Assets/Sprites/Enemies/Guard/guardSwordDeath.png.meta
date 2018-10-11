@@ -121,18 +121,18 @@ TextureImporter:
       name: guardSwordDeath_0
       rect:
         serializedVersion: 2
-        x: 178
-        y: 19
-        width: 293
-        height: 72
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 0
+        y: 0
+        width: 567
+        height: 340
+      alignment: 9
+      pivot: {x: 0.58648, y: 0.09100903}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c15016f3da5c9c64792e33c4505f4109
+      spriteID: cec62d002e239fc43b5eb9e5e10b4256
       vertices: []
       indices: 
       edges: []

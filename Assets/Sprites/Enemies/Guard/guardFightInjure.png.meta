@@ -123,18 +123,18 @@ TextureImporter:
       name: guardFightInjure_0
       rect:
         serializedVersion: 2
-        x: 119
-        y: 25
-        width: 258
-        height: 216
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 0
+        y: 0
+        width: 566.6667
+        height: 340
+      alignment: 9
+      pivot: {x: 0.58648, y: 0.09100903}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8892c0c8a08394a4590dbe941bcf2dbc
+      spriteID: bda913f92ad3ad444b6a0819c5147e49
       vertices: []
       indices: 
       edges: []
@@ -143,18 +143,18 @@ TextureImporter:
       name: guardFightInjure_1
       rect:
         serializedVersion: 2
-        x: 705
-        y: 25
-        width: 222
-        height: 213
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 566
+        y: 0
+        width: 566.6667
+        height: 340
+      alignment: 9
+      pivot: {x: 0.58648, y: 0.09100903}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9007877a06348794ab1dc6652876a31d
+      spriteID: a9b47e6e17de2f34abe1702f883d1629
       vertices: []
       indices: 
       edges: []
@@ -163,18 +163,18 @@ TextureImporter:
       name: guardFightInjure_2
       rect:
         serializedVersion: 2
-        x: 1309
-        y: 25
-        width: 159
-        height: 213
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 1132
+        y: 0
+        width: 566.6667
+        height: 340
+      alignment: 9
+      pivot: {x: 0.58648, y: 0.09100903}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7421511ead4d3264d8ac1a8b38c851f7
+      spriteID: fa8011fc64dd91c469aeaeff15c2e369
       vertices: []
       indices: 
       edges: []

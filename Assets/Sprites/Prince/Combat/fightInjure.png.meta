@@ -112,18 +112,18 @@ TextureImporter:
       name: fightInjure_0
       rect:
         serializedVersion: 2
-        x: 212
-        y: 25
-        width: 213
-        height: 208
+        x: 0
+        y: 0
+        width: 566.6667
+        height: 340
       alignment: 9
-      pivot: {x: 0.1869514, y: 0}
+      pivot: {x: 0.35426763, y: 0.071477234}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f21ba5421423a6843b647b458714193a
+      spriteID: 698792981ab00c94a87ff921721bbcd5
       vertices: []
       indices: 
       edges: []
@@ -132,18 +132,18 @@ TextureImporter:
       name: fightInjure_1
       rect:
         serializedVersion: 2
-        x: 748
-        y: 25
-        width: 179
-        height: 216
+        x: 566
+        y: 0
+        width: 566.6667
+        height: 340
       alignment: 9
-      pivot: {x: 0.35066095, y: 0}
+      pivot: {x: 0.35426763, y: 0.071477234}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8553d90597a4aa244a72fa04f62addd2
+      spriteID: 4202755c2a89c43458cf5c0b9171cf12
       vertices: []
       indices: 
       edges: []
@@ -152,18 +152,18 @@ TextureImporter:
       name: fightInjure_2
       rect:
         serializedVersion: 2
-        x: 1292
-        y: 19
-        width: 221
-        height: 239
+        x: 1132
+        y: 0
+        width: 566.6667
+        height: 340
       alignment: 9
-      pivot: {x: 0.38431436, y: 0}
+      pivot: {x: 0.35426763, y: 0.071477234}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9ab3652ded219174f964d84c892e88cb
+      spriteID: b243d33b0f23b1049b5095fb36f8f068
       vertices: []
       indices: 
       edges: []

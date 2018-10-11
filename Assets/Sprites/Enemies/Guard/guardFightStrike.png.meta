@@ -128,18 +128,18 @@ TextureImporter:
       name: guardFightStrike_0
       rect:
         serializedVersion: 2
-        x: 223
-        y: 31
-        width: 194
-        height: 207
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 0
+        y: 0
+        width: 566.625
+        height: 340
+      alignment: 9
+      pivot: {x: 0.58648, y: 0.09100903}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 35fbb611d3ece3341903ab41a5f1ea9b
+      spriteID: 64f2320ceffe31b4ba685d9b19c56c4b
       vertices: []
       indices: 
       edges: []
@@ -148,18 +148,18 @@ TextureImporter:
       name: guardFightStrike_1
       rect:
         serializedVersion: 2
-        x: 779
-        y: 31
-        width: 205
-        height: 210
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 566
+        y: 0
+        width: 566.625
+        height: 340
+      alignment: 9
+      pivot: {x: 0.58648, y: 0.09100903}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 40cf729c7eb726b4d8027be9f59cd10d
+      spriteID: 4f02b6c784f6c7a44991723b3f35b0c9
       vertices: []
       indices: 
       edges: []
@@ -168,18 +168,18 @@ TextureImporter:
       name: guardFightStrike_2
       rect:
         serializedVersion: 2
-        x: 1257
-        y: 31
-        width: 288
-        height: 205
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 1132
+        y: 0
+        width: 566.625
+        height: 340
+      alignment: 9
+      pivot: {x: 0.58648, y: 0.09100903}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f6ca8fe29e8eb5140966e04f002fd303
+      spriteID: cf365b311d1a16942ae63a12757a426e
       vertices: []
       indices: 
       edges: []
@@ -188,18 +188,18 @@ TextureImporter:
       name: guardFightStrike_3
       rect:
         serializedVersion: 2
-        x: 1736
-        y: 31
-        width: 375
-        height: 190
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 1698
+        y: 0
+        width: 566.625
+        height: 340
+      alignment: 9
+      pivot: {x: 0.58648, y: 0.09100903}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 27c6954c2ad6fb445aecfbe2e079befb
+      spriteID: 8a2c7f10d75f498418cc7dc07d0b6f6d
       vertices: []
       indices: 
       edges: []
@@ -208,18 +208,18 @@ TextureImporter:
       name: guardFightStrike_4
       rect:
         serializedVersion: 2
-        x: 2391
-        y: 31
-        width: 273
-        height: 207
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 2264
+        y: 0
+        width: 566.625
+        height: 340
+      alignment: 9
+      pivot: {x: 0.58648, y: 0.09100903}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b3871f4accb85b4479aeb556eb171f8d
+      spriteID: 4425551dc98c3dd488a16d9181b0f245
       vertices: []
       indices: 
       edges: []
@@ -228,18 +228,18 @@ TextureImporter:
       name: guardFightStrike_5
       rect:
         serializedVersion: 2
-        x: 3028
-        y: 31
-        width: 202
-        height: 224
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 2830
+        y: 0
+        width: 566.625
+        height: 340
+      alignment: 9
+      pivot: {x: 0.58648, y: 0.09100903}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4c1dcb558d33fc8418e4708f8afd6eb8
+      spriteID: 6e9d9605eea23e04fb16c97db52bbd9a
       vertices: []
       indices: 
       edges: []
@@ -248,18 +248,18 @@ TextureImporter:
       name: guardFightStrike_6
       rect:
         serializedVersion: 2
-        x: 3544
-        y: 28
-        width: 270
-        height: 227
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 3396
+        y: 0
+        width: 566.625
+        height: 340
+      alignment: 9
+      pivot: {x: 0.58648, y: 0.09100903}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 47bd65ff8560f744c8c5f634961e242d
+      spriteID: 6795184080cead14586c0113a4f4d567
       vertices: []
       indices: 
       edges: []
@@ -268,18 +268,18 @@ TextureImporter:
       name: guardFightStrike_7
       rect:
         serializedVersion: 2
-        x: 4139
-        y: 31
-        width: 239
-        height: 222
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 3962
+        y: 0
+        width: 566.625
+        height: 340
+      alignment: 9
+      pivot: {x: 0.58648, y: 0.09100903}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ba0696e21556ef34a9a78dfd2a183d1a
+      spriteID: e433197fb098045478ae574f09b1f82e
       vertices: []
       indices: 
       edges: []

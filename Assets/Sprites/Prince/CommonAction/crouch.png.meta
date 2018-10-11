@@ -122,18 +122,18 @@ TextureImporter:
       name: crouch_0
       rect:
         serializedVersion: 2
-        x: 130
-        y: 18
-        width: 66
-        height: 228
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 0
+        y: 0
+        width: 340
+        height: 339
+      alignment: 9
+      pivot: {x: 0.5, y: 0.065}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 190c990fbd90bc24ca534c395b94e989
+      spriteID: ba899553e45007e41b63082e4f9a950c
       vertices: []
       indices: 
       edges: []
@@ -142,18 +142,18 @@ TextureImporter:
       name: crouch_1
       rect:
         serializedVersion: 2
-        x: 459
-        y: 18
-        width: 88
-        height: 225
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 340
+        y: 0
+        width: 340
+        height: 339
+      alignment: 9
+      pivot: {x: 0.5, y: 0.065}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 80f78e351f7921f4c9d9038b1f12ed02
+      spriteID: 76534c5b97c879e41bc59830bac63b29
       vertices: []
       indices: 
       edges: []
@@ -162,18 +162,18 @@ TextureImporter:
       name: crouch_2
       rect:
         serializedVersion: 2
-        x: 773
-        y: 18
-        width: 120
-        height: 211
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 680
+        y: 0
+        width: 340
+        height: 339
+      alignment: 9
+      pivot: {x: 0.5, y: 0.065}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5c618fd9bcad2be48a8b5e6b3405a6d8
+      spriteID: f85585fdadf2bd343a3b8f350f875b42
       vertices: []
       indices: 
       edges: []
@@ -182,18 +182,18 @@ TextureImporter:
       name: crouch_3
       rect:
         serializedVersion: 2
-        x: 1113
-        y: 18
-        width: 143
-        height: 200
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 1020
+        y: 0
+        width: 340
+        height: 339
+      alignment: 9
+      pivot: {x: 0.5, y: 0.065}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: af223f2899ad0b74ca2ebc0ee6665bd3
+      spriteID: 9d26cd09026e890488e63446ffe16f85
       vertices: []
       indices: 
       edges: []
@@ -202,18 +202,18 @@ TextureImporter:
       name: crouch_4
       rect:
         serializedVersion: 2
-        x: 1445
-        y: 18
-        width: 159
-        height: 185
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 1360
+        y: 0
+        width: 340
+        height: 339
+      alignment: 9
+      pivot: {x: 0.5, y: 0.065}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fb39065fed1339f4ab2cfc9894671edb
+      spriteID: 90ac11da0035dc941a11c684b6d6e3bf
       vertices: []
       indices: 
       edges: []
@@ -222,18 +222,18 @@ TextureImporter:
       name: crouch_5
       rect:
         serializedVersion: 2
-        x: 1790
-        y: 18
-        width: 157
-        height: 171
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 1700
+        y: 0
+        width: 340
+        height: 339
+      alignment: 9
+      pivot: {x: 0.5, y: 0.065}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7cf6937991bfeff4295d00d74ac27f04
+      spriteID: 784319274be36f64eb91aaadcd0e17fa
       vertices: []
       indices: 
       edges: []
@@ -242,18 +242,18 @@ TextureImporter:
       name: crouch_6
       rect:
         serializedVersion: 2
-        x: 2156
-        y: 18
-        width: 137
-        height: 163
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 2040
+        y: 0
+        width: 340
+        height: 339
+      alignment: 9
+      pivot: {x: 0.5, y: 0.065}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1e252608daff17e49bfd39cfd177ad4b
+      spriteID: 15a8374845452564fa4181cf6ddef9b1
       vertices: []
       indices: 
       edges: []
@@ -262,18 +262,18 @@ TextureImporter:
       name: crouch_7
       rect:
         serializedVersion: 2
-        x: 2493
-        y: 13
-        width: 145
-        height: 148
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 2380
+        y: 0
+        width: 340
+        height: 339
+      alignment: 9
+      pivot: {x: 0.5, y: 0.065}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2ba10e4ed270425469e49b2f5f7b605f
+      spriteID: 792ef082bc22db146a4a0aa5f5f79d09
       vertices: []
       indices: 
       edges: []
@@ -282,18 +282,18 @@ TextureImporter:
       name: crouch_8
       rect:
         serializedVersion: 2
-        x: 2841
-        y: 7
-        width: 123
-        height: 143
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 2720
+        y: 0
+        width: 340
+        height: 339
+      alignment: 9
+      pivot: {x: 0.5, y: 0.065}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4e5966f1a8f071c40bf7274e729fdcc8
+      spriteID: 1c4f7e2e0fdca1b4aa62ff3fbb86fdd7
       vertices: []
       indices: 
       edges: []
@@ -302,18 +302,18 @@ TextureImporter:
       name: crouch_9
       rect:
         serializedVersion: 2
-        x: 3181
-        y: 10
-        width: 123
-        height: 137
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 3060
+        y: 0
+        width: 340
+        height: 339
+      alignment: 9
+      pivot: {x: 0.5, y: 0.065}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 04d1ca8b04f8e424da6fbce273bb40fd
+      spriteID: e35a1b3b74b7e114887cfa0b5a17bbc3
       vertices: []
       indices: 
       edges: []
@@ -322,18 +322,18 @@ TextureImporter:
       name: crouch_10
       rect:
         serializedVersion: 2
-        x: 3524
-        y: 13
-        width: 120
-        height: 131
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 3400
+        y: 0
+        width: 340
+        height: 339
+      alignment: 9
+      pivot: {x: 0.5, y: 0.065}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d8719dcffc3b32444a7bd44f36b4f241
+      spriteID: 58549f6009b2d1340bec68694501ede3
       vertices: []
       indices: 
       edges: []
@@ -342,18 +342,18 @@ TextureImporter:
       name: crouch_11
       rect:
         serializedVersion: 2
-        x: 3870
-        y: 18
-        width: 114
-        height: 143
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 3740
+        y: 0
+        width: 340
+        height: 339
+      alignment: 9
+      pivot: {x: 0.5, y: 0.065}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e3723379e562545409d140db9182546d
+      spriteID: a10c0c1508be4114fad5d3b543e00d69
       vertices: []
       indices: 
       edges: []
@@ -362,18 +362,18 @@ TextureImporter:
       name: crouch_12
       rect:
         serializedVersion: 2
-        x: 4193
-        y: 18
-        width: 114
-        height: 183
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 4080
+        y: 0
+        width: 340
+        height: 339
+      alignment: 9
+      pivot: {x: 0.5, y: 0.065}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 514a229f88db612428edbdf76795075d
+      spriteID: 0173b0435b07e744fa4d73522bccfcef
       vertices: []
       indices: 
       edges: []

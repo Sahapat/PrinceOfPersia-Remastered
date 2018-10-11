@@ -124,18 +124,18 @@ TextureImporter:
       name: guardFightStep_0
       rect:
         serializedVersion: 2
-        x: 181
-        y: 25
-        width: 250
-        height: 222
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 0
+        y: 0
+        width: 566.75
+        height: 340
+      alignment: 9
+      pivot: {x: 0.58648, y: 0.09100903}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f18a5f334e121dd45a8e6e322523dd85
+      spriteID: 7faca8f2d19583248bd324755ad668e9
       vertices: []
       indices: 
       edges: []
@@ -144,18 +144,18 @@ TextureImporter:
       name: guardFightStep_1
       rect:
         serializedVersion: 2
-        x: 739
-        y: 31
-        width: 265
-        height: 216
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 566
+        y: 0
+        width: 566.75
+        height: 340
+      alignment: 9
+      pivot: {x: 0.58648, y: 0.09100903}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b2cc6c1d73020e84b9324e0231a24dbf
+      spriteID: 3b1ff80b695b37744a06f82c8ff96525
       vertices: []
       indices: 
       edges: []
@@ -164,18 +164,18 @@ TextureImporter:
       name: guardFightStep_2
       rect:
         serializedVersion: 2
-        x: 1289
-        y: 25
-        width: 281
-        height: 222
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 1132
+        y: 0
+        width: 566.75
+        height: 340
+      alignment: 9
+      pivot: {x: 0.58648, y: 0.09100903}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 274646afc4dbacb4c94a40c9afc43453
+      spriteID: f93e69af067bb6e42b56c00a3b59a5d1
       vertices: []
       indices: 
       edges: []
@@ -184,18 +184,18 @@ TextureImporter:
       name: guardFightStep_3
       rect:
         serializedVersion: 2
-        x: 1833
-        y: 25
-        width: 239
-        height: 222
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 1698
+        y: 0
+        width: 566.75
+        height: 340
+      alignment: 9
+      pivot: {x: 0.58648, y: 0.09100903}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 65dec8c9fb49dff40bd7b941a2e28687
+      spriteID: 1cf546edef6b97c40ba210927c3e21de
       vertices: []
       indices: 
       edges: []

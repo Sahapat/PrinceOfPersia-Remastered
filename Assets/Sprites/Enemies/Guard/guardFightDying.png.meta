@@ -125,18 +125,18 @@ TextureImporter:
       name: guardFightDying_0
       rect:
         serializedVersion: 2
-        x: 223
-        y: 25
-        width: 171
-        height: 228
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 0
+        y: 0
+        width: 566.6
+        height: 340
+      alignment: 9
+      pivot: {x: 0.58648, y: 0.09100903}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 66135f8b3a0188c4b9ef9f0546630072
+      spriteID: 55c2d3b43d152a044890d884e9901876
       vertices: []
       indices: 
       edges: []
@@ -145,18 +145,18 @@ TextureImporter:
       name: guardFightDying_1
       rect:
         serializedVersion: 2
-        x: 852
-        y: 25
-        width: 98
-        height: 199
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 566
+        y: 0
+        width: 566.6
+        height: 340
+      alignment: 9
+      pivot: {x: 0.58648, y: 0.09100903}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f58da99250a883340bed4e27c349e045
+      spriteID: 20e2728c583864c4daf721ba54a3d5dd
       vertices: []
       indices: 
       edges: []
@@ -165,18 +165,18 @@ TextureImporter:
       name: guardFightDying_2
       rect:
         serializedVersion: 2
-        x: 1408
-        y: 25
-        width: 117
-        height: 185
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 1132
+        y: 0
+        width: 566.6
+        height: 340
+      alignment: 9
+      pivot: {x: 0.58648, y: 0.09100903}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fe481d24f6ea9df439962de5a7787ff4
+      spriteID: b561ff2302641294ebd677d7d39a46fa
       vertices: []
       indices: 
       edges: []
@@ -185,18 +185,18 @@ TextureImporter:
       name: guardFightDying_3
       rect:
         serializedVersion: 2
-        x: 1960
-        y: 25
-        width: 123
-        height: 134
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 1698
+        y: 0
+        width: 566.6
+        height: 340
+      alignment: 9
+      pivot: {x: 0.58648, y: 0.09100903}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a1aaf4cd21da3ec479c23c64f80b7ea8
+      spriteID: 8bf5200b08fb8c64ca2371228bcf0f7b
       vertices: []
       indices: 
       edges: []
@@ -205,18 +205,18 @@ TextureImporter:
       name: guardFightDying_4
       rect:
         serializedVersion: 2
-        x: 2518
-        y: 19
-        width: 163
-        height: 109
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 2264
+        y: 0
+        width: 566.6
+        height: 340
+      alignment: 9
+      pivot: {x: 0.58648, y: 0.09100903}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6198284cfb3df374aa709f17235ec9c4
+      spriteID: 7e4d07f81a4cd144ba8c436b33051948
       vertices: []
       indices: 
       edges: []

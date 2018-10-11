@@ -112,18 +112,18 @@ TextureImporter:
       name: fightParry_0
       rect:
         serializedVersion: 2
-        x: 158
-        y: 19
-        width: 239
-        height: 222
+        x: 0
+        y: 0
+        width: 566.6667
+        height: 340
       alignment: 9
-      pivot: {x: 0.28373942, y: 0}
+      pivot: {x: 0.35426763, y: 0.071477234}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0f3777e32e15d0246b4973a95d6c9c4d
+      spriteID: 3428782b725632345ad736932234e877
       vertices: []
       indices: 
       edges: []
@@ -132,18 +132,18 @@ TextureImporter:
       name: fightParry_1
       rect:
         serializedVersion: 2
-        x: 725
-        y: 19
-        width: 213
-        height: 279
+        x: 566
+        y: 0
+        width: 566.6667
+        height: 340
       alignment: 9
-      pivot: {x: 0.32548732, y: 0}
+      pivot: {x: 0.35426763, y: 0.071477234}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5e8f3df7af862fb4fbe274f80f314770
+      spriteID: d737a33dc300e6d4991085b89eb2c07d
       vertices: []
       indices: 
       edges: []
@@ -152,18 +152,18 @@ TextureImporter:
       name: fightParry_2
       rect:
         serializedVersion: 2
-        x: 1300
-        y: 19
-        width: 160
-        height: 316
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 1132
+        y: 0
+        width: 566.6667
+        height: 340
+      alignment: 9
+      pivot: {x: 0.35426763, y: 0.071477234}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3d1541a7ee73511418182a450342a818
+      spriteID: e0f944fea6eb7de4da82a9fbabd47b57
       vertices: []
       indices: 
       edges: []

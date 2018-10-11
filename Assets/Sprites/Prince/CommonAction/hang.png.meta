@@ -120,18 +120,18 @@ TextureImporter:
       name: hang_0
       rect:
         serializedVersion: 2
-        x: 99
-        y: 19
-        width: 131
-        height: 304
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 0
+        width: 340
+        height: 340
+      alignment: 9
+      pivot: {x: 0.5, y: 0.065}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3bad2f68279461a4788b69074310cf06
+      spriteID: 5e4e376fc7cda704ca3e3a62bcdaca2e
       vertices: []
       indices: 
       edges: []
@@ -140,18 +140,18 @@ TextureImporter:
       name: hang_1
       rect:
         serializedVersion: 2
-        x: 422
-        y: 34
-        width: 148
-        height: 289
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 340
+        y: 0
+        width: 340
+        height: 340
+      alignment: 9
+      pivot: {x: 0.5, y: 0.065}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7bfbad79ad9c68b409ffd9dc69e25383
+      spriteID: 6d2b406b3889c4743b143ffee110ad46
       vertices: []
       indices: 
       edges: []
@@ -160,18 +160,18 @@ TextureImporter:
       name: hang_2
       rect:
         serializedVersion: 2
-        x: 750
-        y: 31
-        width: 160
-        height: 292
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 680
+        y: 0
+        width: 340
+        height: 340
+      alignment: 9
+      pivot: {x: 0.5, y: 0.065}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e96688bd4cdd5c6409730365f188936d
+      spriteID: 75e44fb6a18a2e542b239e8ee172fca5
       vertices: []
       indices: 
       edges: []
@@ -180,18 +180,18 @@ TextureImporter:
       name: hang_3
       rect:
         serializedVersion: 2
-        x: 1088
-        y: 34
-        width: 162
-        height: 289
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1020
+        y: 0
+        width: 340
+        height: 340
+      alignment: 9
+      pivot: {x: 0.5, y: 0.065}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4984f9c61ac41734fb8a7bb6ebc316ba
+      spriteID: 55eea361b397cb547ac16a66d1ebc2e5
       vertices: []
       indices: 
       edges: []
@@ -200,18 +200,18 @@ TextureImporter:
       name: hang_4
       rect:
         serializedVersion: 2
-        x: 1428
-        y: 39
-        width: 162
-        height: 284
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1360
+        y: 0
+        width: 340
+        height: 340
+      alignment: 9
+      pivot: {x: 0.5, y: 0.065}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 57173a4b6f2859c439757517b1f81f85
+      spriteID: 87cf226fa2c8d4a43acd217c6da9691d
       vertices: []
       indices: 
       edges: []
@@ -220,18 +220,18 @@ TextureImporter:
       name: hang_5
       rect:
         serializedVersion: 2
-        x: 1875
-        y: 5
-        width: 86
-        height: 318
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1700
+        y: 0
+        width: 340
+        height: 340
+      alignment: 9
+      pivot: {x: 0.5, y: 0.065}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d560d9254e468a247a2c26994c82d673
+      spriteID: 8ee7f0ca40a15cf4e94ee1f82987d8ad
       vertices: []
       indices: 
       edges: []
@@ -240,18 +240,18 @@ TextureImporter:
       name: hang_6
       rect:
         serializedVersion: 2
-        x: 2218
-        y: 5
-        width: 97
-        height: 313
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 2040
+        y: 0
+        width: 340
+        height: 340
+      alignment: 9
+      pivot: {x: 0.5, y: 0.065}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c439e549705d72844af5a1fe0c1747a5
+      spriteID: 8a0e6cad1be8f60428d650cc857adfa3
       vertices: []
       indices: 
       edges: []
@@ -260,18 +260,18 @@ TextureImporter:
       name: hang_7
       rect:
         serializedVersion: 2
-        x: 2564
-        y: 17
-        width: 120
-        height: 306
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 2380
+        y: 0
+        width: 340
+        height: 340
+      alignment: 9
+      pivot: {x: 0.5, y: 0.065}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a298bf75382c85b44bdf01be58f01d85
+      spriteID: 53c04105351f637498679c55b06b42de
       vertices: []
       indices: 
       edges: []
@@ -280,18 +280,18 @@ TextureImporter:
       name: hang_8
       rect:
         serializedVersion: 2
-        x: 2904
-        y: 28
-        width: 117
-        height: 295
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 2720
+        y: 0
+        width: 340
+        height: 340
+      alignment: 9
+      pivot: {x: 0.5, y: 0.065}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6867c7831503c3145a2efc0fdf9cd277
+      spriteID: 4d362bc994a1f9347bf55fa9400e6cdc
       vertices: []
       indices: 
       edges: []
@@ -300,18 +300,18 @@ TextureImporter:
       name: hang_9
       rect:
         serializedVersion: 2
-        x: 3224
-        y: 5
-        width: 69
-        height: 318
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 3060
+        y: 0
+        width: 340
+        height: 340
+      alignment: 9
+      pivot: {x: 0.5, y: 0.065}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a2c8c331ca609c74e9bd2a95bd1957ea
+      spriteID: 8c2ece7283686b14eaba7d6bf6a5cf54
       vertices: []
       indices: 
       edges: []
@@ -320,18 +320,18 @@ TextureImporter:
       name: hang_10
       rect:
         serializedVersion: 2
-        x: 3527
-        y: 14
-        width: 103
-        height: 309
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 3400
+        y: 0
+        width: 340
+        height: 340
+      alignment: 9
+      pivot: {x: 0.5, y: 0.065}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 006d33f703484704ba6f30c701661195
+      spriteID: a73186bd7550fb648a9a363e9a84802d
       vertices: []
       indices: 
       edges: []

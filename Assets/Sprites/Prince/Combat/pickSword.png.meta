@@ -122,18 +122,18 @@ TextureImporter:
       name: pickSword_0
       rect:
         serializedVersion: 2
-        x: 104
-        y: 35
-        width: 100
-        height: 228
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 0
+        y: 0
+        width: 340
+        height: 339
+      alignment: 9
+      pivot: {x: 0.5, y: 0.14241692}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cbf40d7030faa1f409ae8d3f648eb753
+      spriteID: 72714b41c2dba2d47aeb91124c807f87
       vertices: []
       indices: 
       edges: []
@@ -142,18 +142,18 @@ TextureImporter:
       name: pickSword_1
       rect:
         serializedVersion: 2
-        x: 436
-        y: 35
-        width: 114
-        height: 225
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 340
+        y: 0
+        width: 340
+        height: 339
+      alignment: 9
+      pivot: {x: 0.5, y: 0.14241692}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8698901d42d75bd4891d4e926b12559a
+      spriteID: 0d88ba42879118f4386a4453d135da9a
       vertices: []
       indices: 
       edges: []
@@ -162,18 +162,18 @@ TextureImporter:
       name: pickSword_2
       rect:
         serializedVersion: 2
-        x: 773
-        y: 41
-        width: 128
-        height: 225
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 680
+        y: 0
+        width: 340
+        height: 339
+      alignment: 9
+      pivot: {x: 0.5, y: 0.14241692}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d6f54059e3dffa54195ea4b0a52c928f
+      spriteID: ac03d16cbcd3ea0459a48a508a3d5f09
       vertices: []
       indices: 
       edges: []
@@ -182,18 +182,18 @@ TextureImporter:
       name: pickSword_3
       rect:
         serializedVersion: 2
-        x: 1116
-        y: 38
-        width: 126
-        height: 228
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 1020
+        y: 0
+        width: 340
+        height: 339
+      alignment: 9
+      pivot: {x: 0.5, y: 0.14241692}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 486824808cc476847bf707254ec2c459
+      spriteID: bde8e077ae04f754bbd50a2d904c6f04
       vertices: []
       indices: 
       edges: []
@@ -202,18 +202,18 @@ TextureImporter:
       name: pickSword_4
       rect:
         serializedVersion: 2
-        x: 1445
-        y: 47
-        width: 153
-        height: 219
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 1360
+        y: 0
+        width: 340
+        height: 339
+      alignment: 9
+      pivot: {x: 0.5, y: 0.14241692}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ded26d65b8b76fb429b12cfa99c01a98
+      spriteID: 869273e2106694a49b839e7d2dda7fec
       vertices: []
       indices: 
       edges: []
@@ -222,18 +222,18 @@ TextureImporter:
       name: pickSword_5
       rect:
         serializedVersion: 2
-        x: 1790
-        y: 47
-        width: 157
-        height: 216
+        x: 1700
+        y: 0
+        width: 340
+        height: 339
       alignment: 9
-      pivot: {x: 0.45802337, y: 0.001326614}
+      pivot: {x: 0.5, y: 0.14241692}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e3aeda5a066c13047aeea7ae24d6aee4
+      spriteID: 1431036a0b533ad4f9c4de051d949a14
       vertices: []
       indices: 
       edges: []
@@ -242,18 +242,18 @@ TextureImporter:
       name: pickSword_6
       rect:
         serializedVersion: 2
-        x: 2136
-        y: 45
-        width: 174
-        height: 225
+        x: 2040
+        y: 0
+        width: 340
+        height: 339
       alignment: 9
-      pivot: {x: 0.37001756, y: 0.00082644995}
+      pivot: {x: 0.5, y: 0.14241692}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eb6488dd41a3d764bba8f19448391e56
+      spriteID: 40b7a43af601359488caafc8234f5375
       vertices: []
       indices: 
       edges: []
@@ -262,18 +262,18 @@ TextureImporter:
       name: pickSword_7
       rect:
         serializedVersion: 2
-        x: 2490
-        y: 44
-        width: 239
-        height: 227
+        x: 2380
+        y: 0
+        width: 340
+        height: 339
       alignment: 9
-      pivot: {x: 0.20005435, y: 0.0053076386}
+      pivot: {x: 0.5, y: 0.14241692}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 932bfd9bd14dff84085b41566f75fbc1
+      spriteID: 40a9ef0c072206a40bfb6e6274a00a18
       vertices: []
       indices: 
       edges: []
@@ -282,18 +282,18 @@ TextureImporter:
       name: pickSword_8
       rect:
         serializedVersion: 2
-        x: 2828
-        y: 44
-        width: 247
-        height: 230
+        x: 2720
+        y: 0
+        width: 340
+        height: 339
       alignment: 9
-      pivot: {x: 0.22339164, y: 0}
+      pivot: {x: 0.5, y: 0.14241692}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2e2314dcb9f06f846af7a3e772da3237
+      spriteID: c9de3bd1bf020f642bc63731271330d8
       vertices: []
       indices: 
       edges: []
@@ -302,18 +302,18 @@ TextureImporter:
       name: pickSword_9
       rect:
         serializedVersion: 2
-        x: 3169
-        y: 44
-        width: 242
-        height: 230
+        x: 3060
+        y: 0
+        width: 340
+        height: 339
       alignment: 9
-      pivot: {x: 0.22339164, y: 0}
+      pivot: {x: 0.5, y: 0.14241692}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e8dcb8e50e2c3494dac19d174d21ce95
+      spriteID: 3c6f070f2b272f8499ea09d7c6dc5e32
       vertices: []
       indices: 
       edges: []
@@ -322,18 +322,18 @@ TextureImporter:
       name: pickSword_10
       rect:
         serializedVersion: 2
-        x: 3510
-        y: 44
-        width: 202
-        height: 259
+        x: 3400
+        y: 0
+        width: 340
+        height: 339
       alignment: 9
-      pivot: {x: 0.2622735, y: 0}
+      pivot: {x: 0.5, y: 0.14241692}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8455671e644785a4da0a7c3d40e405c4
+      spriteID: 8e5cf0a68ef1c8c46aa3ec9d4f8d6d09
       vertices: []
       indices: 
       edges: []
@@ -342,18 +342,18 @@ TextureImporter:
       name: pickSword_11
       rect:
         serializedVersion: 2
-        x: 3850
-        y: 44
-        width: 165
-        height: 290
+        x: 3740
+        y: 0
+        width: 340
+        height: 339
       alignment: 9
-      pivot: {x: 0.32535955, y: 0}
+      pivot: {x: 0.5, y: 0.14241692}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a5ca747aa695c5d45ac44e78c3a473b9
+      spriteID: aa44c3e7e1502a748b62308f38d3ec50
       vertices: []
       indices: 
       edges: []
@@ -362,18 +362,18 @@ TextureImporter:
       name: pickSword_12
       rect:
         serializedVersion: 2
-        x: 4199
-        y: 44
-        width: 148
-        height: 295
+        x: 4080
+        y: 0
+        width: 340
+        height: 339
       alignment: 9
-      pivot: {x: 0.31552207, y: 0}
+      pivot: {x: 0.5, y: 0.14241692}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2ded238dd13a05b4789e000a77c659b2
+      spriteID: 1c2c5fbfde9c32b4697460692ff72480
       vertices: []
       indices: 
       edges: []

@@ -125,18 +125,18 @@ TextureImporter:
       name: fightDying_0
       rect:
         serializedVersion: 2
-        x: 138
-        y: 18
-        width: 171
-        height: 115
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 0
+        y: 0
+        width: 453.4
+        height: 339
+      alignment: 9
+      pivot: {x: 0.5, y: 0.08441712}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dc81a6f0ebd00e740a12efeed13775ca
+      spriteID: c1b10de6123f9004fbc538a02199be4e
       vertices: []
       indices: 
       edges: []
@@ -145,18 +145,18 @@ TextureImporter:
       name: fightDying_1
       rect:
         serializedVersion: 2
-        x: 623
-        y: 24
-        width: 111
-        height: 137
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 453
+        y: 0
+        width: 453.4
+        height: 339
+      alignment: 9
+      pivot: {x: 0.5, y: 0.08441712}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6be0b7c8068edb64eb7c8571f749d2be
+      spriteID: 8927f3c619fbaee4bb7ae174c6270ca7
       vertices: []
       indices: 
       edges: []
@@ -165,18 +165,18 @@ TextureImporter:
       name: fightDying_2
       rect:
         serializedVersion: 2
-        x: 1085
-        y: 27
-        width: 100
-        height: 174
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 906
+        y: 0
+        width: 453.4
+        height: 339
+      alignment: 9
+      pivot: {x: 0.5, y: 0.08441712}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b8e593514fc3c944e98896d783244271
+      spriteID: 8eff020571c8f2247a7c79a6cdd66257
       vertices: []
       indices: 
       edges: []
@@ -185,18 +185,18 @@ TextureImporter:
       name: fightDying_3
       rect:
         serializedVersion: 2
-        x: 1547
-        y: 27
-        width: 80
-        height: 196
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 1359
+        y: 0
+        width: 453.4
+        height: 339
+      alignment: 9
+      pivot: {x: 0.5, y: 0.08441712}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 763d9194fd7a4664c80c8c13eac065dd
+      spriteID: c5386de20b83bef44810c6a13fa80525
       vertices: []
       indices: 
       edges: []
@@ -205,18 +205,18 @@ TextureImporter:
       name: fightDying_4
       rect:
         serializedVersion: 2
-        x: 1935
-        y: 27
-        width: 182
-        height: 239
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 1812
+        y: 0
+        width: 453.4
+        height: 339
+      alignment: 9
+      pivot: {x: 0.5, y: 0.08441712}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f7ec86207e91cd5469abdaf7222fe8e4
+      spriteID: cf1b04eafa4ccc2499827faf5277945a
       vertices: []
       indices: 
       edges: []

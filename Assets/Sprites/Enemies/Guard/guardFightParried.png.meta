@@ -121,18 +121,18 @@ TextureImporter:
       name: guardFightParried_0
       rect:
         serializedVersion: 2
-        x: 90
-        y: 31
-        width: 322
-        height: 256
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 0
+        y: 0
+        width: 567
+        height: 340
+      alignment: 9
+      pivot: {x: 0.58648, y: 0.09100903}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0833ad7c43b7a374e8f7df8f0de8689e
+      spriteID: 9d7095e47657107419d1cab65a659ac6
       vertices: []
       indices: 
       edges: []

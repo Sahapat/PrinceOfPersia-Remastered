@@ -110,18 +110,18 @@ TextureImporter:
       name: fightIdle_0
       rect:
         serializedVersion: 2
-        x: 147
-        y: 19
-        width: 279
-        height: 214
+        x: 0
+        y: 0
+        width: 567
+        height: 340
       alignment: 9
-      pivot: {x: 0.24634402, y: 0.000000053477063}
+      pivot: {x: 0.35426763, y: 0.071477234}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 748724548676d98429f4343bc4f81be3
+      spriteID: 5122c3fc5dcc7c34595e4bec66aaa6cb
       vertices: []
       indices: 
       edges: []
