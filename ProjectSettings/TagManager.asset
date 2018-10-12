@@ -54,12 +54,24 @@ TagManager:
   - name: FloorClose
     uniqueID: 1622262739
     locked: 0
-  - name: Trap
-    uniqueID: 1208435087
+  - name: ColumnBack
+    uniqueID: 1024439551
+    locked: 0
+  - name: FloorDecoration
+    uniqueID: 182661635
     locked: 0
   - name: Player
     uniqueID: 1058031115
     locked: 0
-  - name: Front-Wall
-    uniqueID: 182661635
+  - name: ColumnFront
+    uniqueID: 2023945115
+    locked: 0
+  - name: Floor-back
+    uniqueID: 1070272953
+    locked: 0
+  - name: WallFront
+    uniqueID: 3958901327
+    locked: 0
+  - name: FloorTop
+    uniqueID: 3161564063
     locked: 0
