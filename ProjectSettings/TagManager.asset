@@ -51,11 +51,11 @@ TagManager:
   - name: Floor
     uniqueID: 1499385269
     locked: 0
-  - name: FloorClose
-    uniqueID: 1622262739
-    locked: 0
   - name: ColumnBack
     uniqueID: 1024439551
+    locked: 0
+  - name: FloorFront
+    uniqueID: 727908363
     locked: 0
   - name: FloorDecoration
     uniqueID: 182661635
