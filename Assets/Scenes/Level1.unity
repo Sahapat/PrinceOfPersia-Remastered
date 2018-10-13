@@ -14028,6 +14028,11 @@ Prefab:
       propertyPath: m_BodyType
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114012929262431922, guid: 06f1cf694cf78984181653904e30748d,
+        type: 2}
+      propertyPath: isInvertFacing
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 06f1cf694cf78984181653904e30748d, type: 2}
   m_IsPrefabAsset: 0
