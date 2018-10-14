@@ -9,7 +9,6 @@ public class Prince : CharacterSystem
     [SerializeField] private float normalStepSpeed;
     [SerializeField] private float normalStartStepDuration;
     [SerializeField] private float normalStepDuration;
-    [SerializeField] private float turnFlipDuration;
     [Header("CrouchProperty")]
     [SerializeField] private float crouchStepScale;
     [SerializeField] private float crouchStepSpeed;
@@ -58,7 +57,6 @@ public class Prince : CharacterSystem
     private WaitForSeconds waitForOutCrouch;
     private WaitForSeconds waitForShealth;
     private WaitForSeconds waitForDrawSword;
-    private WaitForSeconds waitForTurnFlip;
     private WaitForSeconds waitForStep;
     private WaitForSeconds waitForStartRun;
     private WaitForSeconds waitForRunTurn;
@@ -68,11 +66,24 @@ public class Prince : CharacterSystem
     private WaitForSeconds waitForJump;
     private WaitForSeconds waitForclimbUp;
     private WaitForSeconds waitForclimDown;
+    
+    private PrinceAnimationEventHandler princeAnimationEventHandler;
+    public void IntoDoor(Transform intoDoorPos)
+    {
+        princeAnimationEventHandler.intoDoorPos = intoDoorPos;
+        controlable = false;
+        isCheckingFall = false;
+        princeAnimator.SetTrigger("IntoDoor");
+    }
     public void DieSprike()
     {
         health = 0;
         controlable = false;
         deadTriggerSet = false;
+        isCheckingFall = false;
+        characterRigid.bodyType = RigidbodyType2D.Static;
+        var spriteChild = transform.Find("PrinceSprite");
+        spriteChild.transform.localPosition = Vector3.zero;
         princeAnimator.SetTrigger("DeadSpike");
     }
     public void Dead()
@@ -89,7 +100,6 @@ public class Prince : CharacterSystem
         waitForDrawSword = new WaitForSeconds(fightDrawSwordDuration);
         waitForCrouch = new WaitForSeconds(toCrouchDuration);
         waitForOutCrouch = new WaitForSeconds(outCrouchDuration);
-        waitForTurnFlip = new WaitForSeconds(turnFlipDuration);
         waitForStartStep = new WaitForSeconds(normalStartStepDuration);
         waitForStep = new WaitForSeconds(normalStepDuration - normalStartStepDuration);
         waitForStartRun = new WaitForSeconds(runStartDuration);
@@ -100,6 +110,7 @@ public class Prince : CharacterSystem
         waitForJump = new WaitForSeconds(jumpDuration);
         waitForclimbUp = new WaitForSeconds(climbUpDuration);
         waitForclimDown = new WaitForSeconds(climbDownDuration);
+        princeAnimationEventHandler = GetComponentInChildren<PrinceAnimationEventHandler>();
     }
     protected override void OnUpdate()
     {
@@ -140,7 +151,7 @@ public class Prince : CharacterSystem
                 isInteractSomething = false;
             }
             #endregion
-            #region Keydown Implement
+            #region Keydown Implements
             if (InputManager.GetKey_Down())
             {
                 if (!isCrouch)
@@ -214,7 +225,8 @@ public class Prince : CharacterSystem
                         {
                             if (currentAnimationClip == "Idle")
                             {
-                                StartCoroutine(IdleTurn());
+                                princeAnimator.SetTrigger("Turn");
+                                controlable = false;
                             }
                         }
                     }
@@ -286,7 +298,8 @@ public class Prince : CharacterSystem
                         {
                             if (currentAnimationClip == "Idle")
                             {
-                                StartCoroutine(IdleTurn());
+                                princeAnimator.SetTrigger("Turn");
+                                controlable = false;
                             }
                         }
                     }
@@ -534,13 +547,6 @@ public class Prince : CharacterSystem
         princeAnimator.SetBool("Crouch", false);
         controlable = false;
         yield return waitForOutCrouch;
-        controlable = true;
-    }
-    private IEnumerator IdleTurn()
-    {
-        princeAnimator.SetTrigger("Turn");
-        controlable = false;
-        yield return waitForTurnFlip;
         controlable = true;
     }
     private IEnumerator CombatToIdle()

@@ -77,6 +77,10 @@ public class CharacterSystem : MonoBehaviour
     {
         spriteRenderer.flipX = !spriteRenderer.flipX;
     }
+    public void SetControlable(bool status)
+    {
+        controlable = status;
+    }
 
     private void Awake()
     {

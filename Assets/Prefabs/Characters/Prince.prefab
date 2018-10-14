@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4602848399499538}
   - component: {fileID: 212160500753838080}
   - component: {fileID: 95195094673098138}
-  - component: {fileID: 114112430792073588}
+  - component: {fileID: 114834486673113008}
   m_Layer: 0
   m_Name: PrinceSprite
   m_TagString: Untagged
@@ -141,7 +141,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1403595600725164}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -3.4}
+  m_LocalPosition: {x: 55.806, y: 2.26, z: -3.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4602848399499538}
@@ -333,18 +333,6 @@ MonoBehaviour:
   fightShealthSwordDuration: 0.8
   princeAnimator: {fileID: 95195094673098138}
   isRunningStop: 0
---- !u!114 &114112430792073588
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1043437064952098}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0aea149f682363d438a806d20c6489d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  crouchOutmoveScale: 0.12
 --- !u!114 &114351547307333440
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -361,6 +349,18 @@ MonoBehaviour:
   EnemyLayer:
     serializedVersion: 2
     m_Bits: 2048
+--- !u!114 &114834486673113008
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1043437064952098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dbc567bfdc1ff747a6ab4349f3283ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  crouchOutmoveScale: 0.12
 --- !u!212 &212160500753838080
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -394,7 +394,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1058031115
-  m_SortingLayer: 8
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 80c97d084c8c0b44e983cc7f8f5c5dd1, type: 3}
   m_Color: {r: 0.62695795, g: 0.6886792, b: 0.6886792, a: 1}

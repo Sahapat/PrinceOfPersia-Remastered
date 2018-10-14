@@ -4,7 +4,11 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Climbable
+  - PotionLarge
+  - PotionSmall
+  - Sword
+  - Interacable
+  - Door
   layers:
   - Default
   - TransparentFX
@@ -68,6 +72,9 @@ TagManager:
     locked: 0
   - name: Floor-back
     uniqueID: 1070272953
+    locked: 0
+  - name: Item
+    uniqueID: 1102269891
     locked: 0
   - name: WallFront
     uniqueID: 3958901327
