@@ -6,9 +6,9 @@ using UnityEngine.SceneManagement;
 public class Door : MonoBehaviour
 {
 	[Header("Reference")]
-	[SerializeField] private string sceneToLoad;
+	[SerializeField] public string sceneToLoad;
 	[SerializeField] private float delayBeforeLoad;
-	[SerializeField] private Transform runInPosition;
+	[SerializeField] private GameObject princeIntoDoor;
 	[SerializeField] private SpriteRenderer edgeDoorSprite;
 	private BoxCollider2D coliderChecker;
 	private Gate gateScript;
@@ -22,6 +22,10 @@ public class Door : MonoBehaviour
 		gateScript = GetComponent<Gate>();
 		edgeDoorSprite.enabled =false;
 	}
+	void Start()
+	{
+		princeIntoDoor.SetActive(false);
+	}
 	void Update()
 	{
 		if(gateScript.isOpen)
@@ -33,19 +37,22 @@ public class Door : MonoBehaviour
 			{
 				if(InputManager.GetKey_Up() && !isIntoDoor)
 				{
-					var princeScript = playerChecker.GetComponent<Prince>();
-					isIntoDoor = true;
+					Destroy(playerChecker.gameObject);
+					princeIntoDoor.SetActive(true);
+					var animatorPrinceIntoDoor = princeIntoDoor.GetComponent<Animator>();
+					animatorPrinceIntoDoor.SetTrigger("Play");
 					edgeDoorSprite.enabled = true;
-					princeScript.IntoDoor(runInPosition);
-					StartCoroutine(IntoDoor(playerChecker.gameObject));
+					StartCoroutine(IntoDoor());
 				}
 			}
 		}
 	}
-	private IEnumerator IntoDoor(GameObject prince)
+	private IEnumerator IntoDoor()
 	{
 		yield return loadWait;
-		print("into");
-		Destroy(prince);
+		if(sceneToLoad != string.Empty)
+		{
+			SceneManager.LoadScene(sceneToLoad);
+		}
 	}
 }

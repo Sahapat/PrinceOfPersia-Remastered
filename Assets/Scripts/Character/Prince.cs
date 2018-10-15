@@ -68,13 +68,6 @@ public class Prince : CharacterSystem
     private WaitForSeconds waitForclimDown;
     
     private PrinceAnimationEventHandler princeAnimationEventHandler;
-    public void IntoDoor(Transform intoDoorPos)
-    {
-        princeAnimationEventHandler.intoDoorPos = intoDoorPos;
-        controlable = false;
-        isCheckingFall = false;
-        princeAnimator.SetTrigger("IntoDoor");
-    }
     public void DieSprike()
     {
         health = 0;

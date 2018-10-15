@@ -29,8 +29,4 @@ public class PrinceAnimationEventHandler : MonoBehaviour
 		bool status = bool.Parse(msg);
 		prince.SetControlable(status);
 	}
-	public void SetPositionToIntoDoorPos()
-	{
-		transform.parent.transform.position = intoDoorPos.position;
-	}
 }

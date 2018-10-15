@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/Midterm Present/Indoor-Temp.unity
+    guid: a77615d74736bdc4d896cd9e5202a318
+  - enabled: 1
+    path: Assets/Scenes/Midterm Present/MainMenu.unity
+    guid: 1822c9d92b0214a4e934e32df32e7174
+  - enabled: 1
+    path: Assets/Scenes/Level1.unity
+    guid: 462c23fe0d308204bbfee619fb10f626
   m_configObjects: {}
