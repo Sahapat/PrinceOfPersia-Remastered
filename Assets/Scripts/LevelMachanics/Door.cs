@@ -37,6 +37,7 @@ public class Door : MonoBehaviour
 			{
 				if(InputManager.GetKey_Up() && !isIntoDoor)
 				{
+					isIntoDoor = true;
 					Destroy(playerChecker.gameObject);
 					princeIntoDoor.SetActive(true);
 					var animatorPrinceIntoDoor = princeIntoDoor.GetComponent<Animator>();

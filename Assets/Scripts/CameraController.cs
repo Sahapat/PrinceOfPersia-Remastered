@@ -15,7 +15,6 @@ public class CameraController : MonoBehaviour
     [SerializeField] private float min_X;
     [SerializeField] private float max_y;
     [SerializeField] private float min_y;
-    private Vector3 moveFocus = new Vector3(60, 0, -10f);
     private void Update()
     {
         if (targetPlayer)

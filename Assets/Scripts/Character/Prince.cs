@@ -7,23 +7,13 @@ public class Prince : CharacterSystem
     [Header("StepProperty")]
     [SerializeField] private float normalStepScale;
     [SerializeField] private float normalStepSpeed;
-    [SerializeField] private float normalStartStepDuration;
-    [SerializeField] private float normalStepDuration;
     [Header("CrouchProperty")]
     [SerializeField] private float crouchStepScale;
     [SerializeField] private float crouchStepSpeed;
-    [SerializeField] private float crouchStepDuration;
-    [SerializeField] private float toCrouchDuration;
-    [SerializeField] private float outCrouchDuration;
     [Header("RunProperty")]
-    [SerializeField] private float runStepScale;
-    [SerializeField] private float runStopScale;
     [SerializeField] private float runSpeed;
+    [SerializeField] private float runStopScale;
     [SerializeField] private float runStopSpeed;
-    [SerializeField] private float runStartDuration;
-    [SerializeField] private float runStopDuration;
-    [SerializeField] private float runTurnDuration;
-    [SerializeField] private float runCycleInputDelay;
     [Header("SpecialActionProperty")]
     [SerializeField] private float fallTakeDamageStunDuration;
     [SerializeField] private float jumpStartDuration;
@@ -38,36 +28,55 @@ public class Prince : CharacterSystem
     [SerializeField] private float fightShealthSwordDuration;
     [Header("Reference")]
     [SerializeField] private Animator princeAnimator;
-    //Counter Variable
-    private float crouchStepCount;
-    private float runCycleInputCount;
+    //Counter variable
+    private float runStartCounter;
+    private float runTurnCounter;
     //Other
     private bool isCrouch;
     private bool isRunning;
+    private bool isInAction;
     private bool isJump;
-    [HideInInspector] public bool isRunningStop;
-    private bool isInteractSomething;
     private bool isDeadFromFall;
     private bool canClimpDown;
     private bool deadTriggerSet;
     private bool forwardBlock;
     private string currentAnimationClip;
-    private WaitForSeconds waitForStartStep;
-    private WaitForSeconds waitForCrouch;
-    private WaitForSeconds waitForOutCrouch;
+    private GameObject interactObject;
     private WaitForSeconds waitForShealth;
     private WaitForSeconds waitForDrawSword;
-    private WaitForSeconds waitForStep;
-    private WaitForSeconds waitForStartRun;
-    private WaitForSeconds waitForRunTurn;
-    private WaitForSeconds waitForStopRun;
     private WaitForSeconds waitForFallStun;
     private WaitForSeconds waitForStartJump;
     private WaitForSeconds waitForJump;
     private WaitForSeconds waitForclimbUp;
     private WaitForSeconds waitForclimDown;
-    
+
     private PrinceAnimationEventHandler princeAnimationEventHandler;
+    private BoxCollider2D princeColider;
+    public void StartRunCycle()
+    {
+        isRunning = true;
+        runStartCounter = Time.time + 0.2f;
+    }
+    public void RunTurnOut()
+    {
+        characterRigid.isKinematic = false;
+        isCheckingFall = true;
+        isRunning = true;
+    }
+    public void IdleStep()
+    {
+        isMoving = true;
+        settingMoveSpeed = normalStepSpeed;
+        var movingIncreast = (currentFacing) ? normalStepScale : -normalStepScale;
+        predictPosition = new Vector3(transform.position.x + movingIncreast, transform.position.y, transform.position.z);
+    }
+    public void CrouchStep()
+    {
+        isMoving = true;
+        var movingIncreast = (currentFacing) ? crouchStepScale : -crouchStepScale;
+        settingMoveSpeed = crouchStepSpeed;
+        predictPosition = new Vector3(transform.position.x + movingIncreast, transform.position.y, transform.position.z);
+    }
     public void DieSprike()
     {
         health = 0;
@@ -78,6 +87,14 @@ public class Prince : CharacterSystem
         var spriteChild = transform.Find("PrinceSprite");
         spriteChild.transform.localPosition = Vector3.zero;
         princeAnimator.SetTrigger("DeadSpike");
+    }
+    public void SetFloorCheck(bool status)
+    {
+        isCheckingFall = status;
+    }
+    public void SetKinematic(bool status)
+    {
+        characterRigid.isKinematic = status;
     }
     public void Dead()
     {
@@ -91,22 +108,26 @@ public class Prince : CharacterSystem
         base.OnAwake();
         waitForShealth = new WaitForSeconds(fightShealthSwordDuration);
         waitForDrawSword = new WaitForSeconds(fightDrawSwordDuration);
-        waitForCrouch = new WaitForSeconds(toCrouchDuration);
-        waitForOutCrouch = new WaitForSeconds(outCrouchDuration);
-        waitForStartStep = new WaitForSeconds(normalStartStepDuration);
-        waitForStep = new WaitForSeconds(normalStepDuration - normalStartStepDuration);
-        waitForStartRun = new WaitForSeconds(runStartDuration);
-        waitForStopRun = new WaitForSeconds(runStopDuration);
-        waitForRunTurn = new WaitForSeconds(runTurnDuration);
         waitForFallStun = new WaitForSeconds(fallTakeDamageStunDuration);
         waitForStartJump = new WaitForSeconds(jumpStartDuration);
         waitForJump = new WaitForSeconds(jumpDuration);
         waitForclimbUp = new WaitForSeconds(climbUpDuration);
         waitForclimDown = new WaitForSeconds(climbDownDuration);
         princeAnimationEventHandler = GetComponentInChildren<PrinceAnimationEventHandler>();
+        princeColider = GetComponent<BoxCollider2D>();
     }
     protected override void OnUpdate()
     {
+        var itemHitChecker = Physics2D.OverlapBox(new Vector2(transform.position.x + princeColider.offset.x, transform.position.y + princeColider.offset.y
+                                                    ), princeColider.size, 0f, LayerMask.GetMask("Interact"));
+        if (itemHitChecker)
+        {
+            interactObject = itemHitChecker.gameObject;
+        }
+        else
+        {
+            interactObject = null;
+        }
         var clips = princeAnimator.GetCurrentAnimatorClipInfo(0);
         currentAnimationClip = clips[0].clip.name;
         GameCore.combatController.isPlayerAttacking = isAttacking;
@@ -131,17 +152,26 @@ public class Prince : CharacterSystem
             {
                 StartCoroutine(IdleToCombat());
             }
-            if (InputManager.GetKey_Interact())
+            else if (InputManager.GetKey_Interact())
             {
-                isInteractSomething = true;
-            }
-            else if (InputManager.GetKeyUp_Interact())
-            {
-                isInteractSomething = false;
-            }
-            else if (!InputManager.GetKey_Interact())
-            {
-                isInteractSomething = false;
+                if (interactObject)
+                {
+                    if (interactObject.CompareTag("PotionSmall"))
+                    {
+                        transform.position = new Vector3(interactObject.transform.position.x, transform.position.y, transform.position.z);
+                        Destroy(interactObject);
+                        princeAnimator.SetTrigger("Heal");
+                        health += 1;
+                    }
+                    else if(interactObject.CompareTag("PotionLarge"))
+                    {
+                        transform.position = new Vector3(interactObject.transform.position.x, transform.position.y, transform.position.z);
+                        Destroy(interactObject);
+                        princeAnimator.SetTrigger("Heal");
+                        MaxHealth += 1;
+                        health = MaxHealth;
+                    }
+                }
             }
             #endregion
             #region Keydown Implements
@@ -150,7 +180,7 @@ public class Prince : CharacterSystem
                 if (!isCrouch)
                 {
                     isCrouch = true;
-                    StartCoroutine(ToCrouch());
+                    princeAnimator.SetBool("Crouch", true);
                 }
             }
             else if (!InputManager.GetKey_Down())
@@ -158,12 +188,12 @@ public class Prince : CharacterSystem
                 if (isCrouch)
                 {
                     isCrouch = false;
-                    StartCoroutine(OutCrouch());
+                    princeAnimator.SetBool("Crouch", false);
                 }
             }
             #endregion
             #region KeyUp Implement
-            if(InputManager.GetKey_Up())
+            if (InputManager.GetKey_Up())
             {
                 isJump = true;
             }
@@ -183,80 +213,61 @@ public class Prince : CharacterSystem
                 {
                     if (!currentFacing)
                     {
-                        if (crouchStepCount <= Time.time)
-                        {
-                            isMoving = true;
-                            crouchStepCount = Time.time + crouchStepDuration;
-                            settingMoveSpeed = crouchStepSpeed;
-                            predictPosition = new Vector3(transform.position.x - crouchStepScale, transform.position.y, transform.position.z);
-                            princeAnimator.SetTrigger("CrouchStep");
-                        }
-                    }
-                }
-                else if (isJump)
-                {
-                    if (!currentFacing)
-                    {
-                        predictPosition = new Vector3(transform.position.x - jumpScale, transform.position.y, transform.position.z);
-                        settingMoveSpeed = jumpSpeed;
-                        StartCoroutine(JumpIdle());
+                        princeAnimator.SetTrigger("CrouchStep");
                     }
                 }
                 else
                 {
-
-                    if (currentFacing)
+                    if (!currentFacing && InputManager.GetKey_Interact())
                     {
-                        if (isRunningStop)
-                        {
-                            isRunningStop = false;
-                            StopAllCoroutines();
-                            StartCoroutine(RuningTurn());
-                        }
-
-                        else
-                        {
-                            if (currentAnimationClip == "Idle")
-                            {
-                                princeAnimator.SetTrigger("Turn");
-                                controlable = false;
-                            }
-                        }
+                        princeAnimator.SetTrigger("Step");
+                        isInAction = true;
                     }
-                    else if (!isRunningStop)
+                    else if (currentFacing)
                     {
-                        if (isInteractSomething && !isMoving)
-                        {
-                            predictPosition = new Vector3(transform.position.x - normalStepScale, transform.position.y, transform.position.z);
-                            settingMoveSpeed = normalStepSpeed;
-                            StartCoroutine(Step());
-                        }
-                        else if (runCycleInputCount <= Time.time && !isRunning)
-                        {
-                            predictPosition = new Vector3(transform.position.x - runStepScale, transform.position.y, transform.position.z);
-                            settingMoveSpeed = runSpeed;
-                            StartCoroutine(StartRun());
-                        }
+                        princeAnimator.SetTrigger("Turn");
+                        isInAction = true;
                     }
                 }
             }
-            if (InputManager.GetKey_Left())
+            if (InputManager.GetKey_Left() && !isCrouch && !isInAction)
             {
-                if (isRunning && runCycleInputCount <= Time.time)
+                if (isRunning)
                 {
-                    predictPosition = new Vector3(predictPosition.x - runStepScale, predictPosition.y, predictPosition.z);
-                    runCycleInputCount = Time.time + runCycleInputDelay;
-                    settingMoveSpeed = runSpeed;
+                    var movingIncreast = (currentFacing) ? runSpeed : -runSpeed;
+                    characterRigid.velocity = new Vector2(movingIncreast, characterRigid.velocity.y);
+                }
+                else
+                {
+                    if (!currentFacing)
+                    {
+                        princeAnimator.SetBool("Running", true);
+                    }
+                    else if (currentFacing)
+                    {
+                        princeAnimator.SetTrigger("Turn");
+                        isInAction = true;
+                    }
+                }
+            }
+            else if (!InputManager.GetKey_Left() && isRunning && !currentFacing)
+            {
+                if (runStartCounter <= Time.time)
+                {
+                    isRunning = false;
                     isMoving = true;
-                }
-            }
-            else if (!InputManager.GetKey_Left())
-            {
-                if (isRunning && !currentFacing)
-                {
-                    predictPosition = new Vector3(transform.position.x - runStopScale, predictPosition.y, predictPosition.z);
                     settingMoveSpeed = runStopSpeed;
-                    StartCoroutine(StopRun());
+                    characterRigid.velocity = Vector2.zero;
+                    princeAnimator.SetBool("Running", false);
+                    princeAnimator.SetBool("ForwardBlock", forwardBlock);
+                    var movingIncreast = (currentFacing) ? runStopScale : -runStopScale;
+                    predictPosition = new Vector3(transform.position.x + movingIncreast, transform.position.y, transform.position.z);
+                }
+                else
+                {
+                    var movingIncreast = (currentFacing) ? runSpeed : -runSpeed;
+                    characterRigid.velocity = new Vector2(movingIncreast, characterRigid.velocity.y);
+                    runStartCounter = Time.time;
                 }
             }
             #endregion
@@ -267,78 +278,61 @@ public class Prince : CharacterSystem
                 {
                     if (currentFacing)
                     {
-                        if (crouchStepCount <= Time.time)
-                        {
-                            isMoving = true;
-                            crouchStepCount = Time.time + crouchStepDuration;
-                            settingMoveSpeed = crouchStepSpeed;
-                            predictPosition = new Vector3(transform.position.x + crouchStepScale, transform.position.y, transform.position.z);
-                            princeAnimator.SetTrigger("CrouchStep");
-                        }
+                        princeAnimator.SetTrigger("CrouchStep");
                     }
                 }
                 else
                 {
-                    if (!currentFacing)
+                    if (currentFacing && InputManager.GetKey_Interact())
                     {
-                        if (isRunningStop)
-                        {
-                            isRunningStop = false;
-                            StopAllCoroutines();
-                            StartCoroutine(RuningTurn());
-                        }
-                        else
-                        {
-                            if (currentAnimationClip == "Idle")
-                            {
-                                princeAnimator.SetTrigger("Turn");
-                                controlable = false;
-                            }
-                        }
+                        princeAnimator.SetTrigger("Step");
+                        isInAction = true;
                     }
-                    else if (isJump)
+                    else if (!currentFacing)
                     {
-                        if (currentFacing)
-                        {
-                            predictPosition = new Vector3(transform.position.x + jumpScale, transform.position.y, transform.position.z);
-                            settingMoveSpeed = jumpSpeed;
-                            StartCoroutine(JumpIdle());
-                        }
-                    }
-                    else
-                    {
-                        if (isInteractSomething && !isMoving)
-                        {
-                            predictPosition = new Vector3(transform.position.x + normalStepScale, transform.position.y, transform.position.z);
-                            settingMoveSpeed = normalStepSpeed;
-                            StartCoroutine(Step());
-                        }
-                        else if (runCycleInputCount <= Time.time && !isRunning)
-                        {
-                            predictPosition = new Vector3(transform.position.x + runStepScale, transform.position.y, transform.position.z);
-                            settingMoveSpeed = runSpeed;
-                            StartCoroutine(StartRun());
-                        }
+                        princeAnimator.SetTrigger("Turn");
+                        isInAction = true;
                     }
                 }
             }
-            if (InputManager.GetKey_Right())
+            if (InputManager.GetKey_Right() && !isCrouch && !isInAction)
             {
-                if (isRunning && runCycleInputCount <= Time.time)
+                if (isRunning)
                 {
-                    predictPosition = new Vector3(predictPosition.x + runStepScale, predictPosition.y, predictPosition.z);
-                    runCycleInputCount = Time.time + runCycleInputDelay;
-                    settingMoveSpeed = runSpeed;
+                    var movingIncreast = (currentFacing) ? runSpeed : -runSpeed;
+                    characterRigid.velocity = new Vector2(movingIncreast, characterRigid.velocity.y);
+                }
+                else
+                {
+                    if (currentFacing)
+                    {
+                        princeAnimator.SetBool("Running", true);
+                    }
+                    else if (!currentFacing)
+                    {
+                        princeAnimator.SetTrigger("Turn");
+                        isInAction = true;
+                    }
+                }
+            }
+            else if (!InputManager.GetKey_Right() && isRunning && currentFacing)
+            {
+                if (runStartCounter <= Time.time)
+                {
+                    isRunning = false;
                     isMoving = true;
-                }
-            }
-            else if (!InputManager.GetKey_Right())
-            {
-                if (isRunning && currentFacing)
-                {
-                    predictPosition = new Vector3(transform.position.x + runStopScale, predictPosition.y, predictPosition.z);
                     settingMoveSpeed = runStopSpeed;
-                    StartCoroutine(StopRun());
+                    princeAnimator.SetBool("Running", false);
+                    princeAnimator.SetBool("ForwardBlock", forwardBlock);
+                    characterRigid.velocity = Vector2.zero;
+                    var movingIncreast = (currentFacing) ? runStopScale : -runStopScale;
+                    predictPosition = new Vector3(transform.position.x + movingIncreast, transform.position.y, transform.position.z);
+                }
+                else
+                {
+                    var movingIncreast = (currentFacing) ? runSpeed : -runSpeed;
+                    characterRigid.velocity = new Vector2(movingIncreast, characterRigid.velocity.y);
+                    runStartCounter = Time.time;
                 }
             }
             #endregion
@@ -417,6 +411,13 @@ public class Prince : CharacterSystem
         base.OnStartFall();
         princeAnimator.SetTrigger("Fall");
         princeAnimator.SetBool("Running", false);
+        characterRigid.velocity = Vector2.zero;
+        var fallPosIncreast = (currentFacing) ? 0.35f : -0.35f;
+        if (!isMoving)
+        {
+            fallPosIncreast = 0;
+        }
+        transform.position = new Vector3(transform.position.x + fallPosIncreast, transform.position.y, transform.position.z);
         isMoving = false;
         isRunning = false;
     }
@@ -427,7 +428,7 @@ public class Prince : CharacterSystem
         {
             if (fallDamageTaken <= 1)
             {
-                StartCoroutine(FallToOutCrouch());
+                princeAnimator.SetTrigger("FallNotTakeDamage");
             }
             else
             {
@@ -444,16 +445,14 @@ public class Prince : CharacterSystem
         base.OnStart();
         deadTriggerSet = true;
     }
-    /* private IEnumerator ClimbDown()
+    public override void SetControlable(bool status)
     {
-        controlable = false;
-        isCheckingFall = false;
-        princeAnimator.SetTrigger("Drop");
-        yield return waitForclimDown;
-        isCheckingFall = true;
-        controlable = true;
-        transform.position = new Vector3(transform.position.x, transform.position.y - 1.5f, transform.position.z);
-    } */
+        base.SetControlable(status);
+        if (controlable)
+        {
+            isInAction = false;
+        }
+    }
     private IEnumerator JumpIdle()
     {
         controlable = false;
@@ -464,83 +463,11 @@ public class Prince : CharacterSystem
         isMoving = true;
         controlable = true;
     }
-    private IEnumerator StartRun()
-    {
-        isRunning = true;
-        runCycleInputCount = Time.time + runCycleInputDelay + runStartDuration;
-        princeAnimator.SetBool("Running", true);
-        yield return waitForStartRun;
-        isMoving = true;
-    }
-    private IEnumerator StopRun()
-    {
-        princeAnimator.SetBool("Running", false);
-        princeAnimator.SetBool("ForwardBlock", forwardBlock);
-        isRunning = false;
-        isMoving = true;
-        isRunningStop = true;
-        yield return waitForStopRun;
-        isRunningStop = false;
-    }
-    private IEnumerator RuningTurn()
-    {
-        controlable = false;
-        isMoving = true;
-        isCheckingFall = false;
-        characterRigid.isKinematic = true;
-        princeAnimator.SetTrigger("RunTurn");
-        princeAnimator.SetBool("Running", true);
-        yield return waitForRunTurn;
-        isRunning = true;
-        controlable = true;
-        isCheckingFall = true;
-        characterRigid.isKinematic = false;
-    }
     private IEnumerator FallToStun()
     {
         princeAnimator.SetTrigger("FallTakeDamage");
         yield return waitForFallStun;
         princeAnimator.SetTrigger("CrouchOut");
-        yield return waitForOutCrouch;
-        controlable = true;
-    }
-    private IEnumerator FallToOutCrouch()
-    {
-        princeAnimator.SetTrigger("FallNotTakeDamage");
-        yield return outCrouchDuration;
-        controlable = true;
-    }
-    private IEnumerator Step()
-    {
-        controlable = false;
-        princeAnimator.SetTrigger("Step");
-        yield return waitForStartStep;
-        isMoving = true;
-        yield return waitForStep;
-        controlable = true;
-    }
-    private IEnumerator StepBlock()
-    {
-        controlable = false;
-        princeAnimator.SetTrigger("StepBlock");
-        yield return waitForStartStep;
-        isMoving = true;
-        yield return waitForStep;
-        controlable = true;
-    }
-    private IEnumerator ToCrouch()
-    {
-        princeAnimator.SetBool("Crouch", true);
-        controlable = false;
-        yield return waitForCrouch;
-        controlable = true;
-    }
-    private IEnumerator OutCrouch()
-    {
-        princeAnimator.SetBool("Crouch", false);
-        controlable = false;
-        yield return waitForOutCrouch;
-        controlable = true;
     }
     private IEnumerator CombatToIdle()
     {

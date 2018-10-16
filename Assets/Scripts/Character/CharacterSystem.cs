@@ -32,7 +32,7 @@ public class CharacterSystem : MonoBehaviour
     public bool currentFacing { get; protected set; } //true:right false:left
     protected CharacterState actionState;
     [Header("CharacterProperty")]
-    [SerializeField] private sbyte MaxHealth;
+    [SerializeField] protected sbyte MaxHealth;
     [SerializeField] private float fallDistancePerFloor;
     [SerializeField] private bool isInvertFacing;
 
@@ -77,7 +77,7 @@ public class CharacterSystem : MonoBehaviour
     {
         spriteRenderer.flipX = !spriteRenderer.flipX;
     }
-    public void SetControlable(bool status)
+    public virtual void SetControlable(bool status)
     {
         controlable = status;
     }
@@ -141,7 +141,7 @@ public class CharacterSystem : MonoBehaviour
     {
         if (isMoving && !isDead)
         {
-            if (transform.position == predictPosition)
+            if (transform.position.x == predictPosition.x)
             {
                 isMoving = false;
                 return;
@@ -266,7 +266,6 @@ public class CharacterSystem : MonoBehaviour
             fallDamageTaken = (byte)(distanceBetweenPoint / fallDistancePerFloor);
         }
         predictPosition = transform.position;
-        isMoving = false;
     }
     protected virtual void OnStopFall()
     {

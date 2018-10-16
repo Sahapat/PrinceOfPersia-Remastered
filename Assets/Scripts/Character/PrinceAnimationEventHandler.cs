@@ -14,13 +14,29 @@ public class PrinceAnimationEventHandler : MonoBehaviour
 		objectParent = transform.parent.gameObject;
 		prince = GetComponentInParent<Prince>();
 	}
+	public void StartRun()
+	{
+		prince.StartRunCycle();
+	}
+	public void RunTurnOut()
+	{
+		prince.RunTurnOut();
+	}
+	public void CrouchStepMove()
+	{
+		prince.CrouchStep();
+	}
+	public void IdleStepMove()
+	{
+		prince.IdleStep();
+	}
 	public void CrouchOutMove()
 	{
 		var direction = (prince.currentFacing)?1:-1;
 		var moveX = objectParent.transform.position.x + (crouchOutmoveScale*direction);
 		objectParent.transform.position = new Vector3(moveX,objectParent.transform.position.y,objectParent.transform.position.z);
 	}
-	public void TurnInRunning()
+	public void Turning()
 	{
 		prince.FlipSprite();
 	}

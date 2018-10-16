@@ -141,7 +141,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1403595600725164}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 55.806, y: 2.26, z: -3.4}
+  m_LocalPosition: {x: 55.923, y: 2.21, z: -3.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4602848399499538}
@@ -303,24 +303,13 @@ MonoBehaviour:
   attackLayer:
     serializedVersion: 2
     m_Bits: 2048
-  normalStepScale: 0.85
-  normalStepSpeed: 1
-  normalStartStepDuration: 0.2
-  normalStepDuration: 0.85
-  turnFlipDuration: 0.8
+  normalStepScale: 0.8
+  normalStepSpeed: 1.2
   crouchStepScale: 0.62
   crouchStepSpeed: 3.8
-  crouchStepDuration: 0.25
-  toCrouchDuration: 0.2
-  outCrouchDuration: 1.25
-  runStepScale: 0.8
-  runStopScale: 1.5
-  runSpeed: 2.5
-  runStopSpeed: 2.4
-  runStartDuration: 0.12
-  runStopDuration: 0.6
-  runTurnDuration: 0.65
-  runCycleInputDelay: 0.25
+  runSpeed: 2.92
+  runStopScale: 1.4
+  runStopSpeed: 2.25
   fallTakeDamageStunDuration: 1.5
   jumpStartDuration: 0.68
   jumpScale: 2.5
@@ -332,7 +321,7 @@ MonoBehaviour:
   fightDrawSwordDuration: 0.7
   fightShealthSwordDuration: 0.8
   princeAnimator: {fileID: 95195094673098138}
-  isRunningStop: 0
+  canRunningTurn: 0
 --- !u!114 &114351547307333440
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -361,6 +350,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   crouchOutmoveScale: 0.12
+  intoDoorPos: {fileID: 0}
 --- !u!212 &212160500753838080
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -394,7 +384,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1058031115
-  m_SortingLayer: 7
+  m_SortingLayer: 8
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 80c97d084c8c0b44e983cc7f8f5c5dd1, type: 3}
   m_Color: {r: 0.62695795, g: 0.6886792, b: 0.6886792, a: 1}

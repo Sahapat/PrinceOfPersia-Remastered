@@ -64,6 +64,9 @@ TagManager:
   - name: FloorDecoration
     uniqueID: 182661635
     locked: 0
+  - name: ColumnBackFloor
+    uniqueID: 1739556049
+    locked: 0
   - name: Player
     uniqueID: 1058031115
     locked: 0

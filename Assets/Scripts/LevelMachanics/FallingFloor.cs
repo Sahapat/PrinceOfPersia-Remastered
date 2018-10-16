@@ -56,5 +56,6 @@ public class FallingFloor : MonoBehaviour
 		this.gameObject.layer = 0;
 		fallingFloorAnim.SetTrigger("Fall");
 		floorRigidbody.isKinematic = false;
+        colliderChecker.isTrigger = true;
     }
 }
