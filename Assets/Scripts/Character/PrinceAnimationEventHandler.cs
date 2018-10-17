@@ -14,6 +14,10 @@ public class PrinceAnimationEventHandler : MonoBehaviour
 		objectParent = transform.parent.gameObject;
 		prince = GetComponentInParent<Prince>();
 	}
+	public void StartJump()
+	{
+		prince.StartJump();
+	}
 	public void StartRun()
 	{
 		prince.StartRunCycle();
@@ -36,6 +40,14 @@ public class PrinceAnimationEventHandler : MonoBehaviour
 		var moveX = objectParent.transform.position.x + (crouchOutmoveScale*direction);
 		objectParent.transform.position = new Vector3(moveX,objectParent.transform.position.y,objectParent.transform.position.z);
 	}
+	public void DropHang()
+	{
+		prince.DropHang();
+	}
+	public void DropEnd()
+	{
+		prince.DropEnd();
+	}
 	public void Turning()
 	{
 		prince.FlipSprite();
@@ -44,5 +56,10 @@ public class PrinceAnimationEventHandler : MonoBehaviour
 	{
 		bool status = bool.Parse(msg);
 		prince.SetControlable(status);
+	}
+	public void SetFloorCheck(string msg)
+	{
+		bool status = bool.Parse(msg);
+		prince.SetFloorCheck(status);
 	}
 }

@@ -11,22 +11,6 @@ Prefab:
   m_SourcePrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1536663548559402}
   m_IsPrefabAsset: 1
---- !u!1 &1000575202035748
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4618320238685538}
-  - component: {fileID: 114529434778737820}
-  m_Layer: 0
-  m_Name: RayChecker
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &1205051308479062
 GameObject:
   m_ObjectHideFlags: 0
@@ -121,19 +105,6 @@ Transform:
   m_Father: {fileID: 4804619068633194}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4618320238685538
-Transform:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000575202035748}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4804619068633194}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4755555062951982
 Transform:
   m_ObjectHideFlags: 1
@@ -145,7 +116,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4804619068633194}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4804619068633194
 Transform:
@@ -154,12 +125,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1536663548559402}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 44.5, y: 2.18, z: 0}
+  m_LocalPosition: {x: 74.06, y: -5.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4085646566307178}
   - {fileID: 4326346886187314}
-  - {fileID: 4618320238685538}
   - {fileID: 4755555062951982}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -277,22 +247,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &114529434778737820
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000575202035748}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef1f331746a2b6b4f91c4eac99a62c6b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  flipDirection: 1
-  EnemyCheckerRayDistance: 9
-  EnemyLayer:
-    serializedVersion: 2
-    m_Bits: 512
 --- !u!114 &114856430068394402
 MonoBehaviour:
   m_ObjectHideFlags: 1

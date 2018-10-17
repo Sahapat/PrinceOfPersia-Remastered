@@ -39,10 +39,12 @@ public class Prince : CharacterSystem
     private bool isInAction;
     private bool isJump;
     private bool isDeadFromFall;
-    private bool canClimpDown;
     private bool deadTriggerSet;
     private bool forwardBlock;
     private bool isHaveSword;
+    private bool isDrop;
+    private bool canHang;
+    private bool isHang;
     private byte stepBlockCount;
     private string currentAnimationClip;
     private GameObject interactObject;
@@ -58,6 +60,27 @@ public class Prince : CharacterSystem
     private BoxCollider2D princeColider;
     private FloorProperty upInteractFloor;
     private FloorProperty downInteractFloor;
+    public void StartJump()
+    {
+        characterRigid.velocity = new Vector2(0, jumpScale);
+        isJump = true;
+    }
+    public void DropEnd()
+    {
+        isCheckingFall = true;
+        characterRigid.isKinematic = false;
+        princeAnimator.SetBool("Drop", false);
+        var decreastPosition = (currentFacing) ? 0.2f : -0.2f;
+        transform.position = new Vector3(transform.position.x + decreastPosition, transform.position.y, transform.position.z);
+        canHang = false;
+    }
+    public void DropHang()
+    {
+        var decreastPosition = (currentFacing) ? -0.4f : 0.4f;
+        transform.position = new Vector3(transform.position.x + decreastPosition, transform.position.y, transform.position.z);
+        canHang = true;
+        StartCoroutine(dropDown());
+    }
     public void StartRunCycle()
     {
         isRunning = true;
@@ -171,9 +194,9 @@ public class Prince : CharacterSystem
     protected override void OnTakeDamage()
     {
         print("takeDamage");
-        if(actionState != CharacterState.COMBAT)
+        if (actionState != CharacterState.COMBAT)
         {
-            health -=1;
+            health -= 1;
         }
         princeAnimator.SetTrigger("TakeDamage");
         isMoving = false;
@@ -211,7 +234,7 @@ public class Prince : CharacterSystem
                         MaxHealth += 1;
                         health = MaxHealth;
                     }
-                    else if(interactObject.CompareTag("Sword"))
+                    else if (interactObject.CompareTag("Sword"))
                     {
                         transform.position = new Vector3(interactObject.transform.position.x, transform.position.y, transform.position.z);
                         isHaveSword = true;
@@ -226,8 +249,25 @@ public class Prince : CharacterSystem
             {
                 if (!isCrouch)
                 {
-                    isCrouch = true;
-                    princeAnimator.SetBool("Crouch", true);
+                    if (downInteractFloor.GetRightSideInteract() && !currentFacing)
+                    {
+                        if (Mathf.Abs(transform.position.x - downInteractFloor.GetRightSideEdge().x) < 0.3f)
+                        {
+                            princeAnimator.SetTrigger("Drop");
+                            isCheckingFall = false;
+                            characterRigid.isKinematic = true;
+                        }
+                        else
+                        {
+                            isCrouch = true;
+                            princeAnimator.SetBool("Crouch", true);
+                        }
+                    }
+                    else
+                    {
+                        isCrouch = true;
+                        princeAnimator.SetBool("Crouch", true);
+                    }
                 }
             }
             else if (!InputManager.GetKey_Down())
@@ -242,15 +282,13 @@ public class Prince : CharacterSystem
             #region KeyUp Implement
             if (InputManager.GetKey_Up())
             {
-                isJump = true;
+                princeAnimator.SetTrigger("Jump");
             }
             else if (!InputManager.GetKey_Up())
             {
-                isJump = false;
             }
             if (InputManager.GetKeyDown_Up())
             {
-                isJump = true;
             }
             #endregion
             #region KeyLeft Implement
@@ -564,18 +602,21 @@ public class Prince : CharacterSystem
     protected override void OnStartFall()
     {
         base.OnStartFall();
-        princeAnimator.SetTrigger("Fall");
-        princeAnimator.SetBool("Running", false);
-        characterRigid.velocity = Vector2.zero;
-        var fallPosIncreast = (currentFacing) ? 0.35f : -0.35f;
-        if (!isMoving)
+        if (!isJump)
         {
-            fallPosIncreast = 0;
+            princeAnimator.SetTrigger("Fall");
+            princeAnimator.SetBool("Running", false);
+            characterRigid.velocity = Vector2.zero;
+            var fallPosIncreast = (currentFacing) ? 0.35f : -0.35f;
+            if (!isMoving)
+            {
+                fallPosIncreast = 0;
+            }
+            stepBlockCount = 0;
+            transform.position = new Vector3(transform.position.x + fallPosIncreast, transform.position.y, transform.position.z);
+            isMoving = false;
+            isRunning = false;
         }
-        stepBlockCount = 0;
-        transform.position = new Vector3(transform.position.x + fallPosIncreast, transform.position.y, transform.position.z);
-        isMoving = false;
-        isRunning = false;
     }
     protected override void OnStopFall()
     {
@@ -607,6 +648,14 @@ public class Prince : CharacterSystem
         if (controlable)
         {
             isInAction = false;
+        }
+    }
+    private IEnumerator dropDown()
+    {
+        for (int i = 0; i < 10; i++)
+        {
+            transform.Translate(new Vector3(0, -0.18f, 0));
+            yield return new WaitForSeconds(0.03f);
         }
     }
     private IEnumerator JumpIdle()
