@@ -11,6 +11,7 @@ public class Guard : CharacterSystem
         MOVEBACK,
         ATTACK
     };
+    [SerializeField] private float moveBackSpeed;
     [Header("EnemyProperty")]
     [SerializeField] private float savePosition;
     [SerializeField] private float attackPosition;
@@ -50,9 +51,12 @@ public class Guard : CharacterSystem
     {
         if (controlable)
         {
-            if (GameCore.combatController.canCombat)
+            if (GameCore.combatController.currentEnemy)
             {
-                StartCoroutine(ToCombat());
+                if (GameCore.combatController.canCombat && GameCore.combatController.currentEnemy.name == this.name)
+                {
+                    StartCoroutine(ToCombat());
+                }
             }
         }
     }
@@ -61,87 +65,90 @@ public class Guard : CharacterSystem
         base.OnCombat();
         if (controlable)
         {
-            if (GameCore.combatController.canCombat)
+            if (GameCore.combatController.currentEnemy)
             {
-                switch (aIActionPhase)
+                if (GameCore.combatController.canCombat && GameCore.combatController.currentEnemy.name == this.name)
                 {
-                    case AIActionPhase.MOVETOPLAYER:
-                        if (!isMoveAndAttack)
-                        {
-                            if (distanceBetweenPlayer > savePosition)
+                    switch (aIActionPhase)
+                    {
+                        case AIActionPhase.MOVETOPLAYER:
+                            if (!isMoveAndAttack)
                             {
-                                isMoving = true;
-                                FightStep(-1);
-                                enemyAnim.SetBool("MoveForward", true);
-                            }
-                            else
-                            {
-                                enemyAnim.SetBool("MoveForward", false);
-                                if (haveAttackPredict)
+                                if (distanceBetweenPlayer > savePosition)
                                 {
-                                    if (!GameCore.combatController.isPlayerAttacking)
+                                    isMoving = true;
+                                    FightStep(-1);
+                                    enemyAnim.SetBool("MoveForward", true);
+                                }
+                                else
+                                {
+                                    enemyAnim.SetBool("MoveForward", false);
+                                    if (haveAttackPredict)
+                                    {
+                                        if (!GameCore.combatController.isPlayerAttacking)
+                                        {
+                                            isMoveAndAttack = true;
+                                        }
+                                    }
+                                    else
                                     {
                                         isMoveAndAttack = true;
                                     }
                                 }
-                                else
-                                {
-                                    isMoveAndAttack = true;
-                                }
-                            }
-                        }
-                        else
-                        {
-                            if (distanceBetweenPlayer > attackPosition)
-                            {
-                                isMoving = true;
-                                FightStep(-1);
-                                enemyAnim.SetBool("MoveForward", true);
                             }
                             else
                             {
-                                enemyAnim.SetBool("MoveForward", false);
-                                aIActionPhase = AIActionPhase.ATTACK;
+                                if (distanceBetweenPlayer > attackPosition)
+                                {
+                                    isMoving = true;
+                                    FightStep(-1);
+                                    enemyAnim.SetBool("MoveForward", true);
+                                }
+                                else
+                                {
+                                    enemyAnim.SetBool("MoveForward", false);
+                                    aIActionPhase = AIActionPhase.ATTACK;
+                                }
                             }
-                        }
-                        break;
-                    case AIActionPhase.ATTACK:
-                        if (GameCore.combatController.isPlayerAttacking && fightParryDelayCounter <= Time.time && isAttacking)
-                        {
-                            fightParryDelayCounter = Time.time + fightParryDelay;
-                            if (Random.value <= fightParryChance)
+                            break;
+                        case AIActionPhase.ATTACK:
+                            if (GameCore.combatController.isPlayerAttacking && fightParryDelayCounter <= Time.time && isAttacking)
                             {
-                                FightParry();
+                                fightParryDelayCounter = Time.time + fightParryDelay;
+                                if (Random.value <= fightParryChance)
+                                {
+                                    FightParry();
+                                }
                             }
-                        }
-                        else if (isReayAttack)
-                        {
-                            if (Random.value <= fightAttackChance && fightAttackDelayCounter <= Time.time)
+                            else if (isReayAttack)
                             {
-                                fightAttackDelayCounter = Time.time + fightAttackDelay;
-                                isAttacking = true;
-                                enemyAnim.SetTrigger("Attack");
-                                isReayAttack = false;
+                                if (Random.value <= fightAttackChance && fightAttackDelayCounter <= Time.time)
+                                {
+                                    fightAttackDelayCounter = Time.time + fightAttackDelay;
+                                    isAttacking = true;
+                                    enemyAnim.SetTrigger("Attack");
+                                    isReayAttack = false;
+                                }
                             }
-                        }
-                        break;
-                    case AIActionPhase.MOVEBACK:
-                        if (isMoveBack)
-                        {
-                            isMoving = true;
-                            enemyAnim.SetBool("MoveBack", true);
-                        }
-                        else
-                        {
-                            enemyAnim.SetBool("MoveBack", false);
-                            aIActionPhase = AIActionPhase.MOVETOPLAYER;
-                        }
-                        break;
+                            break;
+                        case AIActionPhase.MOVEBACK:
+                            if (isMoveBack)
+                            {
+                                isMoving = true;
+                                isMoveBack = false;
+                                enemyAnim.SetTrigger("MoveBack");
+                            }
+                            else
+                            {
+                                StartCoroutine(afterTakeDamage());
+                            }
+                            break;
+                    }
                 }
-            }
-            else
-            {
-                StartCoroutine(ToNormal());
+                else
+                {
+                    StartCoroutine(ToNormal());
+                }
             }
         }
     }
@@ -168,9 +175,10 @@ public class Guard : CharacterSystem
     protected override void OnTakeDamage()
     {
         enemyAnim.SetTrigger("TakeDamage");
-        /*predictPosition = new Vector3(transform.position.x + 0.6f,transform.position.y,transform.position.z);
+        predictPosition = new Vector3(transform.position.x + 0.2f, transform.position.y, transform.position.z);
+        settingMoveSpeed = moveBackSpeed;
         isMoveBack = true;
-        aIActionPhase = AIActionPhase.MOVEBACK;*/
+        aIActionPhase = AIActionPhase.MOVEBACK;
     }
     protected override void OnStopFall()
     {
@@ -185,13 +193,18 @@ public class Guard : CharacterSystem
         {
             distanceBetweenPlayer = Mathf.Abs(transform.position.x - GameCore.combatController.targetPlayer.transform.position.x);
         }
-        if(fightAttackDelayCounter <= Time.time&&!isReayAttack)
+        if (fightAttackDelayCounter <= Time.time && !isReayAttack)
         {
             isReayAttack = true;
         }
     }
-    private void PredictNextState()
+    private IEnumerator afterTakeDamage()
     {
+        controlable = false;
+        enemyAnim.SetBool("MoveBack", false);
+        yield return new WaitForSeconds(0.4f);
+        aIActionPhase = AIActionPhase.MOVETOPLAYER;
+        controlable = true;
     }
     private IEnumerator ToCombat()
     {

@@ -21,15 +21,31 @@ public class RayChecker : MonoBehaviour
             FacingCheck();
             Vector3 rayDirection = transform.TransformDirection(direction) * EnemyCheckerRayDistance;
             RaycastHit2D EnemyHit = Physics2D.Raycast(transform.position, rayDirection, EnemyCheckerRayDistance, EnemyLayer);
-            if (EnemyHit)
+            if (character.GetComponent<Prince>())
             {
-                GameCore.combatController.canCombat = true;
+                if (EnemyHit)
+                {
+                    GameCore.combatController.canCombat = true;
+                    GameCore.combatController.currentEnemy = EnemyHit.collider.gameObject;
+                }
+                else
+                {
+                    GameCore.combatController.canCombat = false;
+                    GameCore.combatController.currentEnemy = null;
+                }
             }
             else
             {
-                GameCore.combatController.canCombat= false;
+                if (EnemyHit)
+                {
+                    GameCore.combatController.canCombat = true;
+                }
+                else
+                {
+                    GameCore.combatController.canCombat = false;
+                }
             }
-            Debug.DrawRay(transform.position, direction*EnemyCheckerRayDistance, Color.green);
+            Debug.DrawRay(transform.position, direction * EnemyCheckerRayDistance, Color.green);
         }
     }
     private void FacingCheck()

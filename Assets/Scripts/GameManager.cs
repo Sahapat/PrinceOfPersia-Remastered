@@ -8,6 +8,9 @@ public static class GameCore
     public static GameManager gameManager;
     public static CombatController combatController;
     public static CameraController cameraController;
+    public static UIHandler uIHandler;
+    public static ThemeSoundHandler themeSoundHandler;
+    public static NormalSoundHandler normalSoundHandler;
 }
 public class GameManager : MonoBehaviour
 {
@@ -18,6 +21,9 @@ public class GameManager : MonoBehaviour
         GameCore.timeCounter = GetComponent<TimeCounter>();
         GameCore.combatController = GetComponent<CombatController>();
         GameCore.cameraController = Camera.main.GetComponent<CameraController>();
+        GameCore.uIHandler = GetComponent<UIHandler>();
+        GameCore.themeSoundHandler = GetComponent<ThemeSoundHandler>();
+        GameCore.normalSoundHandler = GetComponent<NormalSoundHandler>();
     }
     public void GameEnd()
     {

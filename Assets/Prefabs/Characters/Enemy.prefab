@@ -37,6 +37,7 @@ GameObject:
   - component: {fileID: 4085646566307178}
   - component: {fileID: 212542573535064932}
   - component: {fileID: 95561816771289822}
+  - component: {fileID: 114856430068394402}
   m_Layer: 0
   m_Name: EnemySprite
   m_TagString: Untagged
@@ -114,7 +115,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1371985357569054}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.733, y: 0.156, z: 0}
+  m_LocalPosition: {x: -1.092, y: 0.156, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4804619068633194}
@@ -153,7 +154,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1536663548559402}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.97, y: -6.34, z: 0}
+  m_LocalPosition: {x: 44.5, y: 2.18, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4085646566307178}
@@ -239,7 +240,7 @@ BoxCollider2D:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1371985357569054}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -292,6 +293,17 @@ MonoBehaviour:
   EnemyLayer:
     serializedVersion: 2
     m_Bits: 512
+--- !u!114 &114856430068394402
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1205051308479062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 637178d46fdda0d458188247b1d0c702, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114875621427910496
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -318,12 +330,13 @@ MonoBehaviour:
   attackLayer:
     serializedVersion: 2
     m_Bits: 512
-  savePosition: 1.7
-  attackPosition: 1.4
+  moveBackSpeed: 2
+  savePosition: 1.8
+  attackPosition: 1.5
   haveAttackPredict: 1
-  fightAttackChance: 43
-  fightAttackDelay: 1.2
-  fightParryChance: 64
+  fightAttackChance: 79
+  fightAttackDelay: 0.8
+  fightParryChance: 0
   fightParryDelay: 0.8
   destroyAfterDeadDuration: 3
   enemyAnim: {fileID: 95561816771289822}
@@ -360,7 +373,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1058031115
-  m_SortingLayer: 4
+  m_SortingLayer: 8
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 08d217f580636284382403fb9464547a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

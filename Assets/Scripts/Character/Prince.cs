@@ -28,6 +28,8 @@ public class Prince : CharacterSystem
     [SerializeField] private float fightShealthSwordDuration;
     [Header("Reference")]
     [SerializeField] private Animator princeAnimator;
+    [SerializeField] private BoxCollider2D upFloorChecker;
+    [SerializeField] private BoxCollider2D downFloorChecker;
     //Counter variable
     private float runStartCounter;
     private float runTurnCounter;
@@ -40,6 +42,8 @@ public class Prince : CharacterSystem
     private bool canClimpDown;
     private bool deadTriggerSet;
     private bool forwardBlock;
+    private bool isHaveSword;
+    private byte stepBlockCount;
     private string currentAnimationClip;
     private GameObject interactObject;
     private WaitForSeconds waitForShealth;
@@ -52,6 +56,8 @@ public class Prince : CharacterSystem
 
     private PrinceAnimationEventHandler princeAnimationEventHandler;
     private BoxCollider2D princeColider;
+    private FloorProperty upInteractFloor;
+    private FloorProperty downInteractFloor;
     public void StartRunCycle()
     {
         isRunning = true;
@@ -67,8 +73,8 @@ public class Prince : CharacterSystem
     {
         isMoving = true;
         settingMoveSpeed = normalStepSpeed;
-        var movingIncreast = (currentFacing) ? normalStepScale : -normalStepScale;
-        predictPosition = new Vector3(transform.position.x + movingIncreast, transform.position.y, transform.position.z);
+        /* var movingIncreast = (currentFacing) ? normalStepScale : -normalStepScale;
+        predictPosition = new Vector3(transform.position.x + movingIncreast, transform.position.y, transform.position.z); */
     }
     public void CrouchStep()
     {
@@ -128,6 +134,34 @@ public class Prince : CharacterSystem
         {
             interactObject = null;
         }
+        var upFloorColiderCheckPos = new Vector2(upFloorChecker.transform.position.x + upFloorChecker.offset.x, upFloorChecker.transform.position.y + upFloorChecker.offset.y);
+        var upFloorHit = Physics2D.OverlapBox(upFloorColiderCheckPos, upFloorChecker.size, 0f, LayerMask.GetMask("Floor"));
+        if (upFloorHit)
+        {
+            var temp = upFloorHit.GetComponent<FloorProperty>();
+            upInteractFloor = (temp) ? temp : null;
+        }
+        else
+        {
+            upInteractFloor = null;
+        }
+        var downFloorColiderCheckPos = new Vector2(downFloorChecker.transform.position.x + downFloorChecker.offset.x, downFloorChecker.transform.position.y + downFloorChecker.offset.y);
+        var downFloorHit = Physics2D.OverlapBox(downFloorColiderCheckPos, downFloorChecker.size, 0f, LayerMask.GetMask("Floor"));
+        if (downFloorHit)
+        {
+            var temp = downFloorHit.GetComponent<FloorProperty>();
+            downInteractFloor = (temp) ? temp : null;
+        }
+        else
+        {
+            downInteractFloor = null;
+        }
+        if (isMoving)
+        {
+            var predictMoveCheckPos = new Vector2(predictPosition.x + princeColider.offset.x, predictPosition.y + princeColider.offset.y);
+            var predictWallHit = Physics2D.OverlapBox(predictMoveCheckPos, princeColider.size, 0f, LayerMask.GetMask("Wall"));
+            var predictFloorHit = Physics2D.OverlapBox(predictMoveCheckPos, princeColider.size, 0f, LayerMask.GetMask("Floor"));
+        }
         var clips = princeAnimator.GetCurrentAnimatorClipInfo(0);
         currentAnimationClip = clips[0].clip.name;
         GameCore.combatController.isPlayerAttacking = isAttacking;
@@ -137,7 +171,13 @@ public class Prince : CharacterSystem
     protected override void OnTakeDamage()
     {
         print("takeDamage");
+        if(actionState != CharacterState.COMBAT)
+        {
+            health -=1;
+        }
         princeAnimator.SetTrigger("TakeDamage");
+        isMoving = false;
+        isRunning = false;
     }
     protected override void OnParry()
     {
@@ -148,11 +188,11 @@ public class Prince : CharacterSystem
         if (controlable)
         {
             #region InteractKey Implement
-            if (InputManager.GetKeyDown_Interact() && GameCore.combatController.canCombat)
+            if (InputManager.GetKeyDown_Interact() && GameCore.combatController.canCombat && isHaveSword)
             {
                 StartCoroutine(IdleToCombat());
             }
-            else if (InputManager.GetKey_Interact())
+            else if (InputManager.GetKeyDown_Interact())
             {
                 if (interactObject)
                 {
@@ -163,13 +203,20 @@ public class Prince : CharacterSystem
                         princeAnimator.SetTrigger("Heal");
                         health += 1;
                     }
-                    else if(interactObject.CompareTag("PotionLarge"))
+                    else if (interactObject.CompareTag("PotionLarge"))
                     {
                         transform.position = new Vector3(interactObject.transform.position.x, transform.position.y, transform.position.z);
                         Destroy(interactObject);
                         princeAnimator.SetTrigger("Heal");
                         MaxHealth += 1;
                         health = MaxHealth;
+                    }
+                    else if(interactObject.CompareTag("Sword"))
+                    {
+                        transform.position = new Vector3(interactObject.transform.position.x, transform.position.y, transform.position.z);
+                        isHaveSword = true;
+                        Destroy(interactObject);
+                        princeAnimator.SetTrigger("GetSword");
                     }
                 }
             }
@@ -214,14 +261,67 @@ public class Prince : CharacterSystem
                     if (!currentFacing)
                     {
                         princeAnimator.SetTrigger("CrouchStep");
+                        stepBlockCount = 0;
                     }
                 }
                 else
                 {
-                    if (!currentFacing && InputManager.GetKey_Interact())
+                    if (!currentFacing && InputManager.GetKey_Interact() && !isMoving)
                     {
-                        princeAnimator.SetTrigger("Step");
-                        isInAction = true;
+                        var movingIncreast = (currentFacing) ? normalStepScale : -normalStepScale;
+                        predictPosition = new Vector3(transform.position.x + movingIncreast, transform.position.y, transform.position.z);
+                        if (downInteractFloor && stepBlockCount < 2)
+                        {
+                            if (downInteractFloor.GetLeftSideInteract())
+                            {
+                                if (predictPosition.x < downInteractFloor.GetLeftSideEdge().x + 0.3f)
+                                {
+                                    predictPosition = new Vector3(downInteractFloor.GetLeftSideEdge().x + 0.3f, predictPosition.y, predictPosition.z);
+                                    if ((int)transform.position.x == (int)(downInteractFloor.GetLeftSideEdge().x + 0.3f))
+                                    {
+                                        princeAnimator.SetTrigger("StepBlock");
+                                        stepBlockCount++;
+                                    }
+                                    else
+                                    {
+                                        princeAnimator.SetTrigger("Step");
+                                    }
+                                    isInAction = true;
+                                }
+                                else
+                                {
+                                    princeAnimator.SetTrigger("Step");
+                                    isInAction = true;
+                                }
+                            }
+                            else if (downInteractFloor.GetRightSideInteract())
+                            {
+                                if (predictPosition.x > downInteractFloor.GetRightSideEdge().x - 0.3f)
+                                {
+                                    predictPosition = new Vector3(downInteractFloor.GetRightSideEdge().x - 0.3f, predictPosition.y, predictPosition.z);
+                                    if ((int)transform.position.x == (int)(downInteractFloor.GetLeftSideEdge().x - 0.3f))
+                                    {
+                                        princeAnimator.SetTrigger("StepBlock");
+                                        stepBlockCount++;
+                                    }
+                                    else
+                                    {
+                                        princeAnimator.SetTrigger("Step");
+                                    }
+                                    isInAction = true;
+                                }
+                                else
+                                {
+                                    princeAnimator.SetTrigger("Step");
+                                    isInAction = true;
+                                }
+                            }
+                        }
+                        else
+                        {
+                            princeAnimator.SetTrigger("Step");
+                            isInAction = true;
+                        }
                     }
                     else if (currentFacing)
                     {
@@ -242,6 +342,7 @@ public class Prince : CharacterSystem
                     if (!currentFacing)
                     {
                         princeAnimator.SetBool("Running", true);
+                        stepBlockCount = 0;
                     }
                     else if (currentFacing)
                     {
@@ -279,14 +380,67 @@ public class Prince : CharacterSystem
                     if (currentFacing)
                     {
                         princeAnimator.SetTrigger("CrouchStep");
+                        stepBlockCount = 0;
                     }
                 }
                 else
                 {
                     if (currentFacing && InputManager.GetKey_Interact())
                     {
-                        princeAnimator.SetTrigger("Step");
-                        isInAction = true;
+                        var movingIncreast = (currentFacing) ? normalStepScale : -normalStepScale;
+                        predictPosition = new Vector3(transform.position.x + movingIncreast, transform.position.y, transform.position.z);
+                        if (downInteractFloor && stepBlockCount < 2)
+                        {
+                            if (downInteractFloor.GetLeftSideInteract())
+                            {
+                                if (predictPosition.x < downInteractFloor.GetLeftSideEdge().x + 0.3f)
+                                {
+                                    predictPosition = new Vector3(downInteractFloor.GetLeftSideEdge().x + 0.3f, predictPosition.y, predictPosition.z);
+                                    if ((int)transform.position.x == (int)(downInteractFloor.GetLeftSideEdge().x + 0.3f))
+                                    {
+                                        princeAnimator.SetTrigger("StepBlock");
+                                        stepBlockCount++;
+                                    }
+                                    else
+                                    {
+                                        princeAnimator.SetTrigger("Step");
+                                    }
+                                    isInAction = true;
+                                }
+                                else
+                                {
+                                    princeAnimator.SetTrigger("Step");
+                                    isInAction = true;
+                                }
+                            }
+                            else if (downInteractFloor.GetRightSideInteract())
+                            {
+                                if (predictPosition.x > downInteractFloor.GetRightSideEdge().x - 0.3f)
+                                {
+                                    predictPosition = new Vector3(downInteractFloor.GetRightSideEdge().x - 0.3f, predictPosition.y, predictPosition.z);
+                                    if ((int)transform.position.x == (int)(downInteractFloor.GetRightSideEdge().x - 0.3f))
+                                    {
+                                        princeAnimator.SetTrigger("StepBlock");
+                                        stepBlockCount++;
+                                    }
+                                    else
+                                    {
+                                        princeAnimator.SetTrigger("Step");
+                                    }
+                                    isInAction = true;
+                                }
+                                else
+                                {
+                                    princeAnimator.SetTrigger("Step");
+                                    isInAction = true;
+                                }
+                            }
+                        }
+                        else
+                        {
+                            princeAnimator.SetTrigger("Step");
+                            isInAction = true;
+                        }
                     }
                     else if (!currentFacing)
                     {
@@ -307,6 +461,7 @@ public class Prince : CharacterSystem
                     if (currentFacing)
                     {
                         princeAnimator.SetBool("Running", true);
+                        stepBlockCount = 0;
                     }
                     else if (!currentFacing)
                     {
@@ -417,6 +572,7 @@ public class Prince : CharacterSystem
         {
             fallPosIncreast = 0;
         }
+        stepBlockCount = 0;
         transform.position = new Vector3(transform.position.x + fallPosIncreast, transform.position.y, transform.position.z);
         isMoving = false;
         isRunning = false;
