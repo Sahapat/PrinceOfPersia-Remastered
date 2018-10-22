@@ -62,6 +62,8 @@ public class Prince : CharacterSystem
     private FloorProperty downInteractFloor;
     public void StartJump()
     {
+        fallVelocity = 0;
+        princeAnimator.SetFloat("fallVelocity", fallVelocity);
         characterRigid.velocity = new Vector2(0, jumpScale);
         isJump = true;
     }
@@ -249,25 +251,7 @@ public class Prince : CharacterSystem
             {
                 if (!isCrouch)
                 {
-                    if (downInteractFloor.GetRightSideInteract() && !currentFacing)
-                    {
-                        if (Mathf.Abs(transform.position.x - downInteractFloor.GetRightSideEdge().x) < 0.3f)
-                        {
-                            princeAnimator.SetTrigger("Drop");
-                            isCheckingFall = false;
-                            characterRigid.isKinematic = true;
-                        }
-                        else
-                        {
-                            isCrouch = true;
-                            princeAnimator.SetBool("Crouch", true);
-                        }
-                    }
-                    else
-                    {
-                        isCrouch = true;
-                        princeAnimator.SetBool("Crouch", true);
-                    }
+                    ClimbDownChecking();
                 }
             }
             else if (!InputManager.GetKey_Down())
@@ -282,7 +266,10 @@ public class Prince : CharacterSystem
             #region KeyUp Implement
             if (InputManager.GetKey_Up())
             {
-                princeAnimator.SetTrigger("Jump");
+                if (currentAnimationClip == "Idle")
+                {
+                    princeAnimator.SetTrigger("Jump");
+                }
             }
             else if (!InputManager.GetKey_Up())
             {
@@ -602,34 +589,40 @@ public class Prince : CharacterSystem
     protected override void OnStartFall()
     {
         base.OnStartFall();
-        if (!isJump)
+        princeAnimator.SetTrigger("Fall");
+        princeAnimator.SetFloat("distanceBetweenFloor", distanceBetweenPoint);
+        princeAnimator.SetBool("Running", false);
+        characterRigid.velocity = new Vector2(0, characterRigid.velocity.y);
+        var fallPosIncreast = (currentFacing) ? 0.35f : -0.35f;
+        if (!isMoving)
         {
-            princeAnimator.SetTrigger("Fall");
-            princeAnimator.SetBool("Running", false);
-            characterRigid.velocity = Vector2.zero;
-            var fallPosIncreast = (currentFacing) ? 0.35f : -0.35f;
-            if (!isMoving)
-            {
-                fallPosIncreast = 0;
-            }
-            stepBlockCount = 0;
-            transform.position = new Vector3(transform.position.x + fallPosIncreast, transform.position.y, transform.position.z);
-            isMoving = false;
-            isRunning = false;
+            fallPosIncreast = 0;
         }
+        stepBlockCount = 0;
+        transform.position = new Vector3(transform.position.x + fallPosIncreast, transform.position.y, transform.position.z);
+        isMoving = false;
+        isRunning = false;
+    }
+    protected override void OnFall()
+    {
+        fallVelocity = characterRigid.velocity.y;
     }
     protected override void OnStopFall()
     {
         base.OnStopFall();
         if (health != 0)
         {
-            if (fallDamageTaken <= 1)
-            {
-                princeAnimator.SetTrigger("FallNotTakeDamage");
-            }
-            else
+            princeAnimator.SetFloat("distanceBetweenFloor", distanceBetweenPoint);
+            princeAnimator.SetTrigger("toFloor");
+            princeAnimator.SetFloat("fallVelocity", fallVelocity);
+            if (fallVelocity < -9.5f)
             {
                 StartCoroutine(FallToStun());
+            }
+            if (distanceBetweenPoint < 1)
+            {
+                var increastPosition = (currentFacing) ? 0.3f : -0.3f;
+                transform.Translate(new Vector3(increastPosition, 0, 0));
             }
         }
         else
@@ -648,6 +641,42 @@ public class Prince : CharacterSystem
         if (controlable)
         {
             isInAction = false;
+        }
+    }
+    private void ClimbDownChecking()
+    {
+        if (downInteractFloor.GetRightSideInteract() && !currentFacing)
+        {
+            if (Mathf.Abs(transform.position.x - downInteractFloor.GetRightSideEdge().x) < 0.3f)
+            {
+                princeAnimator.SetTrigger("Drop");
+                isCheckingFall = false;
+                characterRigid.isKinematic = true;
+            }
+            else
+            {
+                isCrouch = true;
+                princeAnimator.SetBool("Crouch", true);
+            }
+        }
+        else if (downInteractFloor.GetLeftSideInteract() && currentFacing)
+        {
+            if (Mathf.Abs(transform.position.x - downInteractFloor.GetLeftSideEdge().x) < 0.3f)
+            {
+                princeAnimator.SetTrigger("Drop");
+                isCheckingFall = false;
+                characterRigid.isKinematic = true;
+            }
+            else
+            {
+                isCrouch = true;
+                princeAnimator.SetBool("Crouch", true);
+            }
+        }
+        else
+        {
+            isCrouch = true;
+            princeAnimator.SetBool("Crouch", true);
         }
     }
     private IEnumerator dropDown()
@@ -670,9 +699,8 @@ public class Prince : CharacterSystem
     }
     private IEnumerator FallToStun()
     {
-        princeAnimator.SetTrigger("FallTakeDamage");
         yield return waitForFallStun;
-        princeAnimator.SetTrigger("CrouchOut");
+        princeAnimator.SetTrigger("GetUp");
     }
     private IEnumerator CombatToIdle()
     {

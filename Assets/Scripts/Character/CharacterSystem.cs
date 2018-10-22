@@ -61,11 +61,13 @@ public class CharacterSystem : MonoBehaviour
     private bool isDead;
     private bool isFall;
     protected byte fallDamageTaken;
+    protected float fallVelocity;
     protected bool isMoving = false;
     protected bool isAttacking = false;
     protected bool isParring = false;
     protected bool controlable = false;
     protected bool isCheckingFall = false;
+    protected float distanceBetweenPoint;
     private bool isTakeDamage = false;
     //Other
     protected Vector3 predictPosition;
@@ -110,18 +112,10 @@ public class CharacterSystem : MonoBehaviour
         switch (actionState)
         {
             case CharacterState.NORMAL:
-                if (isCheckingFall)
-                {
-                    FallingCheck();
-                }
                 OnNormal();
                 MoveToPosition();
                 break;
             case CharacterState.COMBAT:
-                if (isCheckingFall)
-                {
-                    FallingCheck();
-                }
                 OnCombat();
                 MoveToPosition();
                 break;
@@ -129,12 +123,12 @@ public class CharacterSystem : MonoBehaviour
                 OnDie();
                 break;
             case CharacterState.FALL:
-                if (isCheckingFall)
-                {
-                    FallingCheck();
-                }
                 OnFall();
                 break;
+        }
+        if (actionState != CharacterState.DIE)
+        {
+            FallingCheck();
         }
     }
     private void MoveToPosition()
@@ -253,25 +247,6 @@ public class CharacterSystem : MonoBehaviour
     {
         return;
     }
-    protected virtual void OnFall()
-    {
-        return;
-    }
-    protected virtual void OnStartFall()
-    {
-        var nextGroundCheck = Physics2D.Raycast(transform.position, Vector2.down, Mathf.Infinity, LayerMask.GetMask("Floor"));
-        if (nextGroundCheck)
-        {
-            var distanceBetweenPoint = Mathf.Abs(nextGroundCheck.point.y - transform.position.y);
-            fallDamageTaken = (byte)(distanceBetweenPoint / fallDistancePerFloor);
-        }
-        predictPosition = transform.position;
-    }
-    protected virtual void OnStopFall()
-    {
-        var damageTake = Mathf.Clamp(fallDamageTaken - 1, 0, 10);
-        health -= (sbyte)damageTake;
-    }
     protected virtual void OnAwake()
     {
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
@@ -302,8 +277,8 @@ public class CharacterSystem : MonoBehaviour
             if (!isFall)
             {
                 OnStartFall();
-                controlable = false;
                 isFall = true;
+                controlable = false;
                 actionState = CharacterState.FALL;
             }
         }
@@ -316,6 +291,28 @@ public class CharacterSystem : MonoBehaviour
                 OnStopFall();
             }
         }
+    }
+    protected virtual void OnFall()
+    {
+        return;
+    }
+    protected virtual void OnStartFall()
+    {
+        if (!isFall)
+        {
+            var nextGroundCheck = Physics2D.Raycast(transform.position, Vector2.down, Mathf.Infinity, LayerMask.GetMask("Floor"));
+            if (nextGroundCheck)
+            {
+                distanceBetweenPoint = Mathf.Abs(transform.position.y - nextGroundCheck.point.y);
+                fallDamageTaken = (byte)(distanceBetweenPoint / fallDistancePerFloor);
+            }
+            predictPosition = transform.position;
+        }
+    }
+    protected virtual void OnStopFall()
+    {
+        var damageTake = Mathf.Clamp(fallDamageTaken - 1, 0, 10);
+        health -= (sbyte)damageTake;
     }
     private void UpdateFacing()
     {

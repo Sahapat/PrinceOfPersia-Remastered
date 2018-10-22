@@ -8,7 +8,6 @@ public class PrinceAnimationEventHandler : MonoBehaviour
 	[SerializeField] private float crouchOutmoveScale;
 	private GameObject objectParent;
 	private Prince prince;
-	public Transform intoDoorPos;
 	private void Awake()
 	{
 		objectParent = transform.parent.gameObject;
