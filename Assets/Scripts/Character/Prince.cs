@@ -62,6 +62,7 @@ public class Prince : CharacterSystem
     private WaitForSeconds waitForclimDown;
 
     private PrinceAnimationEventHandler princeAnimationEventHandler;
+    private PrinceSoundHandler princeSoundHandler;
     private BoxCollider2D princeColider;
     private FloorProperty upInteractFloor;
     private FloorProperty downInteractFloor;
@@ -183,6 +184,7 @@ public class Prince : CharacterSystem
         waitForclimbUp = new WaitForSeconds(climbUpDuration);
         waitForclimDown = new WaitForSeconds(climbDownDuration);
         princeAnimationEventHandler = GetComponentInChildren<PrinceAnimationEventHandler>();
+        princeSoundHandler = GetComponentInChildren<PrinceSoundHandler>();
         princeColider = GetComponent<BoxCollider2D>();
     }
     protected override void OnUpdate()
@@ -748,9 +750,18 @@ public class Prince : CharacterSystem
             princeAnimator.SetFloat("fallVelocity", fallVelocity);
             if (fallVelocity < -9.8f)
             {
+                var damageTake = Mathf.Clamp(fallDamageTaken - 1, 0, 10);
+                if(damageTake <= 0)
+                {
+                    princeSoundHandler.landSoftPlay();
+                }
+                else
+                {
+                    princeSoundHandler.landharmPlay();
+                }
                 StartCoroutine(FallToStun());
             }
-            if (distanceBetweenPoint < 1 && !isFromHang)
+            else if (distanceBetweenPoint < 1 && !isFromHang)
             {
                 var increastPosition = (currentFacing) ? 0.3f : -0.3f;
                 transform.Translate(new Vector3(increastPosition, 0, 0));
@@ -758,6 +769,10 @@ public class Prince : CharacterSystem
             else if (isFromHang)
             {
                 isFromHang = false;
+            }
+            else
+            {
+                princeSoundHandler.landSoftPlay();
             }
         }
         else

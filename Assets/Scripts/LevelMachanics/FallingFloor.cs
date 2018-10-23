@@ -9,11 +9,17 @@ public class FallingFloor : MonoBehaviour
 	[SerializeField] private BoxCollider2D floorColliderChecker;
     [SerializeField] private float fallingWaitDuration;
     [SerializeField] private bool isFalling;
+    [SerializeField] AudioClip breakSound;
+    [SerializeField] AudioClip beforeFall;
     private bool isTouchFloor;
+    private bool OnFall;
+    private float onFallSoundCount;
     private WaitForSeconds waitForFalling;
     private Animator fallingFloorAnim;
     private Rigidbody2D floorRigidbody;
     private BoxCollider2D colliderChecker;
+    private AudioSource floorAudioSource;
+    private SpriteRenderer spriteRenderer;
 
     void Awake()
     {
@@ -21,6 +27,8 @@ public class FallingFloor : MonoBehaviour
         fallingFloorAnim = GetComponentInChildren<Animator>();
         floorRigidbody = GetComponent<Rigidbody2D>();
         colliderChecker = GetComponent<BoxCollider2D>();
+        floorAudioSource = GetComponent<AudioSource>();
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
     }
     void Start()
     {
@@ -38,14 +46,22 @@ public class FallingFloor : MonoBehaviour
             {
                 StartCoroutine(Falling());
             }
+            if(!OnFall && onFallSoundCount <= Time.time)
+            {
+                onFallSoundCount = Time.time + 1.5f;
+                floorAudioSource.PlayOneShot(beforeFall);
+            }
         }
         if (floorChecker)
         {
-            if (!floorRigidbody.isKinematic&&isFalling)
+            if (!floorRigidbody.isKinematic&&isFalling && spriteRenderer.enabled)
             {
                 var temp = Instantiate(rubbleObj, transform.position, Quaternion.identity);
                 temp.transform.position = new Vector3(temp.transform.position.x+0.1f, floorChecker.GetComponent<BoxCollider2D>().bounds.max.y-0.05f);
-                Destroy(this.gameObject);
+                floorAudioSource.PlayOneShot(breakSound);
+                spriteRenderer.enabled =false;
+                colliderChecker.enabled = false;
+                Destroy(this.gameObject,5f);
             }
         }
     }
@@ -54,6 +70,7 @@ public class FallingFloor : MonoBehaviour
         isFalling = true;
 		yield return waitForFalling;
 		this.gameObject.layer = 0;
+        OnFall = true;
 		fallingFloorAnim.SetTrigger("Fall");
 		floorRigidbody.isKinematic = false;
         colliderChecker.isTrigger = true;

@@ -6,14 +6,17 @@ public class FloorOpen : MonoBehaviour
 {
 	[Header("Reference")]
 	[SerializeField] private Gate gateReference;
-
+	[SerializeField] AudioClip button;
 	private BoxCollider2D colliderChecker;
 	private Animator floorAnim;
-
+	private bool soundTrigger;
+	private AudioSource mAudiosource;
 	private void Awake()
 	{
 		floorAnim = GetComponentInChildren<Animator>();
 		colliderChecker = GetComponent<BoxCollider2D>();
+		mAudiosource = GetComponent<AudioSource>();
+		soundTrigger = true;
 	}
 	private void Update()
 	{
@@ -23,10 +26,17 @@ public class FloorOpen : MonoBehaviour
 		{
 			floorAnim.SetBool("Active",true);
 			gateReference.Open();
+			if(soundTrigger)
+			{
+				mAudiosource.PlayOneShot(button);
+				soundTrigger = false;
+			}
 		}
 		else
 		{
 			floorAnim.SetBool("Active",false);
+			gateReference.ForClose();
+			soundTrigger = true;
 		}
 	}
 }
