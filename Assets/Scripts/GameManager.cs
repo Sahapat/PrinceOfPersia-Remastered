@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public static class GameCore
 {
@@ -24,6 +25,16 @@ public class GameManager : MonoBehaviour
         GameCore.uIHandler = GetComponent<UIHandler>();
         GameCore.themeSoundHandler = GetComponent<ThemeSoundHandler>();
         GameCore.normalSoundHandler = GetComponent<NormalSoundHandler>();
+    }
+    private void Update()
+    {
+        if(isGameEnd)
+        {
+            if(InputManager.GetKeyDown_Interact())
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            }
+        }
     }
     public void GameEnd()
     {

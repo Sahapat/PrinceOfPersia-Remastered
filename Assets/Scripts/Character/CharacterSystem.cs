@@ -245,7 +245,7 @@ public class CharacterSystem : MonoBehaviour
     }
     protected virtual void OnDie()
     {
-        return;
+        GameCore.gameManager.GameEnd();
     }
     protected virtual void OnAwake()
     {
@@ -271,24 +271,26 @@ public class CharacterSystem : MonoBehaviour
     {
         var overlapBoxPos = new Vector2(transform.position.x + floorColider.offset.x, transform.position.y + floorColider.offset.y);
         var groundCheck = Physics2D.OverlapBox(overlapBoxPos, floorColider.size, 0, LayerMask.GetMask("Floor"));
-
-        if (!groundCheck)
+        if (isCheckingFall)
         {
-            if (!isFall)
+            if (!groundCheck)
             {
-                OnStartFall();
-                isFall = true;
-                controlable = false;
-                actionState = CharacterState.FALL;
+                if (!isFall)
+                {
+                    OnStartFall();
+                    isFall = true;
+                    controlable = false;
+                    actionState = CharacterState.FALL;
+                }
             }
-        }
-        else
-        {
-            if (isFall)
+            else
             {
-                isFall = false;
-                actionState = CharacterState.NORMAL;
-                OnStopFall();
+                if (isFall)
+                {
+                    isFall = false;
+                    actionState = CharacterState.NORMAL;
+                    OnStopFall();
+                }
             }
         }
     }
