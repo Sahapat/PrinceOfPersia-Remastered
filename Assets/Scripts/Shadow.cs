@@ -4,17 +4,16 @@ using UnityEngine;
 
 public class Shadow : MonoBehaviour 
 {
-	float startPositionX;
-	void Awake()
-	{
-		startPositionX = transform.localPosition.x;
-	}
-	void Start()
-	{
-		transform.localPosition = new Vector3(startPositionX,transform.localPosition.y,transform.localPosition.z);
-	}
+	[SerializeField] Transform parent;
+	[SerializeField] float xOffset;
+	[SerializeField] float yOffset;
 	void Update()
 	{
-		transform.localPosition = new Vector3(startPositionX,transform.localPosition.y,transform.localPosition.z);
+		var hitFloorPoint = Physics2D.Raycast(parent.position,Vector2.down,Mathf.Infinity,LayerMask.GetMask("Floor"));
+		if(hitFloorPoint)
+		{
+			transform.position = hitFloorPoint.point;
+			transform.localPosition = new Vector3(xOffset,transform.localPosition.y+yOffset,transform.localPosition.z);
+		}
 	}
 }
