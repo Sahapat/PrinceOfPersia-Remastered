@@ -58,6 +58,15 @@ public class Gate : MonoBehaviour
     }
     private void Update()
     {
+        var distance = Vector3.Distance(transform.position,Camera.main.transform.position);
+        if(distance < 12.5f)
+        {
+            gateAudioSource.volume = 1;
+        }
+        else 
+        {
+            gateAudioSource.volume = 0;
+        }
         if (isOpen)
         {
             var destination = new Vector3(gateObject.transform.localPosition.x, openPosition.localPosition.y, gateObject.transform.localPosition.z);
