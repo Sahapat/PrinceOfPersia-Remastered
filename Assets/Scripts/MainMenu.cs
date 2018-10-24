@@ -8,6 +8,7 @@ public class MainMenu : MonoBehaviour
     [SerializeField] Sprite[] slideShow;
     [SerializeField] float changeTime;
 	[SerializeField] Sprite loadingSprite;
+    [SerializeField] string sceneToLoad;
 
 
     private WaitForSeconds waitForFade;
@@ -49,7 +50,7 @@ public class MainMenu : MonoBehaviour
     private IEnumerator LoadNewScene()
     {
         // Start an asynchronous operation to load the scene that was passed to the LoadNewScene coroutine.
-        AsyncOperation async = SceneManager.LoadSceneAsync("Level1");
+        AsyncOperation async = SceneManager.LoadSceneAsync(sceneToLoad);
 
         // While the asynchronous operation to load the new scene is not yet complete, continue waiting until it's done.
         while (!async.isDone)

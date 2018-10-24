@@ -47932,6 +47932,11 @@ Prefab:
       propertyPath: m_Color.b
       value: 0.6901961
       objectReference: {fileID: 0}
+    - target: {fileID: 114899016463920290, guid: e7550b285c802c44a9b25306a76c7ff8,
+        type: 2}
+      propertyPath: sceneToLoad
+      value: ThankForPlaying
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7550b285c802c44a9b25306a76c7ff8, type: 2}
   m_IsPrefabAsset: 0
