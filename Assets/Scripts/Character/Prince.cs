@@ -42,8 +42,7 @@ public class Prince : CharacterSystem
     private bool isRunJump;
     private bool isTurning;
     private bool isFromHang;
-
-    [HideInInspector] public bool canInteruptJump;
+    public bool canInteruptJump;
     private bool isDeadFromFall;
     private bool deadTriggerSet;
     private bool forwardBlock;
@@ -505,6 +504,7 @@ public class Prince : CharacterSystem
             {
                 if (canInteruptJump && InputManager.GetKey_Up() && !currentFacing && currentAnimationClip == "Jump")
                 {
+                    print("in");
                     princeAnimator.SetTrigger("IdleJump");
                     princeAnimator.SetBool("isJump", false);
                     controlable = false;
@@ -636,7 +636,7 @@ public class Prince : CharacterSystem
             }
             if (InputManager.GetKey_Right() && !isCrouch && !isInAction)
             {
-                if (canInteruptJump && InputManager.GetKey_Up() && currentFacing && currentAnimationClip == "Jump")
+                if (canInteruptJump && InputManager.GetKey_Up() && currentFacing && currentAnimationClip == "jump")
                 {
                     princeAnimator.SetTrigger("IdleJump");
                     princeAnimator.SetBool("isJump", false);
