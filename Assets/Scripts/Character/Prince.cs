@@ -69,6 +69,9 @@ public class Prince : CharacterSystem
     private Vector3 hangPosition;
     private Vector3 lastPosition;
     private Vector3 nextPosition;
+    private bool screamSetTrigger;
+    private bool startTrigger;
+    private bool isDeadOnFight;
     public void DieSpike()
     {
         GameCore.gameManager.GameEnd();
@@ -252,6 +255,11 @@ public class Prince : CharacterSystem
         if (actionState != CharacterState.COMBAT)
         {
             health -= 1;
+            isDeadOnFight = false;
+        }
+        else
+        {
+            isDeadOnFight = true;
         }
         princeAnimator.SetTrigger("TakeDamage");
         isMoving = false;
@@ -279,15 +287,14 @@ public class Prince : CharacterSystem
                         transform.position = new Vector3(interactObject.transform.position.x, transform.position.y, transform.position.z);
                         Destroy(interactObject);
                         princeAnimator.SetTrigger("Heal");
-                        health += 1;
+                        StartCoroutine(potionSmallPlay());
                     }
                     else if (interactObject.CompareTag("PotionLarge"))
                     {
                         transform.position = new Vector3(interactObject.transform.position.x, transform.position.y, transform.position.z);
                         Destroy(interactObject);
                         princeAnimator.SetTrigger("Heal");
-                        MaxHealth += 1;
-                        health = MaxHealth;
+                        StartCoroutine(potionLargePlay());
                     }
                     else if (interactObject.CompareTag("Sword"))
                     {
@@ -295,6 +302,7 @@ public class Prince : CharacterSystem
                         isHaveSword = true;
                         Destroy(interactObject);
                         princeAnimator.SetTrigger("GetSword");
+                        princeSoundHandler.swordGetPlay();
                     }
                 }
             }
@@ -714,7 +722,14 @@ public class Prince : CharacterSystem
             {
                 princeAnimator.SetTrigger("Dead");
             }
-            deadTriggerSet = false;
+            if (isDeadOnFight)
+            {
+                StartCoroutine(deathFightSoundPlay());
+            }
+            else
+            {
+                StartCoroutine(deathSoundPlay());
+            }
         }
         GameCore.gameManager.GameEnd();
     }
@@ -739,6 +754,11 @@ public class Prince : CharacterSystem
     protected override void OnFall()
     {
         fallVelocity = characterRigid.velocity.y;
+        if (fallVelocity < -14f && screamSetTrigger)
+        {
+            princeSoundHandler.screamPlay();
+            screamSetTrigger = false;
+        }
     }
     protected override void OnStopFall()
     {
@@ -751,9 +771,14 @@ public class Prince : CharacterSystem
             if (fallVelocity < -9.8f)
             {
                 var damageTake = Mathf.Clamp(fallDamageTaken - 1, 0, 10);
-                if(damageTake <= 0)
+                if (damageTake <= 0)
                 {
                     princeSoundHandler.landSoftPlay();
+                    if (startTrigger)
+                    {
+                        StartCoroutine(startSoundPlay());
+                        startTrigger = false;
+                    }
                 }
                 else
                 {
@@ -781,11 +806,14 @@ public class Prince : CharacterSystem
         }
         princeAnimator.SetBool("isJump", false);
         isMoving = false;
+        screamSetTrigger = true;
     }
     protected override void OnStart()
     {
         base.OnStart();
         deadTriggerSet = true;
+        screamSetTrigger = true;
+        startTrigger = true;
     }
     public override void SetControlable(bool status)
     {
@@ -877,5 +905,36 @@ public class Prince : CharacterSystem
         yield return waitForDrawSword;
         actionState = CharacterState.COMBAT;
         controlable = true;
+    }
+    private IEnumerator startSoundPlay()
+    {
+        startTrigger = false;
+        yield return new WaitForSeconds(1.2f);
+        GameCore.gameManager.startSoundPlay();
+    }
+    private IEnumerator deathSoundPlay()
+    {
+        deadTriggerSet = false;
+        yield return new WaitForSeconds(1.2f);
+        GameCore.gameManager.deathSoundPlay();
+    }
+    private IEnumerator deathFightSoundPlay()
+    {
+        deadTriggerSet = false;
+        yield return new WaitForSeconds(1.2f);
+        GameCore.gameManager.FightdeathSoundPlay();
+    }
+    private IEnumerator potionSmallPlay()
+    {
+        health += 1;
+        yield return new WaitForSeconds(1.6f);
+        princeSoundHandler.PotionSmallPlay();
+    }
+    private IEnumerator potionLargePlay()
+    {
+        MaxHealth += 1;
+        health = MaxHealth;
+        yield return new WaitForSeconds(1.6f);
+        princeSoundHandler.PotionBigPlay();
     }
 }

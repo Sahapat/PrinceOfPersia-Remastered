@@ -82,7 +82,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4177323158320262}
   - component: {fileID: 114794001720178636}
-  - component: {fileID: 82618751121688912}
+  - component: {fileID: 82892140896174272}
   m_Layer: 0
   m_Name: Gate
   m_TagString: Untagged
@@ -215,7 +215,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.4808622, y: 1.5372996}
   m_EdgeRadius: 0
---- !u!82 &82618751121688912
+--- !u!82 &82892140896174272
 AudioSource:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}

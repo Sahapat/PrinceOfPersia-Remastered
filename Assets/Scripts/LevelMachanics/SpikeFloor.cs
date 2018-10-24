@@ -10,17 +10,25 @@ public class SpikeFloor : MonoBehaviour
     [SerializeField] private SpriteRenderer frontSpike;
     [SerializeField] private SpriteRenderer princeDummies;
     [SerializeField] private Transform diePosition;
+    [SerializeField] AudioClip activeSound;
+    [SerializeField] AudioClip killSound;
 
     public bool isActive;
     private bool spikeTrigger;
     private float activeCount;
+    private bool activeSoundTrigger;
+    private bool killSoundTrigger;
     private BoxCollider2D spikeChecker;
     private Animator spikeAnim;
     private bool isKill;
+    AudioSource mAudiosource;
     void Awake()
     {
         spikeChecker = GetComponent<BoxCollider2D>();
         spikeAnim = GetComponent<Animator>();
+        mAudiosource = GetComponent<AudioSource>();
+        activeSoundTrigger = true;
+        killSoundTrigger = true;
     }
     void Start()
     {
@@ -39,6 +47,10 @@ public class SpikeFloor : MonoBehaviour
                     activeCount = Time.time + activeDuration;
                     spikeAnim.SetBool("Active", true);
                     isActive = true;
+                    if(activeSoundTrigger)
+                    {
+                        StartCoroutine(activeSoundPlay());
+                    }
                 }
             }
             else
@@ -47,6 +59,7 @@ public class SpikeFloor : MonoBehaviour
                 {
                     isActive = false;
                     spikeAnim.SetBool("Active", false);
+                    activeSoundTrigger = true;
                 }
             }
         }
@@ -66,8 +79,24 @@ public class SpikeFloor : MonoBehaviour
                     frontSpike.enabled = true;
                     princeDummies.enabled = true;
                     spikeAnim.SetBool("Active", true);
+                    if(killSoundTrigger)
+                    {
+                        StartCoroutine(endSoundPlay());
+                    }
                 }
             }
         }
+    }
+    private IEnumerator activeSoundPlay()
+    {
+        activeSoundTrigger = false;
+        yield return new WaitForSeconds(0.5f);
+        mAudiosource.PlayOneShot(activeSound);
+    }
+    private IEnumerator endSoundPlay()
+    {
+        mAudiosource.PlayOneShot(killSound);
+        yield return new WaitForSeconds(1.3f);
+        GameCore.gameManager.deathSoundPlay();
     }
 }

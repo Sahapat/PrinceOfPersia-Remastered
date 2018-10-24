@@ -50,6 +50,8 @@ public class Door : MonoBehaviour
 	}
 	private IEnumerator IntoDoor()
 	{
+		yield return new WaitForSeconds(0.6f);
+		GameCore.gameManager.SuccessSoundPlay();
 		yield return loadWait;
 		if(sceneToLoad != string.Empty)
 		{
