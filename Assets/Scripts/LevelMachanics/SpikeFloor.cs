@@ -12,7 +12,7 @@ public class SpikeFloor : MonoBehaviour
     [SerializeField] private Transform diePosition;
     [SerializeField] AudioClip activeSound;
     [SerializeField] AudioClip killSound;
-
+    public bool canActive;
     public bool isActive;
     private bool spikeTrigger;
     private float activeCount;
@@ -42,7 +42,7 @@ public class SpikeFloor : MonoBehaviour
         {
             if (activeSpikeHit)
             {
-                if (!isActive)
+                if (!isActive && !canActive)
                 {
                     activeCount = Time.time + activeDuration;
                     spikeAnim.SetBool("Active", true);

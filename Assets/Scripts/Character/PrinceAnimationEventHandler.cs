@@ -21,13 +21,33 @@ public class PrinceAnimationEventHandler : MonoBehaviour
 	{
 		prince.EndJump();
 	}
-	public void ClimbUpEnd()
+	public void StartClimbX()
+	{
+		prince.StartClimbUpX();
+	}
+	public void EndClimbX()
+	{
+		prince.EndClimbUpX();
+	}
+	public void StartClimbY()
+	{
+		prince.StartClimbUpY();
+	}
+	public void EndClimbY()
+	{
+		prince.EndClimbUpY();
+	}
+	public void ClimbEnd()
 	{
 		prince.ClimbUpEnd();
 	}
 	public void StartRunJump()
 	{
 		prince.StartRunJump();
+	}
+	public void RunJumpOut()
+	{
+		prince.RunJumpOut();
 	}
 	public void StartIdleJump()
 	{
