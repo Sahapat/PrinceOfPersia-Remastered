@@ -5,28 +5,59 @@ using UnityEngine.UI;
 
 public class UIHandler : MonoBehaviour
 {
-	[Header("UI reference")]
-	[SerializeField] private Text princeHealthText;
-	[SerializeField] private Text enemyHealthText;
+    [Header("HealthUI")]
+    [SerializeField] Image[] prince;
+    [SerializeField] Image[] enemy;
 
-	void Update()
-	{
-		if(GameCore.combatController.currentEnemy)
+    void Update()
+    {
+        if (!GameCore.combatController.currentEnemy)
+        {
+			CloseUIEnemy();
+        }
+		else if(GameCore.gameManager.isGameEnd)
 		{
-			enemyHealthText.enabled = true;
+			CloseUIPrince();
 		}
-		else
-		{
-			enemyHealthText.enabled = false;
-		}
-	}
+    }
+    public void UpdateUIPrince(Prince princeScript)
+    {
+        for (int i = 0; i < prince.Length; i++)
+        {
+            prince[i].enabled = false;
+        }
+        var currentHealth = princeScript.health;
 
-	public void SetPrinceHealthText(int health)
+        for (int i = 0; i < currentHealth; i++)
+        {
+            prince[i].enabled = true;
+        }
+    }
+    public void UpdateUIEnemy(Guard guardScript)
+    {
+        for (int i = 0; i < enemy.Length; i++)
+        {
+            enemy[i].enabled = false;
+        }
+        var currentHealth = guardScript.health;
+
+        for (int i = 0; i < currentHealth; i++)
+        {
+            enemy[i].enabled = true;
+        }
+    }
+	public void CloseUIPrince()
 	{
-		princeHealthText.text = "Prince health: "+health;
+		for (int i = 0; i < prince.Length; i++)
+        {
+            prince[i].enabled = false;
+        }
 	}
-	public void SetEnemyHealthText(int health)
+	public void CloseUIEnemy()
 	{
-		enemyHealthText.text = health+" :Enemy health";
+		for (int i = 0; i < prince.Length; i++)
+        {
+            enemy[i].enabled = false;
+        }
 	}
 }

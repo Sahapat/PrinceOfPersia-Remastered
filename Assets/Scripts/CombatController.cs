@@ -20,7 +20,10 @@ public class CombatController : MonoBehaviour
             {
                 prince = targetPlayer.GetComponent<Prince>();
             }
-            GameCore.uIHandler.SetPrinceHealthText(prince.health);
+            else
+            {
+                GameCore.uIHandler.UpdateUIPrince(prince);
+            }
         }
         if(currentEnemy)
         {
@@ -28,7 +31,10 @@ public class CombatController : MonoBehaviour
             {
                 guard = currentEnemy.GetComponent<Guard>();
             }
-            GameCore.uIHandler.SetEnemyHealthText(guard.health);
+            else
+            {
+                GameCore.uIHandler.UpdateUIEnemy(guard);
+            }
         }
     }
 }

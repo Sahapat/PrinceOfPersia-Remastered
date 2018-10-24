@@ -932,7 +932,6 @@ public class Prince : CharacterSystem
     }
     private IEnumerator potionLargePlay()
     {
-        MaxHealth += 1;
         health = MaxHealth;
         yield return new WaitForSeconds(1.6f);
         princeSoundHandler.PotionBigPlay();
