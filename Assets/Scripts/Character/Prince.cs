@@ -46,7 +46,7 @@ public class Prince : CharacterSystem
     private bool isDeadFromFall;
     private bool deadTriggerSet;
     private bool forwardBlock;
-    private bool isHaveSword;
+    public bool isHaveSword;
     private bool isDrop;
     private bool canHang;
     private bool isHang;

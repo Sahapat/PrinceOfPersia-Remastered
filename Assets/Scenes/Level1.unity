@@ -16243,7 +16243,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4941041785791034, guid: dd1d4072f95900041a9a9e8afa804bcd, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 9.221001
+      value: 9.135
       objectReference: {fileID: 0}
     - target: {fileID: 4941041785791034, guid: dd1d4072f95900041a9a9e8afa804bcd, type: 2}
       propertyPath: m_LocalPosition.z
@@ -17149,7 +17149,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 88de65f7e90a76045811036d08037ef8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: afd9961e0eef3784da3a8fa3db2fe5e3, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -31019,7 +31019,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4941041785791034, guid: dd1d4072f95900041a9a9e8afa804bcd, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 9.221001
+      value: 9.134
       objectReference: {fileID: 0}
     - target: {fileID: 4941041785791034, guid: dd1d4072f95900041a9a9e8afa804bcd, type: 2}
       propertyPath: m_LocalPosition.z
@@ -34064,11 +34064,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4941041785791034, guid: dd1d4072f95900041a9a9e8afa804bcd, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -5.1474404
+      value: -5.164
       objectReference: {fileID: 0}
     - target: {fileID: 4941041785791034, guid: dd1d4072f95900041a9a9e8afa804bcd, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 9.217
+      value: 9.138
       objectReference: {fileID: 0}
     - target: {fileID: 4941041785791034, guid: dd1d4072f95900041a9a9e8afa804bcd, type: 2}
       propertyPath: m_LocalPosition.z
@@ -38367,6 +38367,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b87b4814ec80ac8419df56568146c818, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  princeUIHealthSprite:
+  - {fileID: 21300000, guid: afd9961e0eef3784da3a8fa3db2fe5e3, type: 3}
+  - {fileID: 21300000, guid: 88de65f7e90a76045811036d08037ef8, type: 3}
+  enemyUIHealthSprite:
+  - {fileID: 21300000, guid: 8d53e5b9b3e6b614b9517b1ff796d62e, type: 3}
+  - {fileID: 21300000, guid: 7243dc22857201242aa285315ca43524, type: 3}
   prince:
   - {fileID: 1420791622}
   - {fileID: 1771071096}
@@ -41209,7 +41215,7 @@ Prefab:
     - target: {fileID: 212665723009377084, guid: 01312838d5937e547882b0154e98b2b5,
         type: 2}
       propertyPath: m_SortingLayer
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1046048934063234, guid: 01312838d5937e547882b0154e98b2b5, type: 2}
       propertyPath: m_Name
@@ -45918,7 +45924,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4941041785791034, guid: dd1d4072f95900041a9a9e8afa804bcd, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -2.5459995
+      value: -2.656
       objectReference: {fileID: 0}
     - target: {fileID: 4941041785791034, guid: dd1d4072f95900041a9a9e8afa804bcd, type: 2}
       propertyPath: m_LocalPosition.z
@@ -47145,11 +47151,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4931293471241544, guid: 06f1cf694cf78984181653904e30748d, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 55.83
+      value: 55.941
       objectReference: {fileID: 0}
     - target: {fileID: 4931293471241544, guid: 06f1cf694cf78984181653904e30748d, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 2.57
+      value: 2.438
       objectReference: {fileID: 0}
     - target: {fileID: 4931293471241544, guid: 06f1cf694cf78984181653904e30748d, type: 2}
       propertyPath: m_LocalPosition.z
@@ -47940,6 +47946,11 @@ Prefab:
         type: 2}
       propertyPath: sceneToLoad
       value: ThankForPlaying
+      objectReference: {fileID: 0}
+    - target: {fileID: 114899016463920290, guid: e7550b285c802c44a9b25306a76c7ff8,
+        type: 2}
+      propertyPath: delayBeforeLoad
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7550b285c802c44a9b25306a76c7ff8, type: 2}
@@ -50667,6 +50678,11 @@ Prefab:
       propertyPath: m_Size.x
       value: 1.754158
       objectReference: {fileID: 0}
+    - target: {fileID: 212154638581937326, guid: f7b4c2d501573b741bc1a3ca55b7de7f,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f7b4c2d501573b741bc1a3ca55b7de7f, type: 2}
   m_IsPrefabAsset: 0
@@ -53048,7 +53064,7 @@ Prefab:
     - target: {fileID: 212064165752886920, guid: 0617e7d8b69df1346b0f59819731d8ae,
         type: 2}
       propertyPath: m_SortingLayer
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 212117390736470126, guid: 0617e7d8b69df1346b0f59819731d8ae,
         type: 2}
@@ -61089,7 +61105,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4941041785791034, guid: dd1d4072f95900041a9a9e8afa804bcd, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 3.3410003
+      value: 3.235
       objectReference: {fileID: 0}
     - target: {fileID: 4941041785791034, guid: dd1d4072f95900041a9a9e8afa804bcd, type: 2}
       propertyPath: m_LocalPosition.z

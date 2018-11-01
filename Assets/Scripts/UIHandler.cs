@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class UIHandler : MonoBehaviour
 {
     [Header("HealthUI")]
+    [SerializeField] Sprite[] princeUIHealthSprite;
+    [SerializeField] Sprite[] enemyUIHealthSprite;
     [SerializeField] Image[] prince;
     [SerializeField] Image[] enemy;
 
@@ -24,33 +26,33 @@ public class UIHandler : MonoBehaviour
     {
         for (int i = 0; i < prince.Length; i++)
         {
-            prince[i].enabled = false;
+            prince[i].sprite = princeUIHealthSprite[0];
         }
         var currentHealth = princeScript.health;
 
         for (int i = 0; i < currentHealth; i++)
         {
-            prince[i].enabled = true;
+            prince[i].sprite = princeUIHealthSprite[1];
         }
     }
     public void UpdateUIEnemy(Guard guardScript)
     {
         for (int i = 0; i < enemy.Length; i++)
         {
-            enemy[i].enabled = false;
+            enemy[i].sprite = enemyUIHealthSprite[0];
         }
         var currentHealth = guardScript.health;
 
         for (int i = 0; i < currentHealth; i++)
         {
-            enemy[i].enabled = true;
+            enemy[i].sprite = enemyUIHealthSprite[1];
         }
     }
 	public void CloseUIPrince()
 	{
 		for (int i = 0; i < prince.Length; i++)
         {
-            prince[i].enabled = false;
+            prince[i].enabled =false;
         }
 	}
 	public void CloseUIEnemy()
