@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: PalaceFloorSpike
+  m_Controller: {fileID: 9100000, guid: e541828f3f226bf4f89660e605c150d4, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: c60996442e419c7499eb62fbc5474d17, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 10f1fb79af488234382d03b9ab33f3af, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: a3cbbbaf36a2fa94ca41d0732a5c5ba4, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 370e8cfaf21135a4eb2f42a3d191a6c0, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 1be38a07996da514b95d1c23f7302fc5, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 40d8391069771f0498612fbbf84a79ae, type: 2}

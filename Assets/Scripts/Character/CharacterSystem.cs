@@ -75,6 +75,11 @@ public class CharacterSystem : MonoBehaviour
     protected SpriteRenderer spriteRenderer;
     protected Rigidbody2D characterRigid;
     protected BoxCollider2D characterColider;
+    public void SetDead()
+    {
+        characterHealth = 0;
+        OnSetDead();
+    }
     public void FlipSprite()
     {
         spriteRenderer.flipX = !spriteRenderer.flipX;
@@ -240,6 +245,10 @@ public class CharacterSystem : MonoBehaviour
         }
     }
     protected virtual void OnNormal()
+    {
+        return;
+    }
+    protected virtual void OnSetDead()
     {
         return;
     }

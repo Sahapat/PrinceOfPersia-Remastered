@@ -1,0 +1,14 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: PalaceFloorClose
+  m_Controller: {fileID: 9100000, guid: 3623672b5c74b2e4f881652d9ff600e2, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 3b46016b921a6124e840dfe85303634d, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: e9135497f37b5e547996bdbf2232d2f4, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 89829fa4891428543b8c87d372604959, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: d6bf8d5778ce69348adc4ae529dc1434, type: 2}
