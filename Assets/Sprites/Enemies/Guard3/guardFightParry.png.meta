@@ -1,7 +1,14 @@
 fileFormatVersion: 2
 guid: 4048a81e5c274334c8c0c56a8ab6401d
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: guardFightParry_0
+    21300002: guardFightParry_1
+    21300004: guardFightParry_2
+    21300006: guardFightParry_3
+    21300008: guardFightParry_4
+    21300010: guardFightParry_5
+    21300012: guardFightParry_6
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -71,6 +78,17 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   - serializedVersion: 2
     buildTarget: Standalone
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: 12
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: iPhone
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -104,11 +122,131 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: guardFightParry_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 566.6667
+        height: 340
+      alignment: 9
+      pivot: {x: 0.58648, y: 0.09100903}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25644bd165ada874bb7769c7691be3a6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guardFightParry_1
+      rect:
+        serializedVersion: 2
+        x: 566
+        y: 0
+        width: 566.6667
+        height: 340
+      alignment: 9
+      pivot: {x: 0.58648, y: 0.09100903}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 740d31eac853c3141bf6821ed1c1241f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guardFightParry_2
+      rect:
+        serializedVersion: 2
+        x: 1132
+        y: 0
+        width: 566.6667
+        height: 340
+      alignment: 9
+      pivot: {x: 0.58648, y: 0.09100903}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01784583ce7dd964195e75c7cab8125e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guardFightParry_3
+      rect:
+        serializedVersion: 2
+        x: 1698
+        y: 0
+        width: 566.6667
+        height: 340
+      alignment: 9
+      pivot: {x: 0.58648, y: 0.09100903}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a93c61906045c1946b4593e30dc7cba9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guardFightParry_4
+      rect:
+        serializedVersion: 2
+        x: 2264
+        y: 0
+        width: 566.6667
+        height: 340
+      alignment: 9
+      pivot: {x: 0.58648, y: 0.09100903}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fd2349bb8436a84da066cb6ae899173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guardFightParry_5
+      rect:
+        serializedVersion: 2
+        x: 2830
+        y: 0
+        width: 566.6667
+        height: 340
+      alignment: 9
+      pivot: {x: 0.58648, y: 0.09100903}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 831bbc9e4238ebd4ea8b98a8938a80ec
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: fd7770661dc6c4747bdc0ab6714228bb
+    spriteID: b00875615868ab645b9cd688932b7b91
     vertices: []
     indices: 
     edges: []

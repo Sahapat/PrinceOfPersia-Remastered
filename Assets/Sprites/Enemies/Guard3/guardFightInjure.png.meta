@@ -1,7 +1,10 @@
 fileFormatVersion: 2
 guid: 557d2175e1d02b3458f1d78bfa9ce81e
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: guardFightInjure_0
+    21300002: guardFightInjure_1
+    21300004: guardFightInjure_2
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -71,6 +74,17 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   - serializedVersion: 2
     buildTarget: Standalone
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: 12
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: iPhone
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -104,11 +118,71 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: guardFightInjure_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 566.6667
+        height: 340
+      alignment: 9
+      pivot: {x: 0.58648, y: 0.09100903}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bda913f92ad3ad444b6a0819c5147e49
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guardFightInjure_1
+      rect:
+        serializedVersion: 2
+        x: 566
+        y: 0
+        width: 566.6667
+        height: 340
+      alignment: 9
+      pivot: {x: 0.58648, y: 0.09100903}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9b47e6e17de2f34abe1702f883d1629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guardFightInjure_2
+      rect:
+        serializedVersion: 2
+        x: 1132
+        y: 0
+        width: 566.6667
+        height: 340
+      alignment: 9
+      pivot: {x: 0.58648, y: 0.09100903}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa8011fc64dd91c469aeaeff15c2e369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: ca3ddba8d06390d4c9cbf963b0f43540
+    spriteID: ed533458524608e43b5642769cacbe04
     vertices: []
     indices: 
     edges: []

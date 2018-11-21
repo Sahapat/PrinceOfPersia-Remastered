@@ -1,7 +1,11 @@
 fileFormatVersion: 2
 guid: 3f290de55d1db994582360f74f16e05f
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: guardFightStep_0
+    21300002: guardFightStep_1
+    21300004: guardFightStep_2
+    21300006: guardFightStep_3
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -71,6 +75,17 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   - serializedVersion: 2
     buildTarget: Standalone
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: 12
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: iPhone
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -104,11 +119,91 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: guardFightStep_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 566.75
+        height: 340
+      alignment: 9
+      pivot: {x: 0.58648, y: 0.09100903}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7faca8f2d19583248bd324755ad668e9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guardFightStep_1
+      rect:
+        serializedVersion: 2
+        x: 566
+        y: 0
+        width: 566.75
+        height: 340
+      alignment: 9
+      pivot: {x: 0.58648, y: 0.09100903}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b1ff80b695b37744a06f82c8ff96525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guardFightStep_2
+      rect:
+        serializedVersion: 2
+        x: 1132
+        y: 0
+        width: 566.75
+        height: 340
+      alignment: 9
+      pivot: {x: 0.58648, y: 0.09100903}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f93e69af067bb6e42b56c00a3b59a5d1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guardFightStep_3
+      rect:
+        serializedVersion: 2
+        x: 1698
+        y: 0
+        width: 566.75
+        height: 340
+      alignment: 9
+      pivot: {x: 0.58648, y: 0.09100903}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1cf546edef6b97c40ba210927c3e21de
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: fb33d376af06dc3419b9705ffbbd84d8
+    spriteID: b3d366a7850f42b408b4d55a007b2094
     vertices: []
     indices: 
     edges: []

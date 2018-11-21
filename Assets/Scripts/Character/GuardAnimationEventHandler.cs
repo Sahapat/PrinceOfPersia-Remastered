@@ -17,4 +17,8 @@ public class GuardAnimationEventHandler : MonoBehaviour
 		bool status = bool.Parse(msg);
 		guard.SetControlable(status);
 	}
+	public void ParticlePlay()
+	{
+		guard.ParticlePlay();
+	}
 }

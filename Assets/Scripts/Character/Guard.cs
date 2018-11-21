@@ -24,6 +24,7 @@ public class Guard : CharacterSystem
     [SerializeField] private float moveBackScale;
     [Header("Other")]
     [SerializeField] private Animator enemyAnim;
+    [SerializeField] private GameObject particle;
     //Counter Variable
     private float fightParryDelayCounter;
     private float fightAttackDelayCounter;
@@ -34,6 +35,7 @@ public class Guard : CharacterSystem
     private bool isMoveBack;
     private AIActionPhase aIActionPhase;
     private WaitForSeconds waitForSworddraw;
+    private ParticleSystem m_particleSystem;
     private bool isReayAttack;
     private float distanceBetweenPlayer;
 
@@ -41,6 +43,8 @@ public class Guard : CharacterSystem
     {
         base.OnAwake();
         waitForSworddraw = new WaitForSeconds(0.1f);
+        m_particleSystem = particle.GetComponent<ParticleSystem>();
+        particle.SetActive(false);
     }
     protected override void OnStart()
     {
@@ -60,6 +64,16 @@ public class Guard : CharacterSystem
                 }
             }
         }
+    }
+    public void ParticlePlay()
+    {
+        particle.SetActive(true);
+        m_particleSystem.Play();
+        Invoke("ParticleStop",0.6f);
+    }
+    public void ParticleStop()
+    {
+        particle.SetActive(false);
     }
     protected override void OnCombat()
     {

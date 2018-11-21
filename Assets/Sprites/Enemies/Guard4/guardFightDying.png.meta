@@ -1,7 +1,12 @@
 fileFormatVersion: 2
 guid: 1ff3b8e6ac7d54a49ae5eb9e15e2e411
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: guardFightDying_0
+    21300002: guardFightDying_1
+    21300004: guardFightDying_2
+    21300006: guardFightDying_3
+    21300008: guardFightDying_4
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -71,6 +76,17 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   - serializedVersion: 2
     buildTarget: Standalone
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: 12
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: iPhone
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -104,11 +120,111 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: guardFightDying_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 566.6
+        height: 340
+      alignment: 9
+      pivot: {x: 0.58648, y: 0.09100903}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55c2d3b43d152a044890d884e9901876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guardFightDying_1
+      rect:
+        serializedVersion: 2
+        x: 566
+        y: 0
+        width: 566.6
+        height: 340
+      alignment: 9
+      pivot: {x: 0.58648, y: 0.09100903}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20e2728c583864c4daf721ba54a3d5dd
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guardFightDying_2
+      rect:
+        serializedVersion: 2
+        x: 1132
+        y: 0
+        width: 566.6
+        height: 340
+      alignment: 9
+      pivot: {x: 0.58648, y: 0.09100903}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b561ff2302641294ebd677d7d39a46fa
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guardFightDying_3
+      rect:
+        serializedVersion: 2
+        x: 1698
+        y: 0
+        width: 566.6
+        height: 340
+      alignment: 9
+      pivot: {x: 0.58648, y: 0.09100903}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bf5200b08fb8c64ca2371228bcf0f7b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guardFightDying_4
+      rect:
+        serializedVersion: 2
+        x: 2264
+        y: 0
+        width: 566.6
+        height: 340
+      alignment: 9
+      pivot: {x: 0.58648, y: 0.09100903}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e4d07f81a4cd144ba8c436b33051948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 6163c44a7d7d1f74a91809bf3de5d741
+    spriteID: fb806eba84f39d441bfee28232032a61
     vertices: []
     indices: 
     edges: []

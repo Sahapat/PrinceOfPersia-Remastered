@@ -34,7 +34,7 @@ public class CharacterSystem : MonoBehaviour
     [Header("CharacterProperty")]
     [SerializeField] protected sbyte MaxHealth;
     [SerializeField] private float fallDistancePerFloor;
-    [SerializeField] private bool isInvertFacing;
+    [SerializeField] protected bool isInvertFacing;
 
     [Header("FightPhaseProperty")]
     [SerializeField] private float fightStepScale;

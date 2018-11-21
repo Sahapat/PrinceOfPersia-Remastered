@@ -76,6 +76,17 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   - serializedVersion: 2
     buildTarget: Standalone
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: 12
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: iPhone
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -125,7 +136,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4a7cf1f16811b044baaecd0c5187a68e
+      spriteID: 55c2d3b43d152a044890d884e9901876
       vertices: []
       indices: 
       edges: []
@@ -145,7 +156,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 62e61702cc9bea54fbeaff353653e36f
+      spriteID: 20e2728c583864c4daf721ba54a3d5dd
       vertices: []
       indices: 
       edges: []
@@ -165,7 +176,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d789b1443cc20ea45adba14b45546cd4
+      spriteID: b561ff2302641294ebd677d7d39a46fa
       vertices: []
       indices: 
       edges: []
@@ -185,7 +196,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b913daaffce088c4ba48b67e3f189181
+      spriteID: 8bf5200b08fb8c64ca2371228bcf0f7b
       vertices: []
       indices: 
       edges: []
@@ -205,7 +216,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bae6699bdc903b84387ca7c851dd146d
+      spriteID: 7e4d07f81a4cd144ba8c436b33051948
       vertices: []
       indices: 
       edges: []
@@ -213,7 +224,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 94de9203493f26d46b7750ea8f49407f
+    spriteID: fb806eba84f39d441bfee28232032a61
     vertices: []
     indices: 
     edges: []
