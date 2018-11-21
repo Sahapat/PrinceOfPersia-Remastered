@@ -454,6 +454,7 @@ MonoBehaviour:
   fightParryChance: 0
   fightParryDelay: 0.8
   destroyAfterDeadDuration: 3
+  moveBackScale: 0.6
   enemyAnim: {fileID: 95132110206840826}
 --- !u!114 &114336073982265292
 MonoBehaviour:
