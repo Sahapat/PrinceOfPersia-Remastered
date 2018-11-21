@@ -31,6 +31,7 @@ public class Prince : CharacterSystem
     [SerializeField] private BoxCollider2D upFloorChecker;
     [SerializeField] private BoxCollider2D downFloorChecker;
     [SerializeField] private BoxCollider2D crouchColider;
+    [SerializeField] private GameObject particle;
     //Counter variable
     private float runStartCounter;
     private float runTurnCounter;
@@ -78,6 +79,7 @@ public class Prince : CharacterSystem
     private bool isStepBlock;
     private bool climbDownChecker;
     private bool isClimbDown;
+    private ParticleSystem m_particleSystem;
     public void StartClimbUpX()
     {
         climbMoveX = true;
@@ -194,8 +196,6 @@ public class Prince : CharacterSystem
             isMoving = true;
             settingMoveSpeed = normalStepSpeed;
         }
-        /* var movingIncreast = (currentFacing) ? normalStepScale : -normalStepScale;
-        predictPosition = new Vector3(transform.position.x + movingIncreast, transform.position.y, transform.position.z); */
     }
     public void CrouchStep()
     {
@@ -235,6 +235,8 @@ public class Prince : CharacterSystem
         princeSoundHandler = GetComponentInChildren<PrinceSoundHandler>();
         princeColider = GetComponent<BoxCollider2D>();
         polygonCollider2D = GetComponent<PolygonCollider2D>();
+        m_particleSystem = particle.GetComponent<ParticleSystem>();
+        particle.SetActive(false);
     }
     protected override void OnUpdate()
     {
@@ -329,8 +331,17 @@ public class Prince : CharacterSystem
             isDeadOnFight = true;
         }
         princeAnimator.SetTrigger("TakeDamage");
-        isMoving = false;
+        var decreastPosition = (currentFacing)?-0.6f:0.6f;
+        predictPosition = new Vector3(transform.position.x + decreastPosition, transform.position.y, transform.position.z);
+        isMoving = true;
         isRunning = false;
+    }
+    public void ParticlePlay(Vector2 pos)
+    {
+        particle.SetActive(true);
+        particle.transform.localPosition = pos;
+        m_particleSystem.Play();
+        Invoke("ParticleStop",0.6f);
     }
     protected override void OnParry()
     {
@@ -709,6 +720,7 @@ public class Prince : CharacterSystem
     protected override void OnCombat()
     {
         base.OnCombat();
+        GameCore.combatController.isPlayerParring = isParring;
         if (controlable && !isMoving)
         {
             //Fight Combat implement
@@ -831,6 +843,7 @@ public class Prince : CharacterSystem
                 else
                 {
                     princeSoundHandler.landharmPlay();
+                    ParticlePlay(new Vector2(0,-0.5f));
                 }
                 StartCoroutine(FallToStun());
             }
@@ -864,6 +877,10 @@ public class Prince : CharacterSystem
         screamSetTrigger = true;
         startTrigger = true;
         climbDownChecker = true;
+    }
+    public void ParticleStop()
+    {
+        particle.SetActive(false);
     }
     public override void SetControlable(bool status)
     {

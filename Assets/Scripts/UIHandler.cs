@@ -37,6 +37,7 @@ public class UIHandler : MonoBehaviour
     }
     public void UpdateUIEnemy(Guard guardScript)
     {
+        OpenUIEnemy();
         for (int i = 0; i < enemy.Length; i++)
         {
             enemy[i].sprite = enemyUIHealthSprite[0];
@@ -62,4 +63,11 @@ public class UIHandler : MonoBehaviour
             enemy[i].enabled = false;
         }
 	}
+    public void OpenUIEnemy()
+    {
+        for (int i = 0; i < prince.Length; i++)
+        {
+            enemy[i].enabled = true;
+        }
+    }
 }

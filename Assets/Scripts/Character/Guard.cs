@@ -21,6 +21,7 @@ public class Guard : CharacterSystem
     [SerializeField, Range(0, 100)] private byte fightParryChance;
     [SerializeField] private float fightParryDelay;
     [SerializeField] private float destroyAfterDeadDuration;
+    [SerializeField] private float moveBackScale;
     [Header("Other")]
     [SerializeField] private Animator enemyAnim;
     //Counter Variable
@@ -63,6 +64,8 @@ public class Guard : CharacterSystem
     protected override void OnCombat()
     {
         base.OnCombat();
+        GameCore.combatController.isEnemyAttacking = isAttacking;
+        GameCore.combatController.isEnemyParrying = isParring;
         if (controlable)
         {
             if (GameCore.combatController.currentEnemy)
@@ -112,6 +115,10 @@ public class Guard : CharacterSystem
                             }
                             break;
                         case AIActionPhase.ATTACK:
+                            if(distanceBetweenPlayer < attackPosition)
+                            {
+                                aIActionPhase = AIActionPhase.MOVETOPLAYER;
+                            }
                             if (GameCore.combatController.isPlayerAttacking && fightParryDelayCounter <= Time.time && isAttacking)
                             {
                                 fightParryDelayCounter = Time.time + fightParryDelay;
@@ -136,13 +143,18 @@ public class Guard : CharacterSystem
                             {
                                 isMoving = true;
                                 isMoveBack = false;
-                                enemyAnim.SetTrigger("MoveBack");
                             }
-                            else
+                            else if(!isMoving)
                             {
-                                StartCoroutine(afterTakeDamage());
+                                aIActionPhase = AIActionPhase.NONE;
                             }
                             break;
+                        case AIActionPhase.NONE:
+                            if(!GameCore.combatController.isPlayerAttacking)
+                            {
+                                Invoke("ToMovePhase",1f);
+                            }
+                        break;
                     }
                 }
                 else
@@ -168,17 +180,20 @@ public class Guard : CharacterSystem
         enemyAnim.SetTrigger("Parry");
         isReayAttack = true;
     }
-    protected override void OnTakeParry()
+    public override void OnTakeParry()
     {
         enemyAnim.SetTrigger("TakeParry");
+        StartCoroutine(TakeParryDuration());
     }
     protected override void OnTakeDamage()
     {
         enemyAnim.SetTrigger("TakeDamage");
-        predictPosition = new Vector3(transform.position.x + 0.2f, transform.position.y, transform.position.z);
+        var decreastPosition = (currentFacing)?-moveBackScale:moveBackScale;
+        predictPosition = new Vector3(transform.position.x + decreastPosition, transform.position.y, transform.position.z);
         settingMoveSpeed = moveBackSpeed;
         isMoveBack = true;
         aIActionPhase = AIActionPhase.MOVEBACK;
+        enemyAnim.SetBool("MoveForward",false);
     }
     protected override void OnStopFall()
     {
@@ -198,14 +213,6 @@ public class Guard : CharacterSystem
             isReayAttack = true;
         }
     }
-    private IEnumerator afterTakeDamage()
-    {
-        controlable = false;
-        enemyAnim.SetBool("MoveBack", false);
-        yield return new WaitForSeconds(0.4f);
-        aIActionPhase = AIActionPhase.MOVETOPLAYER;
-        controlable = true;
-    }
     private IEnumerator ToCombat()
     {
         controlable = false;
@@ -223,5 +230,15 @@ public class Guard : CharacterSystem
         controlable = true;
         actionState = CharacterState.NORMAL;
         aIActionPhase = AIActionPhase.NONE;
+    }
+    private IEnumerator TakeParryDuration()
+    {
+        controlable = false;
+        yield return new WaitForSeconds(0.5f);
+        controlable = true;
+    }
+    private void ToMovePhase()
+    {
+        aIActionPhase = AIActionPhase.MOVETOPLAYER;
     }
 }

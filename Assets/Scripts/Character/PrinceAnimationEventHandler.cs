@@ -93,4 +93,8 @@ public class PrinceAnimationEventHandler : MonoBehaviour
 		bool status = bool.Parse(msg);
 		prince.SetFloorCheck(status);
 	}
+	public void ParticlePlay()
+	{
+		prince.ParticlePlay(new Vector2(0.3f,0));
+	}
 }

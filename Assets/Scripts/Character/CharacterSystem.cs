@@ -182,6 +182,14 @@ public class CharacterSystem : MonoBehaviour
     }
     protected virtual void FightAttack()
     {
+        if (isTakeDamage)
+        {
+            isAttacking = false;
+            attackTrigger = true;
+            controlable = true;
+            isHitSomething = false;
+            return;
+        }
         controlable = false;
         if (attackTrigger)
         {
@@ -197,11 +205,7 @@ public class CharacterSystem : MonoBehaviour
             {
                 var character = hit2D.GetComponent<CharacterSystem>();
                 isHitSomething = true;
-                if (character.isParring)
-                {
-                    OnTakeParry();
-                }
-                else
+                if (!character.isParring)
                 {
                     character.TakeDamage(1);
                 }
@@ -225,9 +229,12 @@ public class CharacterSystem : MonoBehaviour
             OnParry();
         }
     }
-    protected virtual void OnTakeParry()
+    public virtual void OnTakeParry()
     {
-        return;
+        isAttacking = false;
+        attackTrigger = true;
+        controlable = true;
+        isHitSomething = false;
     }
     protected virtual void OnParry()
     {
