@@ -456,6 +456,7 @@ MonoBehaviour:
   destroyAfterDeadDuration: 3
   moveBackScale: 0.6
   enemyAnim: {fileID: 95132110206840826}
+  particle: {fileID: 0}
 --- !u!114 &114336073982265292
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -567,7 +568,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.3872832, y: 1.265896}
+  m_Size: {x: 3.2774568, y: 1.965318}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
