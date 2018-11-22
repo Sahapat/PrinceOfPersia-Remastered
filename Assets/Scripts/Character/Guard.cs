@@ -36,14 +36,17 @@ public class Guard : CharacterSystem
     private AIActionPhase aIActionPhase;
     private WaitForSeconds waitForSworddraw;
     private ParticleSystem m_particleSystem;
+    private EnemyRayChecker m_enemyRayChecker;
     private bool isReayAttack;
     private float distanceBetweenPlayer;
+    public bool canCombat;
 
     protected override void OnAwake()
     {
         base.OnAwake();
         waitForSworddraw = new WaitForSeconds(0.1f);
         m_particleSystem = particle.GetComponent<ParticleSystem>();
+        m_enemyRayChecker = GetComponent<EnemyRayChecker>();
         particle.SetActive(false);
     }
     protected override void OnStart()
@@ -58,7 +61,7 @@ public class Guard : CharacterSystem
         {
             if (GameCore.combatController.currentEnemy)
             {
-                if (GameCore.combatController.canCombat && GameCore.combatController.currentEnemy.name == this.name)
+                if (GameCore.combatController.canCombat && GameCore.combatController.currentEnemy.name == this.name && m_enemyRayChecker.canCombat)
                 {
                     StartCoroutine(ToCombat());
                 }
@@ -69,7 +72,7 @@ public class Guard : CharacterSystem
     {
         particle.SetActive(true);
         m_particleSystem.Play();
-        Invoke("ParticleStop",0.6f);
+        Invoke("ParticleStop", 0.6f);
     }
     public void ParticleStop()
     {
@@ -82,6 +85,11 @@ public class Guard : CharacterSystem
         GameCore.combatController.isEnemyParrying = isParring;
         if (controlable)
         {
+            if (!m_enemyRayChecker.canCombat)
+            {
+                StartCoroutine(ToNormal());
+                return;
+            }
             if (GameCore.combatController.currentEnemy)
             {
                 if (GameCore.combatController.canCombat && GameCore.combatController.currentEnemy.name == this.name)
@@ -129,7 +137,7 @@ public class Guard : CharacterSystem
                             }
                             break;
                         case AIActionPhase.ATTACK:
-                            if(distanceBetweenPlayer < attackPosition)
+                            if (distanceBetweenPlayer < attackPosition)
                             {
                                 aIActionPhase = AIActionPhase.MOVETOPLAYER;
                             }
@@ -158,17 +166,17 @@ public class Guard : CharacterSystem
                                 isMoving = true;
                                 isMoveBack = false;
                             }
-                            else if(!isMoving)
+                            else if (!isMoving)
                             {
                                 aIActionPhase = AIActionPhase.NONE;
                             }
                             break;
                         case AIActionPhase.NONE:
-                            if(!GameCore.combatController.isPlayerAttacking)
+                            if (!GameCore.combatController.isPlayerAttacking)
                             {
-                                Invoke("ToMovePhase",1f);
+                                Invoke("ToMovePhase", 1f);
                             }
-                        break;
+                            break;
                     }
                 }
                 else
@@ -202,12 +210,12 @@ public class Guard : CharacterSystem
     protected override void OnTakeDamage()
     {
         enemyAnim.SetTrigger("TakeDamage");
-        var decreastPosition = (currentFacing)?-moveBackScale:moveBackScale;
+        var decreastPosition = (currentFacing) ? -moveBackScale : moveBackScale;
         predictPosition = new Vector3(transform.position.x + decreastPosition, transform.position.y, transform.position.z);
         settingMoveSpeed = moveBackSpeed;
         isMoveBack = true;
         aIActionPhase = AIActionPhase.MOVEBACK;
-        enemyAnim.SetBool("MoveForward",false);
+        enemyAnim.SetBool("MoveForward", false);
     }
     protected override void OnStopFall()
     {
@@ -226,6 +234,7 @@ public class Guard : CharacterSystem
         {
             isReayAttack = true;
         }
+        canCombat = m_enemyRayChecker.canCombat;
     }
     private IEnumerator ToCombat()
     {
@@ -240,6 +249,7 @@ public class Guard : CharacterSystem
     {
         controlable = false;
         enemyAnim.SetBool("Combat", false);
+        enemyAnim.SetBool("MoveForward",false);
         yield return waitForSworddraw;
         controlable = true;
         actionState = CharacterState.NORMAL;

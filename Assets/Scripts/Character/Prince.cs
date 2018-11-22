@@ -52,7 +52,7 @@ public class Prince : CharacterSystem
     private bool canHang;
     private bool isHang;
     private byte stepBlockCount;
-    private string currentAnimationClip;
+    public string currentAnimationClip;
     private GameObject interactObject;
     private WaitForSeconds waitForShealth;
     private WaitForSeconds waitForDrawSword;

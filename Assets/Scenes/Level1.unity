@@ -29960,7 +29960,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 730266248}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 80, y: -5.9, z: -10}
+  m_LocalPosition: {x: 60, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1180647890}
@@ -71360,6 +71360,11 @@ Prefab:
       propertyPath: enemy.Array.data[2]
       value: 
       objectReference: {fileID: 1950786846}
+    - target: {fileID: 114767464163109102, guid: ceee0451f003eb94f95669b659cee71d,
+        type: 2}
+      propertyPath: canCombat
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ceee0451f003eb94f95669b659cee71d, type: 2}
   m_IsPrefabAsset: 0
