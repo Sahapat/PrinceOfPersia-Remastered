@@ -16593,6 +16593,20 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114875621427910496, guid: c9a2b337428e36c4fa98bf5b75d48582,
+        type: 2}
+      propertyPath: fightStepDuration
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114875621427910496, guid: c9a2b337428e36c4fa98bf5b75d48582,
+        type: 2}
+      propertyPath: fightStepMoveSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4085646566307178, guid: c9a2b337428e36c4fa98bf5b75d48582, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -1.04
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c9a2b337428e36c4fa98bf5b75d48582, type: 2}
   m_IsPrefabAsset: 0
