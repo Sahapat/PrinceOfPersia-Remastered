@@ -5,22 +5,37 @@ using UnityEngine;
 public class TrapDoor : MonoBehaviour 
 {
     [SerializeField] private float activeDelay;
+    [SerializeField] private AudioClip activeSound;
+    [SerializeField] private AudioClip killSound;
     private float activeDelayCount;
 
     private bool isActive;
     private Animator m_animator;
     private BoxCollider2D m_coliderChecker;
+    private AudioSource m_audiosource;
     void Awake()
     {
         m_coliderChecker = GetComponent<BoxCollider2D>();
         m_animator = GetComponent<Animator>();
+        m_audiosource = GetComponent<AudioSource>();
     }
     void Update()
     {
+        var distance = Vector3.Distance(transform.position,Camera.main.transform.position);
+        print(distance);
+        if(distance < 12.5f)
+        {
+            m_audiosource.volume = 1;
+        }
+        else 
+        {
+            m_audiosource.volume = 0;
+        }
         if(activeDelayCount <= Time.time)
         {
             activeDelayCount = Time.time + activeDelay;
             m_animator.SetTrigger("Active");
+            m_audiosource.PlayOneShot(activeSound);
         }
         if(isActive)
         {
@@ -31,8 +46,9 @@ public class TrapDoor : MonoBehaviour
                 CharacterSystem temp = hit.GetComponent<CharacterSystem>();
                 if(temp)
                 {
-                    temp.SetDead();
+                    temp.SetDead(transform.position);
                     isActive = false;
+                    m_audiosource.PlayOneShot(killSound);
                 }
             }
         }

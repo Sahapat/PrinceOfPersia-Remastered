@@ -80,6 +80,18 @@ public class Prince : CharacterSystem
     private bool climbDownChecker;
     private bool isClimbDown;
     private ParticleSystem m_particleSystem;
+    public void Reset()
+    {
+        deadTriggerSet = true;
+        screamSetTrigger = true;
+        startTrigger = true;
+        characterRigid.simulated = true;
+        isCheckingFall = true;
+        isMoving = false;
+        isClimbDown = false;
+        climbDownChecker = true;
+        screamSetTrigger = true;
+    }
     public void StartClimbUpX()
     {
         climbMoveX = true;

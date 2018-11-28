@@ -47,6 +47,7 @@ public class CharacterSystem : MonoBehaviour
     [SerializeField] private BoxCollider2D attackColider;
     [SerializeField] protected BoxCollider2D floorColider;
     [SerializeField] private LayerMask attackLayer;
+    [SerializeField] private GameObject sprikeDeadObj;
 
     //Counter Variable
     private float fightParryCounter;
@@ -75,10 +76,11 @@ public class CharacterSystem : MonoBehaviour
     protected SpriteRenderer spriteRenderer;
     protected Rigidbody2D characterRigid;
     protected BoxCollider2D characterColider;
-    public void SetDead()
+    public void SetDead(Vector3 position)
     {
-        characterHealth = 0;
-        OnSetDead();
+        var spawnPos = new Vector3(position.x,position.y-0.644f,position.z);
+        Instantiate(sprikeDeadObj,spawnPos,Quaternion.identity);
+        Destroy(this.gameObject);
     }
     public void FlipSprite()
     {

@@ -595,6 +595,8 @@ MonoBehaviour:
   attackLayer:
     serializedVersion: 2
     m_Bits: 512
+  sprikeDeadObj: {fileID: 1098855343220826, guid: 23ee33fd2a0018542990f245d1895c4a,
+    type: 2}
   moveBackSpeed: 2
   savePosition: 1.8
   attackPosition: 1.5

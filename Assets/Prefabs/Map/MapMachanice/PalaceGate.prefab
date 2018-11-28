@@ -100,7 +100,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4022868428102870}
   - component: {fileID: 212788689227178614}
-  m_Layer: 0
+  - component: {fileID: 61999618458275634}
+  m_Layer: 10
   m_Name: Palace_Gate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -170,7 +171,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1992264986146474}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 30.930632, y: 6.0103636, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4626382192213912}
@@ -221,6 +222,31 @@ Transform:
   m_Father: {fileID: 4583181288370716}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &61999618458275634
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1636549632948634}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.7283237, y: 1.9942197}
+    newSize: {x: 1.26, y: 3.45}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.7283237, y: 1.9942197}
+  m_EdgeRadius: 0
 --- !u!82 &82073441572911710
 AudioSource:
   m_ObjectHideFlags: 1

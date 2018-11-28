@@ -356,7 +356,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1403595600725164}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 55.941, y: 2.438, z: -3.4}
+  m_LocalPosition: {x: 101.08, y: -0.824, z: -3.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4602848399499538}
@@ -695,6 +695,8 @@ MonoBehaviour:
   attackLayer:
     serializedVersion: 2
     m_Bits: 2048
+  sprikeDeadObj: {fileID: 1189259752303622, guid: 431249bc3bda610489bfa4b74b69d213,
+    type: 2}
   normalStepScale: 0.8
   normalStepSpeed: 1.2
   crouchStepScale: 0.62
@@ -19428,7 +19430,7 @@ SpriteRenderer:
   m_SortingLayer: 8
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 80c97d084c8c0b44e983cc7f8f5c5dd1, type: 3}
-  m_Color: {r: 0.62695795, g: 0.6886792, b: 0.6886792, a: 1}
+  m_Color: {r: 0.735849, g: 0.6047108, b: 0.60048056, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

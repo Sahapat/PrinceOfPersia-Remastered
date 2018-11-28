@@ -14,7 +14,7 @@ public class Door : MonoBehaviour
 	private Gate gateScript;
 	private WaitForSeconds loadWait;
 	private bool isIntoDoor;
-
+	bool isIn;
 	void Awake()
 	{
 		loadWait = new WaitForSeconds(delayBeforeLoad);
@@ -43,19 +43,19 @@ public class Door : MonoBehaviour
 					var animatorPrinceIntoDoor = princeIntoDoor.GetComponent<Animator>();
 					animatorPrinceIntoDoor.SetTrigger("Play");
 					edgeDoorSprite.enabled = true;
+					isIn = true;
 					StartCoroutine(IntoDoor());
 				}
 			}
+		}
+		if(isIn&&InputManager.GetKeyDown_Interact())
+		{
+			SceneManager.LoadScene(sceneToLoad);
 		}
 	}
 	private IEnumerator IntoDoor()
 	{
 		yield return new WaitForSeconds(0.6f);
 		GameCore.gameManager.SuccessSoundPlay();
-		yield return loadWait;
-		if(sceneToLoad != string.Empty)
-		{
-			SceneManager.LoadScene(sceneToLoad);
-		}
 	}
 }
