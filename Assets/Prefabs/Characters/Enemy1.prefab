@@ -189,7 +189,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1205051308479062}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.694, z: 0}
+  m_LocalPosition: {x: 0, y: -0.712, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4804619068633194}
@@ -601,8 +601,8 @@ MonoBehaviour:
   fightStartAttackDuration: 0.25
   fightAttackDuration: 0.5
   fightParryDuration: 0.6
-  fightStepDuration: 0.15
-  fightStepMoveSpeed: 3
+  fightStepDuration: 0
+  fightStepMoveSpeed: 1
   takeDamageDuration: 0.65
   attackColider: {fileID: 61857612774552954}
   floorColider: {fileID: 61372796037237480}
@@ -621,6 +621,7 @@ MonoBehaviour:
   moveBackScale: 0.6
   enemyAnim: {fileID: 95561816771289822}
   particle: {fileID: 1914576479147768}
+  canCombat: 0
 --- !u!198 &198279954085404964
 ParticleSystem:
   m_ObjectHideFlags: 1
