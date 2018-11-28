@@ -393,7 +393,7 @@ public class Prince : CharacterSystem
                     isCheckingFall = true;
                     isHang = false;
                     isFromHang = true;
-                    transform.position = lastPosition;
+                    transform.position = new Vector3(lastPosition.x,transform.position.y,transform.position.z);
                 }
                 else if (isHang && InputManager.GetKey_Up())
                 {
@@ -513,11 +513,7 @@ public class Prince : CharacterSystem
             }
             if (InputManager.GetKey_Left() && !isCrouch && !isInAction)
             {
-                print(canInteruptJump);
-                print(InputManager.GetKey_Up());
-                print(!currentFacing);
-                print(currentAnimationClip == "Jump");
-                if (canInteruptJump && InputManager.GetKey_Up() && !currentFacing && currentAnimationClip == "Jump")
+                if (canInteruptJump && InputManager.GetKey_Up() && !currentFacing && currentAnimationClip == "jump")
                 {
                     princeAnimator.SetTrigger("IdleJump");
                     princeAnimator.SetBool("isJump", false);
@@ -534,7 +530,8 @@ public class Prince : CharacterSystem
                 else if (isRunning)
                 {
                     var movingIncreast = (currentFacing) ? runSpeed : -runSpeed;
-                    characterRigid.velocity = new Vector2(movingIncreast, characterRigid.velocity.y);
+                    /* characterRigid.velocity = new Vector2(movingIncreast, characterRigid.velocity.y); */
+                    transform.Translate(new Vector3(movingIncreast*Time.deltaTime,0,0));
                 }
                 else
                 {
@@ -666,7 +663,8 @@ public class Prince : CharacterSystem
                 else if (isRunning)
                 {
                     var movingIncreast = (currentFacing) ? runSpeed : -runSpeed;
-                    characterRigid.velocity = new Vector2(movingIncreast, characterRigid.velocity.y);
+                    /* characterRigid.velocity = new Vector2(movingIncreast, characterRigid.velocity.y); */
+                    transform.Translate(new Vector3(movingIncreast*Time.deltaTime,0,0));
                 }
                 else
                 {
