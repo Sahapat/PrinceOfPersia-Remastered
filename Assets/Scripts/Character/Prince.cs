@@ -295,7 +295,7 @@ public class Prince : CharacterSystem
         }
         var coliderPos = new Vector2(transform.position.x + princeColider.offset.x, transform.position.y + princeColider.offset.y);
         var wallHit = Physics2D.OverlapBox(coliderPos, princeColider.size, 0f, LayerMask.GetMask("Wall"));
-        if (wallHit && !isHang && !isClimbDown)
+        if (wallHit && currentAnimationClip == "Run_Jump")
         {
             characterRigid.simulated = true;
             isCheckingFall = true;
@@ -331,7 +331,7 @@ public class Prince : CharacterSystem
             isDeadOnFight = true;
         }
         princeAnimator.SetTrigger("TakeDamage");
-        var decreastPosition = (currentFacing)?-0.6f:0.6f;
+        var decreastPosition = (currentFacing) ? -0.6f : 0.6f;
         predictPosition = new Vector3(transform.position.x + decreastPosition, transform.position.y, transform.position.z);
         isMoving = true;
         isRunning = false;
@@ -341,7 +341,7 @@ public class Prince : CharacterSystem
         particle.SetActive(true);
         particle.transform.localPosition = pos;
         m_particleSystem.Play();
-        Invoke("ParticleStop",0.6f);
+        Invoke("ParticleStop", 0.6f);
     }
     protected override void OnParry()
     {
@@ -513,9 +513,12 @@ public class Prince : CharacterSystem
             }
             if (InputManager.GetKey_Left() && !isCrouch && !isInAction)
             {
+                print(canInteruptJump);
+                print(InputManager.GetKey_Up());
+                print(!currentFacing);
+                print(currentAnimationClip == "Jump");
                 if (canInteruptJump && InputManager.GetKey_Up() && !currentFacing && currentAnimationClip == "Jump")
                 {
-                    print("in");
                     princeAnimator.SetTrigger("IdleJump");
                     princeAnimator.SetBool("isJump", false);
                     controlable = false;
@@ -843,7 +846,7 @@ public class Prince : CharacterSystem
                 else
                 {
                     princeSoundHandler.landharmPlay();
-                    ParticlePlay(new Vector2(0,-0.5f));
+                    ParticlePlay(new Vector2(0, -0.5f));
                 }
                 StartCoroutine(FallToStun());
             }
@@ -868,6 +871,7 @@ public class Prince : CharacterSystem
         princeAnimator.SetBool("isJump", false);
         isMoving = false;
         isClimbDown = false;
+        climbDownChecker = true;
         screamSetTrigger = true;
     }
     protected override void OnStart()
@@ -904,7 +908,7 @@ public class Prince : CharacterSystem
                     hangPosition = nextPosition;
                     characterRigid.simulated = false;
                     princeAnimator.SetBool("Drop", true);
-                    isClimbDown =true;
+                    isClimbDown = true;
                     isCheckingFall = false;
                     isMoving = false;
                     canHang = true;
@@ -925,7 +929,7 @@ public class Prince : CharacterSystem
                     characterRigid.simulated = false;
                     isCheckingFall = false;
                     isMoving = false;
-                    canHang =true;
+                    canHang = true;
                     return true;
                 }
             }
@@ -976,13 +980,13 @@ public class Prince : CharacterSystem
                     var distanceX = Mathf.Abs(upInteractFloor.GetLeftSideEdge().x) - transform.position.x;
                     if (distanceX > -0.5f && distanceX < 0.5f)
                     {
+                        isCheckingFall = false;
                         canHang = true;
                         lastPosition = new Vector3(upInteractFloor.GetLeftSideEdge().x - 0.3f, transform.position.y, transform.position.z);
                         nextPosition = new Vector3(upInteractFloor.GetLeftSideEdge().x + 0.3f, upInteractFloor.GetLeftSideEdge().y + 0.69f, transform.position.z);
-                        transform.position = new Vector3(upInteractFloor.GetLeftSideEdge().x - 0.3f, transform.position.y, transform.position.z);
+                        transform.position = new Vector3(upInteractFloor.GetLeftSideEdge().x, transform.position.y, transform.position.z);
                         hangPosition = new Vector3(upInteractFloor.GetLeftSideEdge().x - 0.3f, upInteractFloor.GetLeftSideEdge().y - 1, transform.position.z);
                         princeAnimator.SetBool("isJump", true);
-                        isCheckingFall = false;
                         isMoving = false;
                         climbDownChecker = false;
                         return true;
@@ -999,12 +1003,12 @@ public class Prince : CharacterSystem
                     if (distanceX > -0.5f && distanceX < 0.5f)
                     {
                         canHang = true;
+                        isCheckingFall = false;
                         lastPosition = new Vector3(upInteractFloor.GetRightSideEdge().x + 0.3f, transform.position.y, transform.position.z);
                         nextPosition = new Vector3(upInteractFloor.GetRightSideEdge().x - 0.3f, upInteractFloor.GetRightSideEdge().y + 0.69f, transform.position.z);
-                        transform.position = new Vector3(upInteractFloor.GetRightSideEdge().x + 0.3f, transform.position.y, transform.position.z);
+                        transform.position = new Vector3(upInteractFloor.GetRightSideEdge().x, transform.position.y, transform.position.z);
                         hangPosition = new Vector3(upInteractFloor.GetRightSideEdge().x + 0.3f, upInteractFloor.GetRightSideEdge().y - 1, transform.position.z);
                         princeAnimator.SetBool("isJump", true);
-                        isCheckingFall = false;
                         isMoving = false;
                         climbDownChecker = false;
                         return true;

@@ -314,7 +314,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1325699296948782}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.01, y: 0.975, z: 0}
+  m_LocalPosition: {x: -0.01, y: 0.864, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4931293471241544}
@@ -376,7 +376,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1920744789086464}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.105, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4931293471241544}
@@ -428,7 +428,7 @@ PolygonCollider2D:
     m_Paths:
     - - {x: -0.1335144, y: 0.6929252}
       - {x: -0.13441467, y: -0.28510618}
-      - {x: 0.021148682, y: -0.6859888}
+      - {x: -0.13250351, y: -0.68204904}
       - {x: 0.09566879, y: -0.6859888}
       - {x: 0.09213638, y: 0.69174814}
 --- !u!61 &61035737259702140
@@ -487,10 +487,10 @@ BoxCollider2D:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1325699296948782}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.05922322}
@@ -543,7 +543,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.05406952, y: -0.6320522}
+  m_Offset: {x: 0.027713776, y: -0.6320522}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -554,7 +554,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.13706207, y: 0.10963106}
+  m_Size: {x: 0.084350586, y: 0.10963106}
   m_EdgeRadius: 0
 --- !u!82 &82508502855491504
 AudioSource:
@@ -691,7 +691,7 @@ MonoBehaviour:
   fightStepMoveSpeed: 5
   takeDamageDuration: 0.6
   attackColider: {fileID: 61211509464571014}
-  floorColider: {fileID: 61605862194627088}
+  floorColider: {fileID: 61589279206658064}
   attackLayer:
     serializedVersion: 2
     m_Bits: 2048
@@ -720,6 +720,7 @@ MonoBehaviour:
   isJump: 0
   canInteruptJump: 0
   isHaveSword: 0
+  currentAnimationClip: 
 --- !u!114 &114187558238816888
 MonoBehaviour:
   m_ObjectHideFlags: 1
