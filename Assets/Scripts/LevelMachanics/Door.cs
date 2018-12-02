@@ -10,6 +10,7 @@ public class Door : MonoBehaviour
 	[SerializeField] private float delayBeforeLoad;
 	[SerializeField] private GameObject princeIntoDoor;
 	[SerializeField] private SpriteRenderer edgeDoorSprite;
+	[SerializeField] private GameObject loadingSprite;
 	private BoxCollider2D coliderChecker;
 	private Gate gateScript;
 	private WaitForSeconds loadWait;
@@ -25,6 +26,7 @@ public class Door : MonoBehaviour
 	void Start()
 	{
 		princeIntoDoor.SetActive(false);
+		loadingSprite.SetActive(false);
 	}
 	void Update()
 	{
@@ -50,7 +52,7 @@ public class Door : MonoBehaviour
 		}
 		if(isIn&&InputManager.GetKeyDown_Interact())
 		{
-			SceneManager.LoadScene(sceneToLoad);
+			StartCoroutine(LoadNewScene());
 		}
 	}
 	private IEnumerator IntoDoor()
@@ -58,4 +60,17 @@ public class Door : MonoBehaviour
 		yield return new WaitForSeconds(0.6f);
 		GameCore.gameManager.SuccessSoundPlay();
 	}
+	private IEnumerator LoadNewScene()
+    {
+        // Start an asynchronous operation to load the scene that was passed to the LoadNewScene coroutine.
+        AsyncOperation async = SceneManager.LoadSceneAsync(sceneToLoad);
+
+        // While the asynchronous operation to load the new scene is not yet complete, continue waiting until it's done.
+        while (!async.isDone)
+        {
+			loadingSprite.SetActive(true);
+            yield return null;
+        }
+
+    }
 }

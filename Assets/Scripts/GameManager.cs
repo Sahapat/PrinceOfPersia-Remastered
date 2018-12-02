@@ -19,12 +19,12 @@ public class GameManager : MonoBehaviour
     [SerializeField] AudioClip fightDeathSound;
     [SerializeField] AudioClip successSound1;
     [SerializeField] AudioClip successSound2;
-    public bool isGameEnd{get;private set;}
+    public bool isGameEnd { get; private set; }
 
     AudioSource mAudiosSource;
     void Awake()
     {
-		GameCore.gameManager = this;
+        GameCore.gameManager = this;
         GameCore.timeCounter = GetComponent<TimeCounter>();
         GameCore.combatController = GetComponent<CombatController>();
         GameCore.cameraController = Camera.main.GetComponent<CameraController>();
@@ -33,9 +33,9 @@ public class GameManager : MonoBehaviour
     }
     private void Update()
     {
-        if(isGameEnd)
+        if (isGameEnd)
         {
-            if(InputManager.GetKeyDown_Interact())
+            if (InputManager.GetKeyDown_Interact())
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
@@ -48,7 +48,10 @@ public class GameManager : MonoBehaviour
     }
     public void startSoundPlay()
     {
-        mAudiosSource.PlayOneShot(startSound);
+        if (startSound)
+        {
+            mAudiosSource.PlayOneShot(startSound);
+        }
     }
     public void killSoundPlay()
     {

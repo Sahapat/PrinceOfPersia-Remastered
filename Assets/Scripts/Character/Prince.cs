@@ -359,6 +359,10 @@ public class Prince : CharacterSystem
     {
         princeAnimator.SetTrigger("Parry");
     }
+    protected override void OnSetDead()
+    {
+        GameCore.gameManager.GameEnd();
+    }
     protected override void OnNormal()
     {
         if (controlable)

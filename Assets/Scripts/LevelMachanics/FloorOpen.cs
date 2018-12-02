@@ -7,6 +7,7 @@ public class FloorOpen : MonoBehaviour
 {
     [Header("Reference")]
     [SerializeField] private Gate gateReference;
+    [SerializeField] private Gate gateReference2;
     [SerializeField] AudioClip button;
     [SerializeField] UnityEvent activeEvent;
     private BoxCollider2D colliderChecker;
@@ -31,6 +32,10 @@ public class FloorOpen : MonoBehaviour
             if (gateReference)
             {
                 gateReference.Open();
+                if(gateReference2)
+                {
+                    gateReference2.Open();
+                }
             }
             activeEvent.Invoke();
             if (soundTrigger)
@@ -46,6 +51,10 @@ public class FloorOpen : MonoBehaviour
             if (gateReference)
             {
                 gateReference.ForClose();
+                if(gateReference2)
+                {
+                    gateReference2.ForClose();
+                }
             }
             soundTrigger = true;
         }

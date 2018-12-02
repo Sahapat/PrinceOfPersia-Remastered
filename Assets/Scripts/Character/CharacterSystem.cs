@@ -81,6 +81,7 @@ public class CharacterSystem : MonoBehaviour
         var spawnPos = new Vector3(position.x,position.y-0.644f,position.z);
         Instantiate(sprikeDeadObj,spawnPos,Quaternion.identity);
         Destroy(this.gameObject);
+        OnSetDead();
     }
     public void FlipSprite()
     {
