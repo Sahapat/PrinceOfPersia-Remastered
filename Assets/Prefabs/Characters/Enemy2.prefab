@@ -188,8 +188,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1900257960187932}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.339001, y: 0.58700013, z: -3.4}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4485120626436524}
@@ -203,7 +203,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1181632826447796}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 81.81, y: -0.9, z: -0.79}
+  m_LocalPosition: {x: 81.81, y: -0.9, z: -3.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4260931521428764}
@@ -221,7 +221,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1246027753060286}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.712, z: 0}
+  m_LocalPosition: {x: 0.308, y: -0.712, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4254115187226686}
@@ -234,7 +234,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1330929376218414}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.11, y: 0, z: 0}
+  m_LocalPosition: {x: -0.217, y: 0.091, z: 0}
   m_LocalScale: {x: 0.6131086, y: 0.6131086, z: 0.6131086}
   m_Children:
   - {fileID: 4512031769546730}
@@ -250,7 +250,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1657740931702780}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.13, y: 0.156, z: 0}
+  m_LocalPosition: {x: -0.949, y: 0.156, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4254115187226686}
@@ -562,19 +562,19 @@ MonoBehaviour:
   fightStartAttackDuration: 0.25
   fightAttackDuration: 0.5
   fightParryDuration: 0.6
-  fightStepDuration: 0.15
-  fightStepMoveSpeed: 3
+  fightStepDuration: 0
+  fightStepMoveSpeed: 1
   takeDamageDuration: 0.65
   attackColider: {fileID: 61954699887907600}
   floorColider: {fileID: 61963322854781844}
   attackLayer:
     serializedVersion: 2
     m_Bits: 512
-  sprikeDeadObj: {fileID: 1873079455290430, guid: 8b86c4bf2e01f95408db56e1b7360d1f,
+  sprikeDeadObj: {fileID: 1319169481977246, guid: 53e73cf8a9e526f439f5004ff09d2ee9,
     type: 2}
   moveBackSpeed: 2
-  savePosition: 1.8
-  attackPosition: 1.5
+  savePosition: 1.6
+  attackPosition: 1.2
   haveAttackPredict: 1
   fightAttackChance: 79
   fightAttackDelay: 0.8
@@ -597,7 +597,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 4254115187226686}
-  xOffset: -0.07
+  xOffset: 0.29
   yOffset: 0.95
 --- !u!114 &114596837183158262
 MonoBehaviour:
@@ -610,8 +610,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17dda7e097025834aa244873615ec5cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flipDirection: 0
-  EnemyCheckerRayDistance: 10
+  flipDirection: 1
+  EnemyCheckerRayDistance: 6
   canCombat: 0
 --- !u!114 &114699311586282216
 MonoBehaviour:
@@ -19312,11 +19312,11 @@ SpriteRenderer:
   m_SortingLayer: 8
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 86b305263a3f2164eb50fdd2bbe6c221, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.7764706, g: 0.6509804, b: 0.64705884, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 3.2774568, y: 1.965318}
+  m_Size: {x: 1.3872832, y: 1.265896}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

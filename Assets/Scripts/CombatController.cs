@@ -9,6 +9,7 @@ public class CombatController : MonoBehaviour
     public bool isPlayerParring;
     public bool isEnemyAttacking;
     public bool isEnemyParrying;
+    public bool isPlayerDead;
     public GameObject targetPlayer;
     public GameObject currentEnemy;
 

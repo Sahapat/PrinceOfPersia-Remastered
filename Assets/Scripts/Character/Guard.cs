@@ -85,7 +85,7 @@ public class Guard : CharacterSystem
         GameCore.combatController.isEnemyParrying = isParring;
         if (controlable)
         {
-            if (!m_enemyRayChecker.canCombat)
+            if (!m_enemyRayChecker.canCombat||GameCore.combatController.isPlayerDead)
             {
                 StartCoroutine(ToNormal());
                 return;

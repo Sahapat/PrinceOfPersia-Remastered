@@ -814,6 +814,7 @@ public class Prince : CharacterSystem
                 StartCoroutine(deathSoundPlay());
             }
         }
+        GameCore.combatController.isPlayerDead = true;
         GameCore.gameManager.GameEnd();
     }
     protected override void OnStartFall()
