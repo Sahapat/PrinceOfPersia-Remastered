@@ -9,7 +9,7 @@ public class SpikeFloor : MonoBehaviour
     [SerializeField] private float activeDuration;
     [SerializeField] private SpriteRenderer frontSpike;
     [SerializeField] private SpriteRenderer princeDummies;
-    [SerializeField] private Transform diePosition;
+    [SerializeField] private Sprite killSprite;
     [SerializeField] AudioClip activeSound;
     [SerializeField] AudioClip killSound;
     public bool canActive;
@@ -69,7 +69,6 @@ public class SpikeFloor : MonoBehaviour
             var playerChecker = Physics2D.OverlapBox(spikeCheckPosition, spikeChecker.size, 0f, LayerMask.GetMask("Player"));
             if (playerChecker)
             {
-                print(playerChecker.name);
                 if (!spikeTrigger)
                 {
                     isKill = true;
@@ -78,7 +77,8 @@ public class SpikeFloor : MonoBehaviour
                     princeScript.DieSpike();
                     frontSpike.enabled = true;
                     princeDummies.enabled = true;
-                    spikeAnim.SetBool("Active", true);
+                    spikeAnim.enabled = false;
+                    GetComponent<SpriteRenderer>().sprite = killSprite;
                     if(killSoundTrigger)
                     {
                         StartCoroutine(endSoundPlay());

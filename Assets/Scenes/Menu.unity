@@ -143,16 +143,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slideShow:
-  - {fileID: 21300000, guid: f0d2468d6539e0e44af68f3af1404947, type: 3}
-  - {fileID: 21300000, guid: 6e17da1de1820f54d9ca22980228f742, type: 3}
-  - {fileID: 21300000, guid: 02babe53643887c4c979670364ff9ef0, type: 3}
-  - {fileID: 21300000, guid: c37511c1586b87c40b2488c859745fb9, type: 3}
-  - {fileID: 21300000, guid: 1b995e56b2d24fa43824aec6b03dff31, type: 3}
-  - {fileID: 21300000, guid: baa2a3586885c734fa96972bf92607c2, type: 3}
-  - {fileID: 21300000, guid: b152e554368b5b94ab16a158f34cc1e0, type: 3}
-  - {fileID: 21300000, guid: aa1f7f929da7cb440a2b66e92a1b8095, type: 3}
-  - {fileID: 21300000, guid: 853dacf37e25ed04482d5bb4ff0594d4, type: 3}
-  changeTime: 3
+  - {fileID: 21300000, guid: f3976d1b0a09dd7478e26f014faae282, type: 3}
+  - {fileID: 21300000, guid: fd1464f02f8d27547881cb691ae2f699, type: 3}
+  - {fileID: 21300000, guid: 20536967e6ad63843a70f0fe4221e3ef, type: 3}
+  - {fileID: 21300000, guid: 754058b201445b847b81a2f3768e3b57, type: 3}
+  changeTime: 4
   loadingSprite: {fileID: 21300000, guid: f592be9d7c38ab54797cec1e2b5c2dca, type: 3}
   sceneToLoad: Level1
 --- !u!212 &1052768821
@@ -190,12 +185,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f0d2468d6539e0e44af68f3af1404947, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fd1464f02f8d27547881cb691ae2f699, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 11.098266, y: 6.936416}
+  m_Size: {x: 19.2, y: 12}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

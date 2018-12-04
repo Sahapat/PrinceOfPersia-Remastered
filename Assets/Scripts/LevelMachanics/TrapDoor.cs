@@ -22,7 +22,6 @@ public class TrapDoor : MonoBehaviour
     void Update()
     {
         var distance = Vector3.Distance(transform.position,Camera.main.transform.position);
-        print(distance);
         if(distance < 12.5f)
         {
             m_audiosource.volume = 1;
