@@ -16643,6 +16643,32 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 212454195757233376, guid: 3357a449832205f49bed189906b8a24f,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8ef8ce6dc94b1534b9eeff49367f4643,
+        type: 3}
+    - target: {fileID: 61965773795401062, guid: 3357a449832205f49bed189906b8a24f,
+        type: 2}
+      propertyPath: m_Offset.x
+      value: 0.03585601
+      objectReference: {fileID: 0}
+    - target: {fileID: 61965773795401062, guid: 3357a449832205f49bed189906b8a24f,
+        type: 2}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1.965318
+      objectReference: {fileID: 0}
+    - target: {fileID: 61965773795401062, guid: 3357a449832205f49bed189906b8a24f,
+        type: 2}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1.965318
+      objectReference: {fileID: 0}
+    - target: {fileID: 61965773795401062, guid: 3357a449832205f49bed189906b8a24f,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 0.80997276
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3357a449832205f49bed189906b8a24f, type: 2}
   m_IsPrefabAsset: 0
@@ -18469,6 +18495,11 @@ Prefab:
         type: 2}
       propertyPath: m_SortingLayer
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114794001720178636, guid: 1f5b32fe2e8b30e40aef2180cf7917bf,
+        type: 2}
+      propertyPath: Closable
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f5b32fe2e8b30e40aef2180cf7917bf, type: 2}
@@ -20939,6 +20970,11 @@ Prefab:
     - target: {fileID: 1384929993354652, guid: f7b4c2d501573b741bc1a3ca55b7de7f, type: 2}
       propertyPath: m_Name
       value: FloorSpike (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 212154638581937326, guid: f7b4c2d501573b741bc1a3ca55b7de7f,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f7b4c2d501573b741bc1a3ca55b7de7f, type: 2}
@@ -66347,7 +66383,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   leftSideInteract: 1
-  rightSideInteract: 0
+  rightSideInteract: 1
 --- !u!1 &1582646214
 GameObject:
   m_ObjectHideFlags: 0
@@ -69197,6 +69233,16 @@ Prefab:
     - target: {fileID: 4113607365103694, guid: f7b4c2d501573b741bc1a3ca55b7de7f, type: 2}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 61138359367123470, guid: f7b4c2d501573b741bc1a3ca55b7de7f,
+        type: 2}
+      propertyPath: m_Offset.x
+      value: 0.1462388
+      objectReference: {fileID: 0}
+    - target: {fileID: 61138359367123470, guid: f7b4c2d501573b741bc1a3ca55b7de7f,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 1.8628092
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f7b4c2d501573b741bc1a3ca55b7de7f, type: 2}

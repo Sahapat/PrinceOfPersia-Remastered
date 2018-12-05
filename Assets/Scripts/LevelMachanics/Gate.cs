@@ -13,6 +13,7 @@ public class Gate : MonoBehaviour
     [SerializeField] private float closeSpeed;
     [SerializeField] private float normalCloseSpeed;
     [SerializeField] bool special;
+    [SerializeField] bool Closable;
     [SerializeField] AudioClip close;
     [SerializeField] AudioClip closeNormal;
     [SerializeField] AudioClip open;
@@ -58,12 +59,12 @@ public class Gate : MonoBehaviour
     }
     private void Update()
     {
-        var distance = Vector3.Distance(transform.position,Camera.main.transform.position);
-        if(distance < 12.5f)
+        var distance = Vector3.Distance(transform.position, Camera.main.transform.position);
+        if (distance < 12.5f)
         {
             gateAudioSource.volume = 1;
         }
-        else 
+        else
         {
             gateAudioSource.volume = 0;
         }
@@ -114,16 +115,19 @@ public class Gate : MonoBehaviour
         }
         else if (!isOpen && isNormalClose && !special)
         {
-            var destination = new Vector3(gateObject.transform.localPosition.x, closePosition.localPosition.y, gateObject.transform.localPosition.z);
-            gateObject.transform.localPosition = Vector3.MoveTowards(gateObject.transform.localPosition, destination, Time.deltaTime * normalCloseSpeed);
-            if (gateObject.transform.localPosition == destination)
+            if (!Closable)
             {
-                isNormalClose = false;
-            }
-            if (closeCount <= Time.time && !(gateObject.transform.localPosition == destination))
-            {
-                gateAudioSource.PlayOneShot(closeNormal);
-                closeCount = Time.time + 0.6f;
+                var destination = new Vector3(gateObject.transform.localPosition.x, closePosition.localPosition.y, gateObject.transform.localPosition.z);
+                gateObject.transform.localPosition = Vector3.MoveTowards(gateObject.transform.localPosition, destination, Time.deltaTime * normalCloseSpeed);
+                if (gateObject.transform.localPosition == destination)
+                {
+                    isNormalClose = false;
+                }
+                if (closeCount <= Time.time && !(gateObject.transform.localPosition == destination))
+                {
+                    gateAudioSource.PlayOneShot(closeNormal);
+                    closeCount = Time.time + 0.6f;
+                }
             }
         }
     }

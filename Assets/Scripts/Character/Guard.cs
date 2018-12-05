@@ -61,7 +61,7 @@ public class Guard : CharacterSystem
         {
             if (GameCore.combatController.currentEnemy)
             {
-                if (GameCore.combatController.canCombat && GameCore.combatController.currentEnemy.name == this.name && m_enemyRayChecker.canCombat)
+                if (GameCore.combatController.canCombat && GameCore.combatController.currentEnemy.name == this.name && m_enemyRayChecker.canCombat && !GameCore.combatController.isPlayerDead)
                 {
                     StartCoroutine(ToCombat());
                 }
