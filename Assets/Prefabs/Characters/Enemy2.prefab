@@ -203,7 +203,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1181632826447796}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 81.81, y: -0.9, z: -3.4}
+  m_LocalPosition: {x: 49.48, y: -0.9, z: -3.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4260931521428764}
@@ -250,7 +250,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1657740931702780}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.949, y: 0.156, z: 0}
+  m_LocalPosition: {x: 1.47, y: 0.156, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4254115187226686}
@@ -557,7 +557,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHealth: 3
   fallDistancePerFloor: 0
-  isInvertFacing: 1
+  isInvertFacing: 0
   fightStepScale: 0.1
   fightStartAttackDuration: 0.25
   fightAttackDuration: 0.5
@@ -574,7 +574,7 @@ MonoBehaviour:
     type: 2}
   moveBackSpeed: 2
   savePosition: 1.6
-  attackPosition: 1.2
+  attackPosition: 1.5
   haveAttackPredict: 1
   fightAttackChance: 79
   fightAttackDelay: 0.8
@@ -610,7 +610,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17dda7e097025834aa244873615ec5cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flipDirection: 1
+  flipDirection: 0
   EnemyCheckerRayDistance: 6
   canCombat: 0
 --- !u!114 &114699311586282216
@@ -19313,7 +19313,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 86b305263a3f2164eb50fdd2bbe6c221, type: 3}
   m_Color: {r: 0.7764706, g: 0.6509804, b: 0.64705884, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1.3872832, y: 1.265896}
