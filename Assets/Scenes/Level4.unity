@@ -19327,6 +19327,29 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114189179725017888, guid: 4ead126052fc9cf49bb14a08dcf6dcb9,
+        type: 2}
+      propertyPath: isInvertFacing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212704230206900392, guid: 4ead126052fc9cf49bb14a08dcf6dcb9,
+        type: 2}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4260931521428764, guid: 4ead126052fc9cf49bb14a08dcf6dcb9, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0.41
+      objectReference: {fileID: 0}
+    - target: {fileID: 4385414471331190, guid: 4ead126052fc9cf49bb14a08dcf6dcb9, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -0.78
+      objectReference: {fileID: 0}
+    - target: {fileID: 114596837183158262, guid: 4ead126052fc9cf49bb14a08dcf6dcb9,
+        type: 2}
+      propertyPath: flipDirection
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ead126052fc9cf49bb14a08dcf6dcb9, type: 2}
   m_IsPrefabAsset: 0
@@ -37953,14 +37976,19 @@ Prefab:
       propertyPath: m_Name
       value: Enemy2 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4289442324735102, guid: 4ead126052fc9cf49bb14a08dcf6dcb9, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0.206
+      objectReference: {fileID: 0}
     - target: {fileID: 114189179725017888, guid: 4ead126052fc9cf49bb14a08dcf6dcb9,
         type: 2}
       propertyPath: attackPosition
-      value: 1.2
+      value: 1.3
       objectReference: {fileID: 0}
-    - target: {fileID: 4260931521428764, guid: 4ead126052fc9cf49bb14a08dcf6dcb9, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0.046
+    - target: {fileID: 114189179725017888, guid: 4ead126052fc9cf49bb14a08dcf6dcb9,
+        type: 2}
+      propertyPath: fightParryChance
+      value: 24
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ead126052fc9cf49bb14a08dcf6dcb9, type: 2}
@@ -42398,11 +42426,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114400168759183622, guid: e1a4d93770fd7a245ab692f5fd140cfe,
-        type: 2}
-      propertyPath: fightAttackChance
-      value: 68
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e1a4d93770fd7a245ab692f5fd140cfe, type: 2}
   m_IsPrefabAsset: 0
@@ -44391,11 +44414,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4931293471241544, guid: 06f1cf694cf78984181653904e30748d, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 56.51
+      value: 76.68
       objectReference: {fileID: 0}
     - target: {fileID: 4931293471241544, guid: 06f1cf694cf78984181653904e30748d, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -0.35
+      value: -0.39
       objectReference: {fileID: 0}
     - target: {fileID: 4931293471241544, guid: 06f1cf694cf78984181653904e30748d, type: 2}
       propertyPath: m_LocalPosition.z
@@ -44421,10 +44444,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 114012929262431922, guid: 06f1cf694cf78984181653904e30748d,
+    - target: {fileID: 61211509464571014, guid: 06f1cf694cf78984181653904e30748d,
         type: 2}
-      propertyPath: isHaveSword
-      value: 1
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 06f1cf694cf78984181653904e30748d, type: 2}
@@ -45278,6 +45301,12 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114530338230325372, guid: cfab12e459b4ad946a6e3ac159d2d07f,
+        type: 2}
+      propertyPath: sprikeDeadObj
+      value: 
+      objectReference: {fileID: 1804139689739880, guid: 89d55a25a67014841a0f51021191a0da,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cfab12e459b4ad946a6e3ac159d2d07f, type: 2}
   m_IsPrefabAsset: 0

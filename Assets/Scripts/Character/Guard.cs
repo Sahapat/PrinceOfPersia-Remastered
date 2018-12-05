@@ -85,7 +85,7 @@ public class Guard : CharacterSystem
         GameCore.combatController.isEnemyParrying = isParring;
         if (controlable)
         {
-            if (!m_enemyRayChecker.canCombat||GameCore.combatController.isPlayerDead)
+            if (!m_enemyRayChecker.canCombat || GameCore.combatController.isPlayerDead)
             {
                 StartCoroutine(ToNormal());
                 return;
@@ -209,7 +209,15 @@ public class Guard : CharacterSystem
     protected override void OnTakeDamage()
     {
         enemyAnim.SetTrigger("TakeDamage");
-        var decreastPosition = (currentFacing) ? -moveBackScale : moveBackScale;
+        float decreastPosition = 0;
+        if (isInvertFacing)
+        {
+            decreastPosition = (currentFacing) ? -moveBackScale : moveBackScale;
+        }
+        else
+        {
+            decreastPosition = (currentFacing) ? moveBackScale : -moveBackScale;
+        }
         predictPosition = new Vector3(transform.position.x + decreastPosition, transform.position.y, transform.position.z);
         settingMoveSpeed = moveBackSpeed;
         isMoveBack = true;

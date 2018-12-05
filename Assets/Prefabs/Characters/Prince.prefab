@@ -288,7 +288,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1388829125417386}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.959, y: 0.125, z: 0}
+  m_LocalPosition: {x: -1.567, y: 0.125, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4931293471241544}
@@ -356,7 +356,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1403595600725164}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 101.08, y: -0.824, z: -3.4}
+  m_LocalPosition: {x: 57.25, y: -0.39, z: -3.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4602848399499538}
@@ -462,7 +462,7 @@ BoxCollider2D:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1388829125417386}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -719,9 +719,11 @@ MonoBehaviour:
   downFloorChecker: {fileID: 61605862194627088}
   crouchColider: {fileID: 61589279206658064}
   particle: {fileID: 1358921503845840}
+  swordColiderRightPos: {x: 0.959, y: 0.125, z: 0}
+  swordColiderLeftPos: {x: -1.567, y: 0.125, z: 0}
   isJump: 0
   canInteruptJump: 0
-  isHaveSword: 0
+  isHaveSword: 1
   currentAnimationClip: 
 --- !u!114 &114187558238816888
 MonoBehaviour:

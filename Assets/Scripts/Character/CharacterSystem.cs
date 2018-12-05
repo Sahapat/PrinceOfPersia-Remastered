@@ -44,7 +44,7 @@ public class CharacterSystem : MonoBehaviour
     [SerializeField] private float fightStepDuration;
     [SerializeField] private float fightStepMoveSpeed;
     [SerializeField] private float takeDamageDuration;
-    [SerializeField] private BoxCollider2D attackColider;
+    [SerializeField] protected BoxCollider2D attackColider;
     [SerializeField] protected BoxCollider2D floorColider;
     [SerializeField] private LayerMask attackLayer;
     [SerializeField] private GameObject sprikeDeadObj;

@@ -202,7 +202,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1075548277944456}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 22.48, y: -4.88, z: -3.4}
+  m_LocalPosition: {x: 22.48, y: -4.611, z: -3.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4264375532356976}
@@ -595,13 +595,13 @@ MonoBehaviour:
   attackLayer:
     serializedVersion: 2
     m_Bits: 512
-  sprikeDeadObj: {fileID: 1319169481977246, guid: 53e73cf8a9e526f439f5004ff09d2ee9,
+  sprikeDeadObj: {fileID: 1098855343220826, guid: 23ee33fd2a0018542990f245d1895c4a,
     type: 2}
   moveBackSpeed: 2
   savePosition: 1.6
   attackPosition: 1.2
   haveAttackPredict: 1
-  fightAttackChance: 79
+  fightAttackChance: 68
   fightAttackDelay: 0.8
   fightParryChance: 0
   fightParryDelay: 0.8

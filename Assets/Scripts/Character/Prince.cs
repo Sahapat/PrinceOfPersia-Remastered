@@ -32,6 +32,9 @@ public class Prince : CharacterSystem
     [SerializeField] private BoxCollider2D downFloorChecker;
     [SerializeField] private BoxCollider2D crouchColider;
     [SerializeField] private GameObject particle;
+
+    [SerializeField] private Vector3 swordColiderRightPos;
+    [SerializeField] private Vector3 swordColiderLeftPos;
     //Counter variable
     private float runStartCounter;
     private float runTurnCounter;
@@ -252,6 +255,14 @@ public class Prince : CharacterSystem
     }
     protected override void OnUpdate()
     {
+        if(currentFacing)
+        {
+            attackColider.transform.localPosition = swordColiderRightPos;
+        }
+        else
+        {
+            attackColider.transform.localPosition = swordColiderLeftPos;
+        }
         if (isCrouch)
         {
             polygonCollider2D.enabled = false;
