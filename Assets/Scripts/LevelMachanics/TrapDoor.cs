@@ -47,6 +47,7 @@ public class TrapDoor : MonoBehaviour
                 {
                     temp.SetDead(transform.position);
                     isActive = false;
+                    m_animator.SetBool("isKill",true);
                     m_audiosource.PlayOneShot(killSound);
                 }
             }

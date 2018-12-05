@@ -32,7 +32,7 @@ public class CharacterSystem : MonoBehaviour
     public bool currentFacing { get; protected set; } //true:right false:left
     protected CharacterState actionState;
     [Header("CharacterProperty")]
-    [SerializeField] protected sbyte MaxHealth;
+    [SerializeField] public sbyte MaxHealth;
     [SerializeField] private float fallDistancePerFloor;
     [SerializeField] protected bool isInvertFacing;
 

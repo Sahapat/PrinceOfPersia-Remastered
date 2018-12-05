@@ -1101,7 +1101,9 @@ public class Prince : CharacterSystem
     }
     private IEnumerator potionLargePlay()
     {
+        MaxHealth++;
         health = MaxHealth;
+        GameCore.uIHandler.UpdateUIPrince(this);
         yield return new WaitForSeconds(1.6f);
         princeSoundHandler.PotionBigPlay();
     }

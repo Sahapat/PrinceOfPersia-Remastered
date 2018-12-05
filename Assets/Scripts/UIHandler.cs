@@ -26,10 +26,18 @@ public class UIHandler : MonoBehaviour
     {
         for (int i = 0; i < prince.Length; i++)
         {
+            prince[i].enabled = false;
+        }
+        var maxHealth = princeScript.MaxHealth;
+        for (int i = 0; i < maxHealth; i++)
+        {
+            prince[i].enabled = true;
+        }
+        for (int i = 0; i < prince.Length; i++)
+        {
             prince[i].sprite = princeUIHealthSprite[0];
         }
         var currentHealth = princeScript.health;
-
         for (int i = 0; i < currentHealth; i++)
         {
             prince[i].sprite = princeUIHealthSprite[1];
@@ -38,6 +46,15 @@ public class UIHandler : MonoBehaviour
     public void UpdateUIEnemy(Guard guardScript)
     {
         OpenUIEnemy();
+        for (int i = 0; i < enemy.Length; i++)
+        {
+            enemy[i].enabled = false;
+        }
+        var maxHealth = guardScript.MaxHealth;
+        for (int i = 0; i < maxHealth; i++)
+        {
+            enemy[i].enabled = true;
+        }
         for (int i = 0; i < enemy.Length; i++)
         {
             enemy[i].sprite = enemyUIHealthSprite[0];
