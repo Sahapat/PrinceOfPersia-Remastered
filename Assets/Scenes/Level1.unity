@@ -71647,6 +71647,11 @@ Prefab:
       propertyPath: canCombat
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114870373057829302, guid: ceee0451f003eb94f95669b659cee71d,
+        type: 2}
+      propertyPath: showText
+      value: 
+      objectReference: {fileID: 967921092}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ceee0451f003eb94f95669b659cee71d, type: 2}
   m_IsPrefabAsset: 0

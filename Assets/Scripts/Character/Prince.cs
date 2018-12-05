@@ -933,7 +933,7 @@ public class Prince : CharacterSystem
             if (downInteractFloor.GetLeftSideInteract() && currentFacing)
             {
                 var distanceX = Mathf.Abs(downInteractFloor.GetLeftSideEdge().x) - transform.position.x;
-                if (distanceX > -0.3f && distanceX < 0.3f)
+                if (distanceX > -0.32f && distanceX < 0.32f)
                 {
                     print(downInteractFloor.GetLeftSideEdge());
                     nextPosition = new Vector3(downInteractFloor.GetLeftSideEdge().x, downInteractFloor.GetRightSideEdge().y - 1f, transform.position.z);
@@ -948,10 +948,10 @@ public class Prince : CharacterSystem
                 }
             }
 
-            if (downInteractFloor.GetRightSideInteract() && !currentFacing)
+            else if (downInteractFloor.GetRightSideInteract() && !currentFacing)
             {
                 var distanceX = Mathf.Abs(downInteractFloor.GetRightSideEdge().x) - transform.position.x;
-                if (distanceX > -0.3f && distanceX < 0.3f)
+                if (distanceX > -0.32f && distanceX < 0.32f)
                 {
                     print(downInteractFloor.GetRightSideEdge());
                     nextPosition = new Vector3(downInteractFloor.GetRightSideEdge().x, downInteractFloor.GetRightSideEdge().y - 1f, transform.position.z);

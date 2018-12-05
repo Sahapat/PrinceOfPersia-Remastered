@@ -82,7 +82,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1830778685799038}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 15.498, y: -5.614, z: 0}
+  m_LocalPosition: {x: 23.501, y: -1.68, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4074718531877998}
@@ -253,7 +253,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gateReference: {fileID: 0}
+  gateReference2: {fileID: 0}
   button: {fileID: 8300000, guid: bb33515936f8f5640a86d0e426fdc794, type: 3}
+  activeEvent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  isOpen: 0
 --- !u!212 &212098984168749812
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -341,7 +348,7 @@ SpriteMask:
   m_BackSortingLayerID: 0
   m_FrontSortingLayer: 6
   m_BackSortingLayer: 0
-  m_FrontSortingOrder: 1
+  m_FrontSortingOrder: 2
   m_BackSortingOrder: 0
   m_IsCustomRangeActive: 1
   m_SpriteSortPoint: 0

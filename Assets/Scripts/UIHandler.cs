@@ -10,6 +10,12 @@ public class UIHandler : MonoBehaviour
     [SerializeField] Sprite[] enemyUIHealthSprite;
     [SerializeField] Image[] prince;
     [SerializeField] Image[] enemy;
+    [SerializeField] GameObject showText;
+
+    void Start()
+    {
+        Invoke("CloseText",4f);
+    }
 
     void Update()
     {
@@ -86,5 +92,9 @@ public class UIHandler : MonoBehaviour
         {
             enemy[i].enabled = true;
         }
+    }
+    private void CloseText()
+    {
+        showText.SetActive(false);
     }
 }
